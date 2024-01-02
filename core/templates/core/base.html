@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Title</title>
+</head>
+<body>
+<div class="menu">
+    <div class="wrap">
+        <div class="logo">
+            <a class="logo-menu" href="{% url 'base' %}"><img src="{% static 'images/logo.png' %}" alt=""></a>
+        </div>
+        <div class="shape"></div>
+
+        <ul>
+            <li>
+                <label class="search-icon">
+                    <img src="{% static 'images/search.png' %}" alt="Search">
+                </label>
+                <input class="search-input" type="text" placeholder="Поиск">
+            </li>
+            <li>
+                <button type="button">+ Создать</button>
+            </li>
+            <li>
+                <a href="#">
+                    <img class="welcom-img" src="{% static 'images/welcome.png' %}" alt="Войти">
+                     Войти
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="container">
+    <div class="wrap">
+    {% block content %}
+
+    {% endblock %}
+    </div>
+</div>
+</body>
+</html>
