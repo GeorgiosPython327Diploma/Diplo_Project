@@ -141,31 +141,40 @@ ul button:hover {
     .menu ul li:last-child {
         margin-right: 0;
         position: relative;
-        left: 15%;
-        top: 14px;
+        left: 12%;
+        top: 23px;
     }
 
     .menu ul li:first-child {
         margin-right: 0;
         position: relative;
-        left: 5%;
+        left: 1%;
+        top: 23px;
     }
 
     .menu ul li:nth-child(2) {
         margin-right: 0;
         position: relative;
-        left: 7%;
-        top: 12px;
+        left: 4%;
+        top: 23px;
     }
 
     ul input{
         padding: 16px;
-        width: 290px;
+        width: 370px;
         margin-top: -16px;
         text-indent: 16px;
     }
 
     ul button {
         padding: 8px;
+    }
+
+    .menu .wrap{
+        font-size: 1.5rem;
+    }
+
+    .logo-menu img{
+        width: 260px;
     }
 }
