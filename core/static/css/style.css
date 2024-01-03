@@ -40,7 +40,7 @@ body {
     margin-right: 0;
     position: relative;
     left: 11%;
-    top: 13px;
+    top: 14px;
 
 }
 
@@ -138,27 +138,24 @@ ul button:hover {
 }
 
 @media (min-width: 1600px) {
-    .menu ul li {
-        margin-right: 250px;
-    }
-
     .menu ul li:last-child {
         margin-right: 0;
         position: relative;
-        left: 90%;
+        left: 15%;
+        top: 14px;
     }
 
     .menu ul li:first-child {
         margin-right: 0;
         position: relative;
-        left: 26%;
+        left: 5%;
     }
 
     .menu ul li:nth-child(2) {
         margin-right: 0;
         position: relative;
-        left: 44%;
-        top: 2%;
+        left: 7%;
+        top: 12px;
     }
 
     ul input{
