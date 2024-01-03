@@ -40,7 +40,7 @@ body {
     margin-right: 0;
     position: relative;
     left: 11%;
-    top: 14px;
+    top: 13px;
 
 }
 
@@ -56,7 +56,7 @@ body {
     margin-right: 0;
     position: relative;
     left: 3%;
-    top: 11px;
+    top: 12px;
 
 }
 
@@ -74,7 +74,7 @@ ul input{
 }
 
 ul input:hover{
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.57);
 }
 
 .search-input::placeholder {
@@ -84,7 +84,7 @@ ul input:hover{
 ul button {
     padding: 8px;
     border-radius: 7px;
-    background: rgb(255, 255, 255);
+    background: rgba(255, 255, 255, 0.57);
     font-size: 0.9em;
     font-weight: bold;
     letter-spacing: 1px;
@@ -95,7 +95,7 @@ ul button {
 }
 
 ul button:hover {
-    background-color: rgb(159, 192, 214);
+    background-color: rgb(140, 147, 211);
     color: #ffffff;
 }
 
@@ -109,7 +109,7 @@ ul button:hover {
 }
 
 .menu ul li a:hover{
-    border-bottom: 3px solid rgba(119, 178, 217, 0.87);
+    border-bottom: 3px solid rgba(143, 197, 95, 0.84);
     border-radius: 11px;
 
 }
