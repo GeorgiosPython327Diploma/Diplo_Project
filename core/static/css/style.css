@@ -146,7 +146,7 @@ ul button:hover {
         margin-right: 0;
         position: relative;
         left: 12%;
-        top: 23px;
+        top: 25px;
     }
 
     .menu ul li:first-child {
@@ -180,5 +180,9 @@ ul button:hover {
 
     .logo-menu img{
         width: 260px;
+    }
+
+    .welcom-img {
+        width: 30px;
     }
 }
