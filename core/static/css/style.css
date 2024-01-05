@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Play:wght@400;700&family=Tektur:wght@400;500;600;700;800;900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
 body {
     margin: 0;
@@ -91,14 +91,14 @@ ul button {
     font-family: Play, serif;
     font-weight: bold;
     letter-spacing: 1px;
-    box-shadow: 0 2px 12px 2px rgba(0, 0, 0, 0.13);
+    box-shadow: 0 2px 12px 2px rgba(112, 110, 110, 0.36);
     color: rgba(82, 81, 81, 0.82);
-    border: 2px solid rgba(255, 254, 254, 0.38);
+    border: 2px solid rgba(255, 255, 255, 0.47);
     transition: background-color ease-in-out 0.3s, color ease-in-out 0.3s;
 }
 
 ul button:hover {
-    background-color: rgb(140, 147, 211);
+    background-color: rgba(110, 134, 184, 0.82);
     color: #ffffff;
 }
 
@@ -113,7 +113,7 @@ ul button:hover {
 }
 
 .menu ul li a:hover{
-    border-bottom: 3px solid rgba(143, 197, 95, 0.84);
+    border-bottom: 3px solid rgba(110, 134, 184, 0.82);
     border-radius: 11px;
 
 }
@@ -139,6 +139,94 @@ ul button:hover {
 
 .logo-menu:hover{
     opacity: 3;
+}
+
+ ul {
+    list-style: none;
+     font-family: Ubuntu, serif;
+     font-weight: 300;
+     color: #3b3a35;
+}
+
+.container .wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.register-menu form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.register-menu input[type="text"],
+.register-menu input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 11px;
+    border: 1px solid rgba(128, 128, 128, 0.65);
+}
+
+label, #id_username{
+    font-weight: bold;
+    color: rgba(93, 89, 82, 0.77);
+    font-family: Tektur, serif;
+}
+
+.helptext{
+    font-family: Fira Sans Condensed, serif;
+    color: #59564f;
+}
+
+.register-menu button {
+    background-color: rgba(255, 255, 255, 0.57);
+    color: rgba(82, 81, 81, 0.82);
+    padding: 11px 15px;
+    margin-left: 109px;
+    margin-top: 11px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    font-size: 0.9em;
+    font-weight: bold;
+    border-radius: 11px;
+    cursor: pointer;
+    transition: background-color ease-in-out 0.3s, color ease-in-out 0.3s;
+}
+
+.register-menu button:hover{
+    background-color: rgba(141, 213, 131, 0.93);
+    color: white;
+}
+
+.register-menu  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 8px;
+    background-color: rgba(239, 204, 139, 0.15);
+    padding: 11px 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.13);
+    box-shadow: 0 2px 12px 2px rgba(255, 255, 255, 0.99);
+}
+
+
+
+h2{
+    font-family: Play, serif;
+    color: rgba(80, 86, 78, 0.82);
+}
+
+
+.register-menu li {
+    box-shadow: none;
+    font-size: 15px;
+    margin-bottom: 0;
+    margin-right: 60px;
 }
 
 @media (min-width: 1600px) {
