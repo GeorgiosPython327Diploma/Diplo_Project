@@ -109,12 +109,13 @@ ul button:hover {
     font-size: 1em;
     font-family: Play, serif;
     padding: 6px;
-    transition: border-bottom  linear 0.3s;
+    transition: border-bottom  linear 0.3s, color ease-in-out 0.3s;
 }
 
 .menu ul li a:hover{
-    border-bottom: 3px solid rgba(110, 134, 184, 0.82);
+    border-bottom: 2px solid rgba(101, 99, 141, 0.84);
     border-radius: 11px;
+    color: rgba(101, 99, 141, 0.84);
 
 }
 
@@ -180,7 +181,7 @@ label, #id_username{
 
 .helptext{
     font-family: Fira Sans Condensed, serif;
-    color: rgba(89, 86, 79, 0.71);
+    color: rgba(86, 85, 85, 0.6);
 }
 
 .register-menu button {
@@ -219,6 +220,7 @@ label, #id_username{
 h2{
     font-family: Play, serif;
     color: rgba(80, 86, 78, 0.69);
+    font-size: 1.6em;
 }
 
 
@@ -227,6 +229,7 @@ h2{
     font-size: 15px;
     margin-bottom: 0;
     margin-right: 60px;
+    color: rgba(86, 85, 85, 0.79);
 }
 
 .login-menu {
@@ -284,14 +287,14 @@ h2{
     font-family: Play, serif;
     padding: 5px;
     color: rgba(93, 89, 82, 0.65);
-    margin-left: 118px;
+    margin-left: 119px;
     transition: border-bottom  linear 0.3s, color ease-in-out 0.3s;
 }
 
 .registration-target:hover{
-    border-bottom: 2px solid rgba(110, 134, 184, 0.82);
+    border-bottom: 2px solid rgba(101, 99, 141, 0.84);
     border-radius: 11px;
-    color: rgba(56, 101, 129, 0.99);
+    color: rgba(101, 99, 141, 0.84);
     width: 106px;
 }
 

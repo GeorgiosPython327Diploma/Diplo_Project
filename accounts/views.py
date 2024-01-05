@@ -15,7 +15,7 @@ class RegistrationView(FormView):
 class LoginView(FormView):
     template_name = 'registration/login.html'
     form_class = AuthenticationForm
-    success_url = 'core/base.html'  # Замените '/' на URL, на который вы хотите перейти после успешного входа
+    success_url = 'core/base.html'
 
     def form_valid(self, form):
         username = form.cleaned_data['username']
