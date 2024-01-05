@@ -4,6 +4,7 @@ body {
     margin: 0;
     padding: 0;
     background: linear-gradient(to right, rgba(214, 213, 213, 0.73), rgba(214, 213, 213, 0.58));
+    zoom: 0.9;
 
 }
 
@@ -207,7 +208,7 @@ label, #id_username{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 8px;
+    margin-top: 20px;
     background-color: rgba(239, 204, 139, 0.15);
     padding: 11px 40px;
     border-radius: 20px;
