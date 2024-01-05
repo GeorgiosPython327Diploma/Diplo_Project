@@ -66,7 +66,7 @@ ul input{
     padding: 14px;
     border-radius: 11px;
     width: 290px;
-    background: rgba(163, 201, 184, 0.82);
+    background: rgba(163, 201, 184, 0.77);
     color: #646363;
     font-size: 0.8em;
     font-weight: bold;
@@ -145,7 +145,7 @@ ul button:hover {
     list-style: none;
      font-family: Ubuntu, serif;
      font-weight: 300;
-     color: #3b3a35;
+     color: rgba(59, 58, 53, 0.71);
 }
 
 .container .wrap{
@@ -174,13 +174,13 @@ ul button:hover {
 
 label, #id_username{
     font-weight: bold;
-    color: rgba(93, 89, 82, 0.77);
+    color: rgba(93, 89, 82, 0.65);
     font-family: Tektur, serif;
 }
 
 .helptext{
     font-family: Fira Sans Condensed, serif;
-    color: #59564f;
+    color: rgba(89, 86, 79, 0.71);
 }
 
 .register-menu button {
@@ -198,7 +198,7 @@ label, #id_username{
 }
 
 .register-menu button:hover{
-    background-color: rgba(141, 213, 131, 0.93);
+    background-color: rgba(141, 213, 131, 0.75);
     color: white;
 }
 
@@ -218,7 +218,7 @@ label, #id_username{
 
 h2{
     font-family: Play, serif;
-    color: rgba(80, 86, 78, 0.82);
+    color: rgba(80, 86, 78, 0.69);
 }
 
 
@@ -227,6 +227,72 @@ h2{
     font-size: 15px;
     margin-bottom: 0;
     margin-right: 60px;
+}
+
+.login-menu {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.login-menu input[type="text"],
+.login-menu input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-sizing: border-box;
+    border-radius: 11px;
+    border: 1px solid rgba(128, 128, 128, 0.71);
+}
+
+.login-menu button {
+    background-color: rgba(255, 255, 255, 0.57);
+    color: rgba(82, 81, 81, 0.82);
+    padding: 11px 15px;
+    margin-left: 138px;
+    font-size: 0.9em;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 11px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color ease-in-out 0.3s, color ease-in-out 0.3s;
+}
+
+.login-menu button:hover{
+    background-color: rgba(141, 213, 131, 0.75);
+    color: white;
+}
+
+.login-menu  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 120px;
+    background-color: rgba(239, 204, 139, 0.15);
+    padding: 11px 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.13);
+    box-shadow: 0 2px 12px 2px rgba(255, 255, 255, 0.99);
+}
+
+
+.registration-target {
+    display: block;
+    margin-top: 20px;
+    font-size: 1.1em;
+    text-decoration: none;
+    font-family: Play, serif;
+    padding: 5px;
+    color: rgba(93, 89, 82, 0.65);
+    margin-left: 118px;
+    transition: border-bottom  linear 0.3s, color ease-in-out 0.3s;
+}
+
+.registration-target:hover{
+    border-bottom: 2px solid rgba(110, 134, 184, 0.82);
+    border-radius: 11px;
+    color: rgba(56, 101, 129, 0.99);
+    width: 106px;
 }
 
 @media (min-width: 1600px) {
