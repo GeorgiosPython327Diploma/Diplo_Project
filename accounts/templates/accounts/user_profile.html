@@ -1,0 +1,13 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block content %}
+ <h1>{{ user.username }}'s Profile</h1>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save Profile</button>
+  </form>
+<img class="gif" src="{% static 'images/girl.gif'%}">
+{% endblock %}
