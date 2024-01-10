@@ -305,9 +305,69 @@ h2{
 }
 
 .gif{
-    margin-top: 5vh;
-    margin-left: 155vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    position: relative;
+    top: 50vh;
+    left: 41%;
     opacity: 0.6;
+    visibility: hidden;
+}
+
+.profile-menu {
+    width: 300px;
+    border-radius: 7px;
+    background-color: #f8f9fa; /* Цвет фона вашего вертикального меню */
+    padding-top: 20px;
+    position: relative;
+    top: -40vh;
+    left: -40%;
+}
+
+
+.profile-service {
+    display: none;
+}
+
+.profile-service a {
+    padding: 15px;
+    text-decoration: none;
+    color: #343a40; /* Цвет текста ссылок */
+    display: block;
+}
+
+.profile-service a:hover {
+    background-color: #dee2e6; /* Цвет фона при наведении */
+}
+
+.form-profile{
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: rgba(255, 255, 255, 0.75);
+    padding: 20px 100px;
+    box-sizing: border-box;
+    border-radius: 11px;
+    border: 2px solid rgba(224, 223, 223, 0.9);
+   margin-right: 80px;
+    margin-top: -300px;
+}
+
+h1 {
+    font-family: Tektur, serif;
+    font-size: 1.8em;
+    font-weight: 500;
+    color: rgb(104, 138, 178);
+}
+
+.span-welcome{
+    display: block;
+    padding: 11px;
+    font-size: 1.4em;
+    font-family: Play, serif;
+    font-weight: bold;
+    color: rgba(82, 82, 82, 0.67);
+    letter-spacing: 3px;
 }
 
 @media (min-width: 1600px) {
