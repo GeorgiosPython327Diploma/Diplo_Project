@@ -3,11 +3,32 @@
 {% load static %}
 
 {% block content %}
- <h1>{{ user.username }}'s Profile</h1>
-  <form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Save Profile</button>
-  </form>
-<img class="gif" src="{% static 'images/girl.gif'%}">
+    <h1><span class="span-welcome">Welcome</span>{{user.username}}</h1>
+    <img id="myGif" class="gif" src="{% static 'images/girl.gif' %}">
+    <div id="profileMenu" class="profile-menu">
+      <ul class="profile-service">
+        <li><a href="#">Service1</a></li>
+        <li><a href="#">Service2</a></li>
+        <li><a href="#">Service3</a></li>
+        <li><a href="#">Service4</a></li>
+        <li><a href="#">Service5</a></li>
+        <li><a href="#">Service6</a></li>
+        <li><a href="#">Service7</a></li>
+      </ul>
+    </div>
+ <script>
+        var profileMenu = document.getElementById('profileMenu');
+        var profileService = document.querySelector('.profile-service');
+        var myGif = document.getElementById('myGif');
+
+        profileMenu.addEventListener('mouseover', function () {
+            profileService.style.display = 'block';
+            myGif.style.visibility = 'visible';
+        });
+
+        profileMenu.addEventListener('mouseout', function () {
+            profileService.style.display = 'none';
+            myGif.style.visibility = 'hidden';
+        });
+ </script>
 {% endblock %}
