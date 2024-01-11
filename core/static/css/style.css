@@ -43,7 +43,6 @@ body {
     position: relative;
     left: 11%;
     top: 16px;
-
 }
 
 .menu ul li:first-child {
@@ -51,7 +50,6 @@ body {
     position: relative;
     left: 1%;
     top: 11px;
-
 }
 
 .menu ul li:nth-child(2) {
@@ -223,7 +221,6 @@ h2{
     font-size: 1.6em;
 }
 
-
 .register-menu li {
     box-shadow: none;
     font-size: 15px;
@@ -314,8 +311,14 @@ h2{
     position: relative;
     top: 25vh;
     left: 41%;
-    opacity: 0.6;
+    opacity: 0;
     visibility: hidden;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.visible {
+    opacity: 0.6;
+    visibility: visible;
 }
 
 .profile-menu {
@@ -326,10 +329,16 @@ h2{
     box-shadow: 0 2px 12px 2px rgba(239, 204, 139, 0.22);
     position: relative;
     border: 3px solid rgba(166, 164, 164, 0.35);
+    cursor: pointer;
+    overflow: hidden;
     top: -50vh;
     left: -42%;
+    transition: top 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
+.profile-menu:hover {
+    top: -45vh;
+}
 
 .profile-service {
     display: none;
@@ -344,8 +353,8 @@ h2{
 
 .profile-service a:hover {
     background-color: #a4c5b0;
+    border-radius: 3px;
 }
-
 
 h1 {
     font-family: Tektur, serif;

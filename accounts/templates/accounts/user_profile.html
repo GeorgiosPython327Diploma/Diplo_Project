@@ -17,18 +17,18 @@
       </ul>
     </div>
  <script>
-        var profileMenu = document.getElementById('profileMenu');
-        var profileService = document.querySelector('.profile-service');
-        var myGif = document.getElementById('myGif');
+      let profileMenu = document.getElementById('profileMenu');
+      let profileService = document.querySelector('.profile-service');
+      let myGif = document.getElementById('myGif');
 
-        profileMenu.addEventListener('mouseover', function () {
-            profileService.style.display = 'block';
-            myGif.style.visibility = 'visible';
-        });
+    profileMenu.addEventListener('mouseover', function () {
+        profileService.style.display = 'block';
+        myGif.classList.add('visible');
+    });
 
-        profileMenu.addEventListener('mouseout', function () {
-            profileService.style.display = 'none';
-            myGif.style.visibility = 'hidden';
-        });
+    profileMenu.addEventListener('mouseout', function () {
+        profileService.style.display = 'none';
+        myGif.classList.remove('visible');
+    });
  </script>
 {% endblock %}
