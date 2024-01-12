@@ -354,7 +354,7 @@ h2{
 }
 
 .profile-service a:hover {
-    background-color: #a4c5b0;
+    background-color: rgba(164, 197, 176, 0.83);
     border-radius: 3px;
 }
 
