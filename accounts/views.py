@@ -1,30 +1,63 @@
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-from django.views.generic.edit import FormView
 from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
-from django.urls import reverse_lazy
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .forms import MyUserCreationForm, MyAuthenticationForm, UserProfileForm, UserEmailChangeForm, UserPasswordChangeForm
 
-class RegistrationView(FormView):
-    template_name = 'registration/register.html'
-    form_class = UserCreationForm
-    success_url = reverse_lazy('login')
+def register_user(request):
+    if request.method == 'POST':
+        form = MyUserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect('base')
+    else:
+        form = MyUserCreationForm()
+    return render(request, 'registration/register.html', {'form': form})
 
-    def form_valid(self, form):
-        form.save()
-        return super().form_valid(form)
+def login_user(request):
+    if request.method == 'POST':
+        form = MyAuthenticationForm(request, request.POST)
+        if form.is_valid():
+            user = form.get_user()
+            login(request, user)
+            return redirect('user_profile')
+    else:
+        form = MyAuthenticationForm()
+    return render(request, 'registration/login.html', {'form': form})
 
-class LoginView(FormView):
-    template_name = 'registration/login.html'
-    form_class = AuthenticationForm
-    success_url = reverse_lazy('user_profile')
-
-    def form_valid(self, form):
-        username = form.cleaned_data['username']
-        password = form.cleaned_data['password']
-        user = form.get_user()
-        login(self.request, user)
-        return super().form_valid(form)
 @login_required
 def user_profile(request):
     return render(request, 'accounts/user_profile.html', {'user': request.user})
+
+@login_required
+def edit_profile(request):
+    if request.method == 'POST':
+        form = UserProfileForm(request.POST, request.FILES, instance=request.user)
+        if form.is_valid():
+            form.save()
+            return redirect('user_profile')
+    else:
+        form = UserProfileForm(instance=request.user)
+    return render(request, 'accounts/edit_profile.html', {'form': form})
+
+@login_required
+def change_email(request):
+    if request.method == 'POST':
+        form = UserEmailChangeForm(request.POST, instance=request.user)
+        if form.is_valid():
+            form.save()
+            return redirect('user_profile')
+    else:
+        form = UserEmailChangeForm(instance=request.user)
+    return render(request, 'accounts/change_email.html', {'form': form})
+
+@login_required
+def change_password(request):
+    if request.method == 'POST':
+        form = UserPasswordChangeForm(request.user, request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('user_profile')
+    else:
+        form = UserPasswordChangeForm(request.user)
+    return render(request, 'accounts/change_password.html', {'form': form})

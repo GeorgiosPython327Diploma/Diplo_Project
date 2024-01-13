@@ -7,10 +7,7 @@ class User(AbstractUser):
     bio = models.TextField(blank=True)
     avatar = models.ImageField(upload_to='avatars', blank=True)
     date_joined = models.DateTimeField(auto_now_add=True)
-    email = None
-    is_active = None
-    is_staff = None
-    is_superuser = None
+    email = models.EmailField(unique=True)
     last_login = None
     groups = None
     user_permissions = None
