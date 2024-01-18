@@ -12,6 +12,5 @@ class User(AbstractUser):
     groups = None
     user_permissions = None
 
-
     def __str__(self):
         return self.username

@@ -1,14 +1,17 @@
 {% extends 'core/base.html' %}
 
-{% block content %}
+{% load static %}
 
-<div class="edit-profile-menu">
-    <h2>Редактировать профиль</h2>
-    <form method="post" enctype="multipart/form-data" action="{% url 'edit_profile' %}">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Сохранить изменения</button>
-    </form>
+{% block content %}
+<div class="profile-container">
+    <div class="edit-profile-menu">
+        <h2>Редактировать профиль</h2>
+        <form method="post" enctype="multipart/form-data" action="{% url 'edit_profile' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="but-edit_profile" type="submit">Сохранить изменения</button>
+        </form>
+    </div>
 </div>
 
 {% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+  <div class="article-list">
+    {% if articles %}
+      <ul>
+        {% for article in articles %}
+          <li>
+            <h3>{{ article.title }}</h3>
+            <p>{{ article.content }}</p>
+            <p>Автор: {{ article.author.username }}</p>
+
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>Пока нет статей.</p>
+    {% endif %}
+  </div>
+{% endblock %}

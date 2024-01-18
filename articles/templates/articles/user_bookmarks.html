@@ -1,0 +1,19 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+
+    <h1>Ваши закладки</h1>
+    {% if bookmarks %}
+        <ul>
+            {% for bookmark in bookmarks %}
+                <li>
+                    <h3>{{ bookmark.article.title }}</h3>
+                    <p>{{ bookmark.article.content }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>У вас нет закладок.</p>
+    {% endif %}
+
+{% endblock %}

@@ -25,7 +25,9 @@
                 <input class="search-input" type="text" placeholder="Поиск">
             </li>
             <li>
-                <button type="button">+ Создать</button>
+                <a class="add-button" href="{% url 'add_article' %}">
+                    <button type="button">+ Создать</button>
+                </a>
             </li>
             <li>
                 <a href="{% url 'login' %}">
@@ -38,9 +40,32 @@
 </div>
 <div class="container">
     <div class="wrap">
-    {% block content %}
-
-    {% endblock %}
+        {% block content %}
+       <div class="article-list">
+            {% if articles %}
+                <ul>
+                    {% for article in articles %}
+                        <li>
+                            <div class="article-item">
+                                <h3>{{ article.title }}</h3>
+                                <p>{{ article.content }}</p>
+                                <p>Автор: {{ article.author.username }}</p>
+                                {% if user.is_authenticated %}
+                                    {% if user_has_bookmark %}
+                                        <a href="{% url 'remove_bookmark' article.id %}">Убрать из закладок</a>
+                                    {% else %}
+                                        <a href="{% url 'add_bookmark' article.id %}">Добавить в закладки</a>
+                                    {% endif %}
+                                {% endif %}
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>Статей нет</p>
+            {% endif %}
+        </div>
+        {% endblock %}
     </div>
 </div>
 <script>
