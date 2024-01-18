@@ -29,12 +29,18 @@
                     <button type="button">+ Создать</button>
                 </a>
             </li>
+            {% if user.is_authenticated %}
+            <li>
+                <a href="{% url 'user_profile' %}">{{ user.username }}</a>
+            </li>
+            {% else %}
             <li>
                 <a href="{% url 'login' %}">
                     <img class="welcom-img" src="{% static 'images/welcome.png' %}" alt="Войти">
                      Войти
                 </a>
             </li>
+            {% endif %}
         </ul>
     </div>
 </div>
@@ -52,7 +58,9 @@
                                 <p>Автор: {{ article.author.username }}</p>
                                 {% if user.is_authenticated %}
                                     {% if not user_has_bookmark %}
-                                        <a href="{% url 'add_bookmark' article.id %}">Добавить в закладки</a>
+                                        <a href="{% url 'add_bookmark' article.id %}">
+                                        <img src="{% static 'images/bookmarkio.svg' %}" alt="Добавить в закладки">
+                                        </a>
                                     {% endif %}
                                 {% endif %}
                             </div>

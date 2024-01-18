@@ -9,7 +9,7 @@ class Article(models.Model):
     dislikes = models.IntegerField(default=0)
 
     def __str__(self):
-        return self.title
+        return f" {self.title} | Автор => {self.author}"
 
 class Comment(models.Model):
     article = models.ForeignKey(Article, on_delete=models.CASCADE)
@@ -26,4 +26,4 @@ class Bookmark(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"{self.user.username} bookmarked {self.article.title}"
+        return f"Пользователь: {self.user.username} | Закладки: {self.article.title}"
