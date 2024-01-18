@@ -6,6 +6,7 @@ from .models import Article, Comment, Bookmark
 from .forms import ArticleForm, CommentForm
 
 BASE_TEMPLATE = 'core/base.html'
+
 def base_with_articles(request):
     articles = Article.objects.order_by('-created_at')
     article_form = ArticleForm()
