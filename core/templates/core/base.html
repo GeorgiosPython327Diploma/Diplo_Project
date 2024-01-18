@@ -51,9 +51,7 @@
                                 <p>{{ article.content }}</p>
                                 <p>Автор: {{ article.author.username }}</p>
                                 {% if user.is_authenticated %}
-                                    {% if user_has_bookmark %}
-                                        <a href="{% url 'remove_bookmark' article.id %}">Убрать из закладок</a>
-                                    {% else %}
+                                    {% if not user_has_bookmark %}
                                         <a href="{% url 'add_bookmark' article.id %}">Добавить в закладки</a>
                                     {% endif %}
                                 {% endif %}

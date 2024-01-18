@@ -9,6 +9,7 @@
                 <li>
                     <h3>{{ bookmark.article.title }}</h3>
                     <p>{{ bookmark.article.content }}</p>
+                     <a href="{% url 'remove_bookmark' bookmark.article.id %}">Убрать из закладок</a>
                 </li>
             {% endfor %}
         </ul>
