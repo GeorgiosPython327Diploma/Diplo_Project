@@ -15,7 +15,7 @@ def base_with_articles(request):
     if request.user.is_authenticated:
         user_has_bookmarks = Bookmark.objects.filter(user=request.user, article__in=articles).exists()
 
-    return render(request, 'BASE_TEMPLATE', {'articles': articles, 'article_form': article_form, 'comment_form': comment_form, 'user_has_bookmarks': user_has_bookmarks})
+    return render(request, BASE_TEMPLATE, {'articles': articles, 'article_form': article_form, 'comment_form': comment_form, 'user_has_bookmarks': user_has_bookmarks})
 
 def article_detail(request, pk):
     article = get_object_or_404(Article, pk=pk)
@@ -24,7 +24,7 @@ def article_detail(request, pk):
     if request.user.is_authenticated:
         user_has_bookmark = article.bookmark_set.filter(user=request.user).exists()
 
-    return render(request, 'BASE_TEMPLATE', {'article': article, 'user_has_bookmark': user_has_bookmark})
+    return render(request, BASE_TEMPLATE, {'article': article, 'user_has_bookmark': user_has_bookmark})
 
 @login_required()
 def add_article(request):
@@ -56,7 +56,7 @@ def add_comment(request, pk):
     else:
         form = CommentForm()
 
-    return render(request, 'BASE_TEMPLATE', {'form': form})
+    return render(request, BASE_TEMPLATE, {'form': form})
 
 @login_required()
 def like_article(request, article_id):

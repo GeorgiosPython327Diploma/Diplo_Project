@@ -1,6 +1,7 @@
-from django.contrib.auth import login
+from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
+from django.urls import reverse
 from .forms import MyUserCreationForm, MyAuthenticationForm, UserProfileForm, UserEmailChangeForm, UserPasswordChangeForm
 
 def register_user(request):
@@ -27,6 +28,10 @@ def login_user(request):
         form = MyAuthenticationForm()
 
     return render(request, 'registration/login.html', {'form': form})
+
+def user_logout(request):
+    logout(request)
+    return redirect(reverse('base_with_articles'))
 
 @login_required
 def user_profile(request):
