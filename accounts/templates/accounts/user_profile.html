@@ -3,7 +3,11 @@
 {% load static %}
 
 {% block content %}
-    <h1><span class="span-welcome">Welcome</span>{{user.username}}</h1>
+<div class="user-info">
+        <h1><span class="span-welcome">Welcome</span>{{ user.username }}
+         <img class="avatar" src="{{ user.avatar.url }}" alt="User Avatar">
+        </h1>
+</div>
     <img id="myGif" class="gif" src="{% static 'images/girl.gif' %}">
     <div id="profileMenu" class="profile-menu">
       <ul class="profile-service">

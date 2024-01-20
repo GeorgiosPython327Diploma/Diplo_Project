@@ -59,7 +59,7 @@
                                 {% if user.is_authenticated %}
                                     {% if not user_has_bookmark %}
                                         <a href="{% url 'add_bookmark' article.id %}">
-                                        <img src="{% static 'images/bookmarkio.svg' %}" alt="Добавить в закладки">
+                                        <img class="bookmarkio" src="{% static 'images/bookmarkio.svg' %}" alt="Добавить в закладки">
                                         </a>
                                     {% endif %}
                                 {% endif %}
