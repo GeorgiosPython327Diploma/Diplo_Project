@@ -371,7 +371,6 @@ h1 {
 
 .span-welcome{
     display: block;
-    padding: 11px;
     font-size: 1.4em;
     font-family: Play, serif;
     font-weight: bold;
@@ -500,6 +499,36 @@ h1,.span-welcome {
 
 .article-item p:last-child {
     margin-bottom: 20px;
+}
+
+.bookmarkio{
+   transition: background-color ease-in-out 0.3s;
+}
+
+.bookmarkio:hover{
+    background-color: rgba(68, 109, 150, 0.2);
+    border-radius: 3px;
+}
+
+.user-info {
+    display: grid;
+    grid-template-columns: auto 1fr; 
+    align-items: center;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    padding: 3px;
+    border-radius: 50%;
+    border: 1px solid rgba(128, 128, 128, 0.53);
+    margin-left: 11px;
+    opacity: 0.8;
+    transform: translateY(11px);
+}
+
+h1 {
+    margin: 5px;
 }
 
 @media (min-width: 1600px) {
