@@ -1,5 +1,6 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from django.conf import settings
 
 class User(AbstractUser):
     username = models.CharField(max_length=150, unique=True)
@@ -11,6 +12,12 @@ class User(AbstractUser):
     last_login = None
     groups = None
     user_permissions = None
+
+    def avatar_url(self):
+        if self.avatar:
+            return self.avatar.url
+        else:
+            return settings.MEDIA_URL + 'avatars/standart_img.png'
 
     def __str__(self):
         return self.username

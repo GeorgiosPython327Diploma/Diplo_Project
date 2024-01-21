@@ -36,7 +36,8 @@ def user_logout(request):
 @login_required
 def user_profile(request):
 
-    return render(request, 'accounts/user_profile.html', {'user': request.user})
+    return render(request, 'accounts/user_profile.html', {'user': request.user, 'avatar_url': request.user.avatar_url})
+
 
 @login_required
 def edit_profile(request):
