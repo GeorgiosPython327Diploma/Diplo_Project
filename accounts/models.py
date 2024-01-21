@@ -17,7 +17,7 @@ class User(AbstractUser):
         if self.avatar:
             return self.avatar.url
         else:
-            return settings.MEDIA_URL + 'avatars/standart_img.png'
+            return settings.STATIC_URL + 'static/images/standart_img.png'
 
     def __str__(self):
         return self.username
