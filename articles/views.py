@@ -1,9 +1,9 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponseRedirect
-from django.urls import reverse
 from .models import Article, Comment, Bookmark
 from .forms import ArticleForm, CommentForm
+from django.http import JsonResponse
+
 
 BASE_TEMPLATE = 'core/base.html'
 
@@ -58,21 +58,26 @@ def add_comment(request, pk):
 
     return render(request, BASE_TEMPLATE, {'form': form})
 
-@login_required()
-def like_article(request, article_id):
-    article = get_object_or_404(Article, pk=article_id)
-    article.likes += 1
-    article.save()
 
-    return HttpResponseRedirect(reverse('base_with_articles', args=(article.id,)))
+@login_required
+def like_article(request, article_id):  # исправлено
+    if request.method == 'POST':
+        article = Article.objects.get(pk=article_id)
+        article.likes += 1
+        article.save()
+        return JsonResponse({'likes': article.likes})
+    else:
+        return JsonResponse({'error': 'Invalid request'})
 
-@login_required()
-def dislike_article(request, article_id):
-    article = get_object_or_404(Article, pk=article_id)
-    article.dislikes += 1
-    article.save()
-
-    return HttpResponseRedirect(reverse('base_with_articles', args=(article.id,)))
+@login_required
+def dislike_article(request, article_id):  # исправлено
+    if request.method == 'POST':
+        article = Article.objects.get(pk=article_id)
+        article.dislikes += 1
+        article.save()
+        return JsonResponse({'dislikes': article.dislikes})
+    else:
+        return JsonResponse({'error': 'Invalid request'})
 
 @login_required()
 def add_bookmark(request, article_id):

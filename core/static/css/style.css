@@ -352,11 +352,13 @@ h2{
     text-decoration: none;
     color: #343a40;
     display: block;
+    transition: color ease-in-out 0.3s;
 }
 
 .profile-service a:hover {
     background-color: rgba(164, 197, 176, 0.83);
     border-radius: 3px;
+    color: #ffffff;
 }
 
 h1 {
@@ -502,13 +504,12 @@ h1,.span-welcome {
     margin-bottom: 20px;
 }
 
-.bookmarkio{
-   transition: background-color ease-in-out 0.3s;
+.bookmarkio.hovered path {
+    transition: fill ease-in-out 0.3s;
 }
 
-.bookmarkio:hover{
-    background-color: rgba(68, 109, 150, 0.2);
-    border-radius: 3px;
+.bookmarkio.hovered path {
+    fill: #0077ff;
 }
 
 .user-info {
@@ -518,7 +519,7 @@ h1,.span-welcome {
     justify-content: center;
 }
 
-.avatar {
+.avatar, .static-avatar  {
     width: 50px;
     height: 50px;
     padding: 3px;
@@ -529,14 +530,14 @@ h1,.span-welcome {
     transform: translateY(11px);
 }
 
-.static-avatar {
-    width: 50px;
-    height: 50px;
-    padding: 3px;
+.menu-avatar{
+    width: 33px;
+    height: 33px;
+    padding: 1px;
     border-radius: 50%;
     border: 2px solid rgba(9, 90, 154, 0.53);
-    margin-left: 27px;
     opacity: 0.8;
+    margin: 0 auto;
     transform: translateY(11px);
 }
 
