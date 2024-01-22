@@ -60,7 +60,7 @@ def add_comment(request, pk):
 
 
 @login_required
-def like_article(request, article_id):  # исправлено
+def like_article(request, article_id):
     if request.method == 'POST':
         article = Article.objects.get(pk=article_id)
         article.likes += 1
@@ -70,7 +70,7 @@ def like_article(request, article_id):  # исправлено
         return JsonResponse({'error': 'Invalid request'})
 
 @login_required
-def dislike_article(request, article_id):  # исправлено
+def dislike_article(request, article_id):
     if request.method == 'POST':
         article = Article.objects.get(pk=article_id)
         article.dislikes += 1
