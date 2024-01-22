@@ -352,13 +352,14 @@ h2{
     text-decoration: none;
     color: #343a40;
     display: block;
-    transition: color ease-in-out 0.3s;
+    transition: color ease-in-out 0.3s, font-weight ease-in-out 0.2s;
 }
 
 .profile-service a:hover {
     background-color: rgba(164, 197, 176, 0.83);
     border-radius: 3px;
     color: #ffffff;
+    font-weight: 500;
 }
 
 h1 {
