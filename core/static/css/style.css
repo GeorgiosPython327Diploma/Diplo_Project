@@ -359,7 +359,7 @@ h2{
     background-color: rgba(164, 197, 176, 0.83);
     border-radius: 3px;
     color: #ffffff;
-    font-weight: 500;
+    font-weight: 400;
 }
 
 h1 {
@@ -545,6 +545,17 @@ h1,.span-welcome {
 h1 {
     margin: 7px;
 }
+
+ .like-button,
+ .dislike-button {
+     margin-right: 11px;
+     cursor: pointer;
+}
+
+.bookmarkio{
+    margin-top: 20px;
+}
+
 
 @media (min-width: 1600px) {
     .menu ul li:last-child {

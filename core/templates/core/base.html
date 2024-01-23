@@ -10,6 +10,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.0/gsap.min.js"></script>
      <script src="{% static 'js/base_app.js' %}"></script>
     <script src="{% static 'js/likes_dislikes_app.js' %}"></script>
+    <script src="{% static 'js/search_app.js' %}"></script>
     <title>Title</title>
 </head>
 <body>
@@ -24,7 +25,8 @@
                 <label class="search-icon">
                     <img src="{% static 'images/search.png' %}" alt="Search">
                 </label>
-                <input class="search-input" type="text" placeholder="Поиск">
+                <input class="search-input" type="text" placeholder="Поиск" id="search-input">
+                <ul id="search-results"></ul>
             </li>
             <li>
                 <a class="add-button" href="{% url 'add_article' %}">

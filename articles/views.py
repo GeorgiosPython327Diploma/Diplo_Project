@@ -105,3 +105,13 @@ def user_bookmarks(request):
     bookmarks = Bookmark.objects.filter(user=request.user)
 
     return render(request, 'articles/user_bookmarks.html', {'bookmarks': bookmarks})
+
+def search_articles(request):
+    query = request.GET.get('query', '')
+    results = []
+
+    if query:
+        results = Article.objects.filter(title__icontains=query).values('id', 'title')
+
+
+    return JsonResponse({'results': list(results)})
