@@ -32,13 +32,16 @@ $(document).ready(function () {
                         `);
 
                         resultsContainer.append(articleItem.hide().fadeIn({
-                            duration: 500,
+                            duration: 700,
                         }));
                     });
 
                     resultsContainer.css("display", "flex");
                     resultsContainer.css("justify-content", "center");
                     resultsContainer.css("align-items", "center");
+                    resultsContainer.css("display", "grid");
+                    resultsContainer.css("overflow", "scroll");
+                    resultsContainer.css("height", "740px");
                 } else {
                     resultsContainer.removeClass("has-results");
                     resultsContainer.hide();

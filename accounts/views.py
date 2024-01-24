@@ -31,6 +31,7 @@ def login_user(request):
 
 def user_logout(request):
     logout(request)
+
     return redirect(reverse('base_with_articles'))
 
 @login_required
