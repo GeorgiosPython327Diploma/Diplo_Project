@@ -1,6 +1,7 @@
 $(document).ready(function () {
     const searchInput = $("#search-input");
     const resultsContainer = $(".container");
+    const originalArticlesUrl = "/articles/";
 
     searchInput.on("input", function () {
         const query = $(this).val();
@@ -19,7 +20,6 @@ $(document).ready(function () {
                 resultsContainer.empty();
 
                 if (data.results.length > 0) {
-
                     resultsContainer.addClass("has-results");
 
                     data.results.forEach(function (result) {
@@ -39,10 +39,12 @@ $(document).ready(function () {
                     resultsContainer.css("align-items", "center");
                 } else {
                     resultsContainer.removeClass("has-results");
+                    resultsContainer.hide();
+                    window.location.href = originalArticlesUrl;
                 }
             },
             error: function () {
-                console.log("Error searching articles.");
+                console.log("Ошибка поиска.");
             }
         });
     });
