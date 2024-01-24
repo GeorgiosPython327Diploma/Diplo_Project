@@ -1,6 +1,6 @@
 $(document).ready(function () {
     const searchInput = $("#search-input");
-    const resultsContainer = $(".article-list");
+    const resultsContainer = $(".container");
 
     searchInput.on("input", function () {
         const query = $(this).val();
@@ -23,19 +23,21 @@ $(document).ready(function () {
                     resultsContainer.addClass("has-results");
 
                     data.results.forEach(function (result) {
-
                         const articleItem = $(`
                             <li class="article-item">
                                 <h3>${result.title}</h3>
                                 <p>${result.content}</p>
                                 <p>Автор: ${result.author}</p>
+                                <a href="/articles/${result.id}/">Подробнее</a>
                             </li>
                         `);
 
-                        resultsContainer.append(articleItem);
-
-                        articleItem.hide().fadeIn();
+                        resultsContainer.append(articleItem.hide().fadeIn());
                     });
+
+                    resultsContainer.css("display", "flex");
+                    resultsContainer.css("justify-content", "center");
+                    resultsContainer.css("align-items", "center");
                 } else {
                     resultsContainer.removeClass("has-results");
                 }

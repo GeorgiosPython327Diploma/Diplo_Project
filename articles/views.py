@@ -106,7 +106,6 @@ def user_bookmarks(request):
 
     return render(request, 'articles/user_bookmarks.html', {'bookmarks': bookmarks})
 
-# views.py
 
 def search_articles(request):
     query = request.GET.get('query', '')
