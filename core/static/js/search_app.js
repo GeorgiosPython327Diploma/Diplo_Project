@@ -28,7 +28,6 @@ $(document).ready(function () {
                                 <h3>${result.title}</h3>
                                 <p>${result.content}</p>
                                 <p>Автор: ${result.author}</p>
-                                <a href="/articles/${result.id}/">Подробнее</a>
                             </li>
                         `);
 
