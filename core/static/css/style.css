@@ -556,6 +556,19 @@ h1 {
     margin-top: 20px;
 }
 
+#search-results.has-results .article-item {
+    border: 1px solid rgba(252, 252, 252, 0.5);
+    padding: 40px;
+    box-sizing: border-box;
+    border-radius: 40px;
+    background-color: rgba(255, 255, 255, 0.82);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 40px 0;
+    width: 700px;
+    height: 500px;
+}
+
+
 
 @media (min-width: 1600px) {
     .menu ul li:last-child {

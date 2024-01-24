@@ -106,12 +106,23 @@ def user_bookmarks(request):
 
     return render(request, 'articles/user_bookmarks.html', {'bookmarks': bookmarks})
 
+# views.py
+
 def search_articles(request):
     query = request.GET.get('query', '')
     results = []
 
     if query:
-        results = Article.objects.filter(title__icontains=query).values('id', 'title')
+        results = Article.objects.filter(title__icontains=query)
 
+    serialized_results = [
+        {
+            'id': result.id,
+            'title': result.title,
+            'content': result.content,
+            'author': result.author.username
+        }
+        for result in results
+    ]
 
-    return JsonResponse({'results': list(results)})
+    return JsonResponse({'results': serialized_results})
