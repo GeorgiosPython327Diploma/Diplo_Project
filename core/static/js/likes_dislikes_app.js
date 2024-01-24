@@ -35,7 +35,7 @@ $.ajaxSetup({
                 likeCountElement.text(data.likes);
             },
             error: function () {
-                console.log('Error liking article.');
+                console.log('Ошибка лайков.');
             }
         });
     });
@@ -52,7 +52,7 @@ $.ajaxSetup({
                 dislikeCountElement.text(data.dislikes);
             },
             error: function () {
-                console.log('Error disliking article.');
+                console.log('Ошибка дизлайков.');
             }
         });
     });
