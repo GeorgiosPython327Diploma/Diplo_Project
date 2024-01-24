@@ -31,7 +31,9 @@ $(document).ready(function () {
                             </li>
                         `);
 
-                        resultsContainer.append(articleItem.hide().fadeIn());
+                        resultsContainer.append(articleItem.hide().fadeIn({
+                            duration: 500,
+                        }));
                     });
 
                     resultsContainer.css("display", "flex");
