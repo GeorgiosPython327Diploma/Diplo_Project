@@ -86,6 +86,14 @@ def dislike_article(request, article_id):
 
     return JsonResponse({'error': 'Неверный запрос'})
 
+@login_required
+def get_like_dislike_count(request, article_id):
+    article = get_object_or_404(Article, pk=article_id)
+    likes = article.likes.count()
+    dislikes = article.dislikes.count()
+
+    return JsonResponse({'likes': likes, 'dislikes': dislikes})
+
 @login_required()
 def add_bookmark(request, article_id):
     article = get_object_or_404(Article, pk=article_id)
