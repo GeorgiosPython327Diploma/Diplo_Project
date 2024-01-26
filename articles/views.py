@@ -63,21 +63,30 @@ def add_comment(request, pk):
 def like_article(request, article_id):
     if request.method == 'POST':
         article = Article.objects.get(pk=article_id)
-        article.likes += 1
-        article.save()
-        return JsonResponse({'likes': article.likes})
-    else:
-        return JsonResponse({'error': 'Invalid request'})
+        user = request.user
+
+        if not article.likes.filter(id=user.id).exists():
+            article.likes.add(user)
+            article.dislikes.remove(user)
+
+            return JsonResponse({'likes': article.likes.count(), 'dislikes': article.dislikes.count(), 'is_liked': True, 'is_disliked': False})
+
+    return JsonResponse({'error': 'Неверный запрос'})
+
 
 @login_required
 def dislike_article(request, article_id):
     if request.method == 'POST':
         article = Article.objects.get(pk=article_id)
-        article.dislikes += 1
-        article.save()
-        return JsonResponse({'dislikes': article.dislikes})
-    else:
-        return JsonResponse({'error': 'Invalid request'})
+        user = request.user
+
+        if not article.dislikes.filter(id=user.id).exists():
+            article.dislikes.add(user)
+            article.likes.remove(user)
+
+            return JsonResponse({'likes': article.likes.count(), 'dislikes': article.dislikes.count(), 'is_liked': False, 'is_disliked': True})
+
+    return JsonResponse({'error': 'Неверный запрос'})
 
 @login_required()
 def add_bookmark(request, article_id):

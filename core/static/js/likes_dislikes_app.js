@@ -14,46 +14,49 @@ function getCookie(name) {
 }
 
 const csrftoken = getCookie('csrftoken');
+
 $.ajaxSetup({
-    beforeSend: function(xhr, settings) {
+    beforeSend: function (xhr, settings) {
         if (!/^(GET|HEAD|OPTIONS|TRACE)$/i.test(settings.type) && !this.crossDomain) {
-            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+            xhr.setRequestHeader('X-CSRFToken', csrftoken);
         }
     }
 });
 
-    $(document).ready(function () {
-    $('.like-button').on('click', function () {
+$(document).ready(function () {
+    $('.like-button, .dislike-button').on('click', function () {
         let articleId = $(this).data('article-id');
-        let likeCountElement = $('#likes-count-' + articleId);
+        let actionType = $(this).hasClass('like-button') ? 'like' : 'dislike';
+        let countElement = $('#' + actionType + 's-count-' + articleId);
+        let isLiked = $(this).data('is-liked');
+        let isDisliked = $(this).data('is-disliked');
 
-        $.ajax({
-            type: 'POST',
-            url: '/articles/' + articleId + '/like/',
-            data: { article_id: articleId },
-            success: function (data) {
-                likeCountElement.text(data.likes);
-            },
-            error: function () {
-                console.log('Ошибка лайков.');
-            }
-        });
-    });
+        if ((actionType === 'like' && !isLiked && !isDisliked) || (actionType === 'dislike' && !isLiked && !isDisliked)) {
+            $.ajax({
+                type: 'POST',
+                url: '/articles/' + articleId + '/' + actionType + '/',
+                data: { article_id: articleId },
+                success: function (data) {
+                    countElement.text(data[actionType + 's']);
 
-    $('.dislike-button').on('click', function () {
-        let articleId = $(this).data('article-id');
-        let dislikeCountElement = $('#dislikes-count-' + articleId);
+                    $('.like-button[data-article-id=' + articleId + ']').data('is-liked', data.is_liked);
+                    $('.like-button[data-article-id=' + articleId + ']').data('is-disliked', data.is_disliked);
+                    $('.dislike-button[data-article-id=' + articleId + ']').data('is-liked', data.is_liked);
+                    $('.dislike-button[data-article-id=' + articleId + ']').data('is-disliked', data.is_disliked);
 
-        $.ajax({
-            type: 'POST',
-            url: '/articles/' + articleId + '/dislike/',
-            data: { article_id: articleId },
-            success: function (data) {
-                dislikeCountElement.text(data.dislikes);
-            },
-            error: function () {
-                console.log('Ошибка дизлайков.');
-            }
-        });
+                    $('.like-button[data-article-id=' + articleId + ']').removeClass('active');
+                    $('.dislike-button[data-article-id=' + articleId + ']').removeClass('active');
+
+                    if (data.is_liked) {
+                        $('.like-button[data-article-id=' + articleId + ']').addClass('active');
+                    } else if (data.is_disliked) {
+                        $('.dislike-button[data-article-id=' + articleId + ']').addClass('active');
+                    }
+                },
+                error: function () {
+                    console.log('Ошибка ' + actionType + 'ов.');
+                }
+            });
+        }
     });
 });
