@@ -31,7 +31,7 @@ $(document).ready(function () {
         let isLiked = $(this).data('is-liked');
         let isDisliked = $(this).data('is-disliked');
 
-        if ((actionType === 'like' && !isLiked && !isDisliked) || (actionType === 'dislike' && !isLiked && !isDisliked)) {
+        if ((actionType === 'like' && (!isLiked || isDisliked)) || (actionType === 'dislike' && (!isLiked && !isDisliked))) {
             $.ajax({
                 type: 'POST',
                 url: '/articles/' + articleId + '/' + actionType + '/',
@@ -58,5 +58,36 @@ $(document).ready(function () {
                 }
             });
         }
+    });
+
+    $('.like-button, .dislike-button').each(function () {
+        let articleId = $(this).data('article-id');
+        const likeDislikeStateString = localStorage.getItem('likeDislikeState_' + articleId);
+
+        if (likeDislikeStateString) {
+            const likeDislikeState = JSON.parse(likeDislikeStateString);
+            $('.like-button[data-article-id=' + articleId + ']').data('is-liked', likeDislikeState.isLiked);
+            $('.like-button[data-article-id=' + articleId + ']').data('is-disliked', likeDislikeState.isDisliked);
+            $('.dislike-button[data-article-id=' + articleId + ']').data('is-liked', likeDislikeState.isLiked);
+            $('.dislike-button[data-article-id=' + articleId + ']').data('is-disliked', likeDislikeState.isDisliked);
+        }
+
+        $.ajax({
+            type: 'GET',
+            url: '/get_like_dislike_count/' + articleId + '/',
+            success: function (data) {
+                $('.like-button[data-article-id=' + articleId + ']').removeClass('active');
+                $('.dislike-button[data-article-id=' + articleId + ']').removeClass('active');
+
+                if (data.is_liked) {
+                    $('.like-button[data-article-id=' + articleId + ']').addClass('active');
+                } else if (data.is_disliked) {
+                    $('.dislike-button[data-article-id=' + articleId + ']').addClass('active');
+                }
+            },
+            error: function () {
+                console.log('Ошибка при получении счетчика лайков и дизлайков.');
+            }
+        });
     });
 });

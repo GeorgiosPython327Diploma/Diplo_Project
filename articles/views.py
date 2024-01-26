@@ -58,7 +58,6 @@ def add_comment(request, pk):
 
     return render(request, BASE_TEMPLATE, {'form': form})
 
-
 @login_required
 def like_article(request, article_id):
     if request.method == 'POST':
@@ -72,7 +71,6 @@ def like_article(request, article_id):
             return JsonResponse({'likes': article.likes.count(), 'dislikes': article.dislikes.count(), 'is_liked': True, 'is_disliked': False})
 
     return JsonResponse({'error': 'Неверный запрос'})
-
 
 @login_required
 def dislike_article(request, article_id):
@@ -114,7 +112,6 @@ def user_bookmarks(request):
     bookmarks = Bookmark.objects.filter(user=request.user)
 
     return render(request, 'articles/user_bookmarks.html', {'bookmarks': bookmarks})
-
 
 def search_articles(request):
     query = request.GET.get('query', '')
