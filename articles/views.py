@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
-from .models import Article, Comment, Bookmark
-from .forms import ArticleForm, CommentForm
+from .models import Article, Comment, Bookmark, Review
+from .forms import ArticleForm, CommentForm, ReviewForm
 from django.http import JsonResponse
 
 
@@ -17,6 +17,7 @@ def base_with_articles(request):
 
     return render(request, BASE_TEMPLATE, {'articles': articles, 'article_form': article_form, 'comment_form': comment_form, 'user_has_bookmarks': user_has_bookmarks})
 
+
 def article_detail(request, pk):
     article = get_object_or_404(Article, pk=pk)
 
@@ -25,6 +26,7 @@ def article_detail(request, pk):
         user_has_bookmark = article.bookmark_set.filter(user=request.user).exists()
 
     return render(request, BASE_TEMPLATE, {'article': article, 'user_has_bookmark': user_has_bookmark})
+
 
 @login_required()
 def add_article(request):
@@ -41,9 +43,10 @@ def add_article(request):
 
     return render(request, 'articles/add_article.html', {'form': form})
 
-@login_required()
-def add_comment(request, pk):
-    article = get_object_or_404(Article, pk=pk)
+
+@login_required
+def add_comment(request, article_id):
+    article = get_object_or_404(Article, pk=article_id)
     if request.method == 'POST':
         form = CommentForm(request.POST)
         if form.is_valid():
@@ -52,11 +55,12 @@ def add_comment(request, pk):
             comment.author = request.user
             comment.save()
 
-            return redirect('base_with_articles', pk=pk)
+            return redirect('review_article', pk=article.id)
     else:
         form = CommentForm()
 
-    return render(request, BASE_TEMPLATE, {'form': form})
+    return render(request, 'articles/review_article.html', {'article': article, 'comment_form': form})
+
 
 @login_required
 def like_article(request, article_id):
@@ -72,6 +76,7 @@ def like_article(request, article_id):
 
     return JsonResponse({'error': 'Неверный запрос'})
 
+
 @login_required
 def dislike_article(request, article_id):
     if request.method == 'POST':
@@ -86,6 +91,7 @@ def dislike_article(request, article_id):
 
     return JsonResponse({'error': 'Неверный запрос'})
 
+
 @login_required
 def get_like_dislike_count(request, article_id):
     article = get_object_or_404(Article, pk=article_id)
@@ -93,6 +99,7 @@ def get_like_dislike_count(request, article_id):
     dislikes = article.dislikes.count()
 
     return JsonResponse({'likes': likes, 'dislikes': dislikes})
+
 
 @login_required()
 def add_bookmark(request, article_id):
@@ -104,6 +111,7 @@ def add_bookmark(request, article_id):
         bookmark.save()
 
     return redirect('base_with_articles')
+
 
 @login_required()
 def remove_bookmark(request, article_id):
@@ -120,6 +128,7 @@ def user_bookmarks(request):
     bookmarks = Bookmark.objects.filter(user=request.user)
 
     return render(request, 'articles/user_bookmarks.html', {'bookmarks': bookmarks})
+
 
 def search_articles(request):
     query = request.GET.get('query', '')
@@ -139,3 +148,27 @@ def search_articles(request):
     ]
 
     return JsonResponse({'results': serialized_results})
+
+
+def review_article(request, pk):
+    article = get_object_or_404(Article, pk=pk)
+    user_has_bookmark = False
+
+    if request.user.is_authenticated:
+        user_has_bookmark = article.bookmark_set.filter(user=request.user).exists()
+
+    comment_form = CommentForm()
+
+    if request.method == 'POST':
+        comment_form = CommentForm(request.POST)
+        if comment_form.is_valid():
+            comment = comment_form.save(commit=False)
+            comment.article = article
+            comment.author = request.user
+            comment.save()
+
+            return redirect('review_article', pk=pk)
+
+    comments = Comment.objects.filter(article=article)
+
+    return render(request, 'articles/review_article.html', {'article': article, 'user_has_bookmark': user_has_bookmark, 'comment_form': comment_form, 'comments': comments})

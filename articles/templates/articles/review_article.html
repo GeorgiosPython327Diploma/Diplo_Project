@@ -1,0 +1,25 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+
+  <h2>{{ article.title }}</h2>
+  <p>{{ article.content }}</p>
+  <p>Автор: {{ article.author.username }}</p>
+
+  <h3>Комментарии</h3>
+  <div class="comment-area">
+    {% for comment in comments %}
+      <div class="comment">
+        <p>{{ comment.author.username }}: {{ comment.content }}</p>
+      </div>
+    {% endfor %}
+  </div>
+
+  <h3>Добавить комментарий</h3>
+  <form method="post" action="{% url 'add_comment' article.id %}">
+    {% csrf_token %}
+    {{ comment_form.as_p }}
+    <button type="submit">Добавить комментарий</button>
+  </form>
+
+{% endblock %}

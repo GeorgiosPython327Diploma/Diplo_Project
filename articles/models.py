@@ -24,15 +24,27 @@ class Article(models.Model):
         if not self.dislikes.filter(id=user.id).exists():
             self.dislikes.add(user)
 
+class Review(models.Model):
+    article = models.OneToOneField(Article, on_delete=models.CASCADE)
+    rating = models.IntegerField(choices=[(i, str(i)) for i in range(1, 6)])
+    full_description = models.TextField()
+    likes = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='liked_reviews')
+    dislikes = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='disliked_reviews')
+    parent_review = models.ForeignKey('self', on_delete=models.CASCADE, null=True, blank=True, related_name='replies')
+
+    def __str__(self):
+        return f"Review for {self.article.title} by {self.article.author.username}"
+
 
 class Comment(models.Model):
-    article = models.ForeignKey(Article, on_delete=models.CASCADE)
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
+    article = models.ForeignKey('Article', on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"Comment by {self.author.username} on {self.article.title}"
+        return f"Comment by {self.author.username}"
+
 
 class Bookmark(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
