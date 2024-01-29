@@ -577,6 +577,20 @@ h1 {
     transition: opacity 1s ease-out;
 }
 
+.comment-area{
+    padding: 5px;
+    background-color: white;
+    border-radius: 7px;
+}
+
+.open_rewiew{
+    text-decoration: none;
+    color: #6b6a6a;
+}
+
+
+
+
 @media (min-width: 1600px) {
     .menu ul li:last-child {
         margin-right: 0;

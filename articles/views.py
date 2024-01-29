@@ -3,6 +3,8 @@ from django.contrib.auth.decorators import login_required
 from .models import Article, Comment, Bookmark, Review
 from .forms import ArticleForm, CommentForm, ReviewForm
 from django.http import JsonResponse
+from html2text import html2text
+import bleach
 
 
 BASE_TEMPLATE = 'core/base.html'
@@ -47,12 +49,17 @@ def add_article(request):
 @login_required
 def add_comment(request, article_id):
     article = get_object_or_404(Article, pk=article_id)
+
     if request.method == 'POST':
         form = CommentForm(request.POST)
         if form.is_valid():
             comment = form.save(commit=False)
             comment.article = article
             comment.author = request.user
+
+            # Используем html2text для конвертации HTML-кода в текст
+            comment.content = html2text(bleach.clean(comment.content, tags=[], strip=True))
+
             comment.save()
 
             return redirect('review_article', pk=article.id)
