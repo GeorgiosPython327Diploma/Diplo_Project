@@ -57,7 +57,6 @@ def add_comment(request, article_id):
             comment.article = article
             comment.author = request.user
 
-            # Используем html2text для конвертации HTML-кода в текст
             comment.content = html2text(bleach.clean(comment.content, tags=[], strip=True))
 
             comment.save()
