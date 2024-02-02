@@ -3,6 +3,7 @@
 {% load static %}
 
 {% block content %}
+<link rel="stylesheet" href="{% static 'css/style-user_profile.css' %}">
 <div class="user-info">
         <h1><span class="span-welcome">Welcome</span>{{ user.username }}
             {% if user.avatar %}

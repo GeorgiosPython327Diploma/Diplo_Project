@@ -6,7 +6,9 @@
   <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
 
-    {{ form.as_p }}
+    {{ form.title.label_tag }} {{ form.title }}
+    {{ form.content.label_tag }}
+    {{ form.content }}
 
     <button type="submit">Сохранить</button>
   </form>

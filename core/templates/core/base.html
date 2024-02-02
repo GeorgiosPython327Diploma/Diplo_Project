@@ -19,7 +19,7 @@
 <div class="menu">
     <div class="wrap">
         <div class="logo">
-            <a class="logo-menu" href="{% url 'base' %}"><img src="{% static 'images/logo.png' %}" alt=""></a>
+            <a class="logo-menu" href="{% url 'base_with_articles' %}"><img src="{% static 'images/logo.png' %}" alt=""></a>
         </div>
         <div class="shape"></div>
         <ul>
@@ -67,7 +67,7 @@
                                 <a class="open_rewiew" href="{% url 'review_article' pk=article.id %}">
                                 <h3>{{ article.title }}</h3>
                                 </a>
-                                <p>{{ article.content }}</p>
+                                <p>{{ article.content|safe }}</p>
                                 <p>Автор: {{ article.author.username }}</p>
                                  <p>
                                         <span id="likes-count-{{ article.id }}">{{ article.likes.count }}</span>
@@ -99,6 +99,23 @@
             {% else %}
                 <p>Статей нет</p>
             {% endif %}
+        </div>
+        <div class="pagination">
+            <span class="step-links">
+                {% if articles.has_previous %}
+                    <a href="?page=1">&laquo; первая</a>
+                    <a href="?page={{ articles.previous_page_number }}">предыдущая</a>
+                {% endif %}
+
+                <span class="current">
+                    Страница {{ articles.number }} из {{ articles.paginator.num_pages }}.
+                </span>
+
+                {% if articles.has_next %}
+                    <a href="?page={{ articles.next_page_number }}">следующая</a>
+                    <a href="?page={{ articles.paginator.num_pages }}">последняя &raquo;</a>
+                {% endif %}
+            </span>
         </div>
         {% endblock %}
     </div>

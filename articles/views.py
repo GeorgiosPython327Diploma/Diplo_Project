@@ -1,21 +1,29 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
-from .models import Article, Comment, Bookmark, Review
-from .forms import ArticleForm, CommentForm, ReviewForm
+from .models import Article, Comment, Bookmark
+from .forms import ArticleForm, CommentForm
 from django.http import JsonResponse
-from html2text import html2text
-import bleach
-
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 BASE_TEMPLATE = 'core/base.html'
 
 def base_with_articles(request):
-    articles = Article.objects.order_by('-created_at')
+    articles_list = Article.objects.order_by('-created_at')
+    paginator = Paginator(articles_list, 5)
+
+    page = request.GET.get('page', 1)
+    try:
+        articles = paginator.page(page)
+    except (PageNotAnInteger, EmptyPage):
+        articles = paginator.page(1)
+
     article_form = ArticleForm()
     comment_form = CommentForm()
     user_has_bookmarks = False
     if request.user.is_authenticated:
-        user_has_bookmarks = Bookmark.objects.filter(user=request.user, article__in=articles).exists()
+        user_has_bookmarks = Bookmark.objects.filter(user=request.user, article__in=articles_list).exists()
+
+    print(f"Page: {page}, Articles: {articles}")
 
     return render(request, BASE_TEMPLATE, {'articles': articles, 'article_form': article_form, 'comment_form': comment_form, 'user_has_bookmarks': user_has_bookmarks})
 
@@ -30,12 +38,15 @@ def article_detail(request, pk):
     return render(request, BASE_TEMPLATE, {'article': article, 'user_has_bookmark': user_has_bookmark})
 
 
+from django.utils.html import mark_safe
+
 @login_required()
 def add_article(request):
     if request.method == 'POST':
         form = ArticleForm(request.POST)
         if form.is_valid():
             article = form.save(commit=False)
+            article.content = mark_safe(form.cleaned_data['content'])
             article.author = request.user
             article.save()
 
@@ -56,9 +67,6 @@ def add_comment(request, article_id):
             comment = form.save(commit=False)
             comment.article = article
             comment.author = request.user
-
-            comment.content = html2text(bleach.clean(comment.content, tags=[], strip=True))
-
             comment.save()
 
             return redirect('review_article', pk=article.id)

@@ -1,11 +1,13 @@
 from django import forms
-from .models import Article, Comment, Review
+from .models import Article, Comment
 from tinymce.widgets import TinyMCE
 
 class ArticleForm(forms.ModelForm):
     class Meta:
         model = Article
         fields = ['title', 'content']
+
+    content = forms.CharField(widget=TinyMCE(attrs={'cols': 80, 'rows': 30}))
 
 
 class CommentForm(forms.ModelForm):
@@ -14,9 +16,3 @@ class CommentForm(forms.ModelForm):
         fields = ['content']
 
     content = forms.CharField(widget=TinyMCE(attrs={'cols': 80, 'rows': 30}))
-
-
-class ReviewForm(forms.ModelForm):
-    class Meta:
-        model = Review
-        fields = ['rating', 'full_description']

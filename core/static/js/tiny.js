@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
         selector: 'textarea.tinymce',
         height: 200,
         width: 700,
-        plugins: 'lists image media',
-        content_css: '/static/css/tinystyle.css',
+        plugins: 'lists image media emoticons link',
+//        content_style: "body { background-color: #f5f5f5; border-radius: 40px; }",
     });
 });
