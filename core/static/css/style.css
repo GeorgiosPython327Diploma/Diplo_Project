@@ -1,13 +1,9 @@
-html {
-    height: 500px;
-    overflow: hidden;
-}
-
 body {
     margin: 0;
     padding: 0;
     background: linear-gradient(to right, rgba(214, 213, 213, 0.73), rgba(214, 213, 213, 0.58));
     zoom: 0.9;
+    height: 100vh;
     opacity: 0;
 }
 
@@ -547,10 +543,10 @@ h1 {
     margin: 7px;
 }
 
- .like-button,
- .dislike-button {
-     margin-right: 11px;
-     cursor: pointer;
+.like-button,
+.dislike-button {
+    margin-right: 11px;
+    cursor: pointer;
 }
 
 .bookmarkio{
@@ -588,8 +584,30 @@ h1 {
     color: #6b6a6a;
 }
 
+.pagination span.page.current, .pagination a.page  {
+    background: rgba(163, 201, 184, 0.77);
+    padding: 14px 19px;
+    text-decoration: none;
+    color: #ffffff;
+    display: inline-block;
+    border-radius: 50%;
+    transition: background-color linear 0.3s;
+    border: 3px solid rgba(255, 255, 255, 0.78);
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 1.1em;
+    margin: 7px;
+}
 
+.pagination span.page.current, .pagination a.page:hover{
+    background-color: rgba(69, 204, 144, 0.67);
+}
 
+.pagination a {
+    text-decoration: none;
+    font-size: 2.2em;
+    color: #747069;
+}
 
 @media (min-width: 1600px) {
     .menu ul li:last-child {
