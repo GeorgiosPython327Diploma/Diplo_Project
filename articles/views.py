@@ -1,9 +1,13 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from .models import Article, Comment, Bookmark
+from accounts.models import User
 from .forms import ArticleForm, CommentForm
 from django.http import JsonResponse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic import DeleteView
+from django.urls import reverse_lazy
 
 BASE_TEMPLATE = 'core/base.html'
 
@@ -186,3 +190,23 @@ def review_article(request, pk):
     comments = Comment.objects.filter(article=article)
 
     return render(request, 'articles/review_article.html', {'article': article, 'user_has_bookmark': user_has_bookmark, 'comment_form': comment_form, 'comments': comments})
+
+@login_required()
+def user_articles(request, user_id):
+    # Получаем пользователя по его ID
+    user = get_object_or_404(User, id=user_id)
+
+    # Получаем все статьи данного пользователя
+    articles = Article.objects.filter(author=user).order_by('-created_at')
+
+    return render(request, 'articles/user_articles.html', {'user': user, 'articles': articles})
+
+class ArticleDeleteView(LoginRequiredMixin, DeleteView):
+    model = Article
+    template_name = 'articles/article_confirm_delete.html'
+
+    def get_success_url(self):
+        return reverse_lazy('user_articles', kwargs={'user_id': self.request.user.id})
+
+    def get_queryset(self):
+        return Article.objects.filter(author=self.request.user)

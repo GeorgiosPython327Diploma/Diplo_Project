@@ -21,8 +21,7 @@
         <li><a href="{% url 'change_password' %}">Изменить Пароль</a></li>
         <li><a href="{% url 'user_bookmarks' %}">Закладки</a></li>
         <li><a href="{% url 'add_article' %}">Создать статью </a></li>
-        <li><a href="{% url 'logout' %}">Выход</a></li>
-        <li><a href="#">Service7</a></li>
+        <li><a href="{% url 'user_articles' user_id=user.id %}">Список статей</a></li>
       </ul>
     </div>
  <script>

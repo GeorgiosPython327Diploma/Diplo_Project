@@ -1,5 +1,5 @@
 from django import forms
-from .models import Article, Comment
+from .models import Article, Comment, Bookmark
 from tinymce.widgets import TinyMCE
 
 class ArticleForm(forms.ModelForm):
@@ -16,3 +16,9 @@ class CommentForm(forms.ModelForm):
         fields = ['content']
 
     content = forms.CharField(widget=TinyMCE(attrs={'cols': 80, 'rows': 30}))
+
+
+class BookmarkForm(forms.ModelForm):
+    class Meta:
+        model = Bookmark
+        fields = ['user', 'article']

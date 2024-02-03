@@ -1,7 +1,7 @@
 $(document).ready(function () {
     const searchInput = $("#search-input");
     const resultsContainer = $(".container");
-    const originalArticlesUrl = "/articles/";
+    const originalArticlesUrl = "/";
 
     searchInput.on("input", function () {
         const query = $(this).val();
@@ -32,7 +32,7 @@ $(document).ready(function () {
                         `);
 
                         resultsContainer.append(articleItem.hide().fadeIn({
-                            duration: 700,
+                            duration: 1300,
                         }));
                     });
 

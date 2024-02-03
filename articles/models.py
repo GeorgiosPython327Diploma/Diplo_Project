@@ -10,7 +10,7 @@ class Article(models.Model):
     dislikes = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='disliked_articles')
 
     def __str__(self):
-        return f"{self.title} | Автор => {self.author}"
+        return f"{self.title}"
 
     def like(self, user):
         self.dislikes.remove(user)
@@ -33,7 +33,7 @@ class Review(models.Model):
     parent_review = models.ForeignKey('self', on_delete=models.CASCADE, null=True, blank=True, related_name='replies')
 
     def __str__(self):
-        return f"Review for {self.article.title} by {self.article.author.username}"
+        return f" {self.article.title}  {self.article.author.username}"
 
 
 class Comment(models.Model):
@@ -43,7 +43,7 @@ class Comment(models.Model):
     article = models.ForeignKey('Article', on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"Comment by {self.author.username}"
+        return f"{self.author.username}"
 
 
 class Bookmark(models.Model):
@@ -52,4 +52,4 @@ class Bookmark(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"Пользователь: {self.user.username} | Закладки: {self.article.title}"
+        return f"{self.article.title}"

@@ -1,0 +1,23 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+  <h2>Статьи пользователя {{ user.username }}</h2>
+
+  {% for article in articles %}
+    <div>
+      <h3>{{ article.title }}</h3>
+      <p>{{ article.content|safe }}</p>
+
+      <!-- Добавляем кнопку для удаления статьи -->
+      {% if user.is_authenticated and user == article.author %}
+        <form method="post" action="{% url 'delete_article' pk=article.pk %}">
+          {% csrf_token %}
+          <button type="submit" onclick="return confirm('Вы уверены, что хотите удалить эту статью?')">Удалить статью</button>
+        </form>
+      {% endif %}
+
+      <!-- Дополнительные поля статьи, если необходимо -->
+    </div>
+  {% endfor %}
+
+{% endblock %}
