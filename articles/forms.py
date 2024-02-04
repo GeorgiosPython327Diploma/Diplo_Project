@@ -7,8 +7,6 @@ class ArticleForm(forms.ModelForm):
         model = Article
         fields = ['title', 'content']
 
-    content = forms.CharField(widget=TinyMCE(attrs={'cols': 80, 'rows': 30}))
-
 
 class CommentForm(forms.ModelForm):
     class Meta:

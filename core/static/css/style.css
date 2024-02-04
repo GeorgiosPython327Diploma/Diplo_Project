@@ -51,7 +51,7 @@ body {
 .menu ul li:nth-child(2) {
     margin-right: 0;
     position: relative;
-    left: 4%;
+    left: 7%;
     top: 12px;
 
 }
@@ -588,7 +588,7 @@ h1 {
     display: inline-block;
     border-radius: 50%;
     transition: background-color linear 0.3s;
-    border: 3px solid rgba(255, 255, 255, 0.78);
+    border: 3px solid rgba(255, 255, 255, 0.66);
     font-weight: bold;
     letter-spacing: 1px;
     font-size: 1.1em;

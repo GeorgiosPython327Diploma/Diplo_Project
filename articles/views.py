@@ -194,7 +194,6 @@ def review_article(request, pk):
 @login_required()
 def user_articles(request, user_id):
     user = get_object_or_404(User, id=user_id)
-
     articles = Article.objects.filter(author=user).order_by('-created_at')
 
     return render(request, 'articles/user_articles.html', {'user': user, 'articles': articles})
