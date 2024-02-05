@@ -496,6 +496,9 @@ h1,.span-welcome {
     display: inline-block;
 }
 
+.date-created-article{
+    margin-top: 60px;
+}
 
 .bookmarkio.hovered path {
     transition: fill ease-in-out 0.3s;
