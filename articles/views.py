@@ -47,7 +47,7 @@ from django.utils.html import mark_safe
 @login_required()
 def add_article(request):
     if request.method == 'POST':
-        form = ArticleForm(request.POST)
+        form = ArticleForm(request.POST, request.FILES)
         if form.is_valid():
             article = form.save(commit=False)
             article.content = mark_safe(form.cleaned_data['content'])

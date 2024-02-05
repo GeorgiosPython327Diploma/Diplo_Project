@@ -5,7 +5,7 @@ from tinymce.widgets import TinyMCE
 class ArticleForm(forms.ModelForm):
     class Meta:
         model = Article
-        fields = ['title', 'content']
+        fields = ['title', 'content', 'photo']
 
 
 class CommentForm(forms.ModelForm):

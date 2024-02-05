@@ -10,6 +10,15 @@
     {{ form.content.label_tag }}
     {{ form.content }}
 
+    {{ form.photo.label_tag }} {{ form.photo }}
+    {% if form.photo.errors %}
+      <ul class="errorlist">
+        {% for error in form.photo.errors %}
+          <li>{{ error }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
     <button type="submit">Сохранить</button>
   </form>
 {% endblock %}
