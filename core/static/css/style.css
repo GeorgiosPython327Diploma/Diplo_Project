@@ -486,6 +486,8 @@ h1,.span-welcome {
     margin-top: 11px;
     padding-bottom: 70px;
     text-align: center;
+    color: rgba(88, 87, 87, 0.74);
+    font-weight: 517;
 }
 
 .article-item .content-article{
@@ -498,6 +500,8 @@ h1,.span-welcome {
 
 .date-created-article{
     margin-top: 60px;
+    font-weight: 499;
+    color: rgba(88, 87, 87, 0.73);
 }
 
 .bookmarkio.hovered path {
@@ -574,7 +578,24 @@ h1 {
 .comment-area{
     padding: 5px;
     background-color: white;
-    border-radius: 7px;
+    border-radius: 40px;
+    width: 670px;
+    height: auto;
+    color: rgba(72, 71, 71, 0.82);
+}
+
+.comment-p{
+    text-align: center;
+    font-weight: 600;
+    margin-right: 55%;
+    font-size: 1.1em;
+
+}
+
+.comment-special{
+    font-size: 1.6em;
+    margin: 5px;
+    vertical-align: text-bottom;
 }
 
 .open_rewiew{
@@ -615,10 +636,25 @@ h1 {
     margin-right: 20px;
 }
 
+.author-article{
+    font-weight: 450;
+    color: rgba(88, 87, 87, 0.73);
+}
+
+.review-container{
+    flex-basis: 50%;
+    padding: 20px;
+    width: 700px;
+    background-color: white;
+    border-radius: 20px;
+    margin: 20px;
+}
+
 @media (min-width: 1600px) {
     .menu ul li:last-child {
         margin-right: 0;
         position: relative;
+
         left: 12%;
         top: 25px;
         font-size: 1.1em;

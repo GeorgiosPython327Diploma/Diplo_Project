@@ -1,15 +1,19 @@
 {% extends 'core/base.html' %}
 
 {% block content %}
-
+<div class="review-container">
   <h2>{{ article.title }}</h2>
-  <p>{{ article.content|safe }}</p>
-  <p>Автор: {{ article.author.username }}</p>
+      {% if article.photo %}
+      <img class="image-article" src="{{ article.photo.url }}" alt="{{ article.title }}">
+      {% endif %}
+  <p class="review-content"> {{ article.content|safe|linebreaks }}</p>
+  <p class="review-author"> Автор: {{ article.author.username }}</p>
+</div>
 
   <h3>Комментарии</h3>
   <div class="comment-area">
     {% for comment in comments %}
-    <p>{{ comment.author.username }}: {{ comment.content|striptags }}</p>
+    <p class="comment-p"><span class="comment-special"> &raquo;</span> {{ comment.author.username }}: {{ comment.content|striptags }}</p>
     {% endfor %}
   </div>
 

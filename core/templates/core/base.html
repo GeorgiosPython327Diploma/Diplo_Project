@@ -71,7 +71,7 @@
                                 <img class="image-article" src="{{ article.photo.url }}" alt="{{ article.title }}">
                                  {% endif %}
                                 <p class="content-article"> {{ article.content|safe|truncatewords:50|linebreaks }}</p>
-                                <p>Автор: {{ article.author.username }}</p>
+                                <p class="author-article"> Автор: {{ article.author.username }}</p>
                                  <p class="content-likes-dislikes-bookmarkio-article">
                                         <span id="likes-count-{{ article.id }}">{{ article.likes.count }}</span>
                                         <span class="like-button" data-article-id="{{ article.id }}" data-is-liked="{{ article.is_liked }}" data-is-disliked="{{ article.is_disliked }}">
