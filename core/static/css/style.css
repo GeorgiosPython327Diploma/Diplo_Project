@@ -178,12 +178,12 @@ label, #id_username{
 }
 
 .register-menu button {
-    background-color: rgba(255, 255, 255, 0.57);
+    background-color: rgba(164, 197, 176, 0.27);
     color: rgba(82, 81, 81, 0.82);
     padding: 11px 15px;
-    margin-left: 88px;
-    margin-top: 20px;
-    border: 1px solid rgba(229, 229, 229, 0.34);
+    width: 100%;
+    margin-bottom: 11px;
+    border: 1px solid rgba(161, 159, 159, 0.64);
     font-size: 0.9em;
     font-weight: bold;
     border-radius: 11px;
@@ -192,7 +192,7 @@ label, #id_username{
 }
 
 .register-menu button:hover{
-    background-color: rgba(141, 213, 131, 0.75);
+    background-color: rgba(141, 213, 131, 0.56);
     color: white;
 }
 
@@ -202,9 +202,10 @@ label, #id_username{
     align-items: center;
     margin-top: 75px;
     margin-left: 35px;
+    height: 511px;
     background-color: rgba(239, 204, 139, 0.11);
-    padding: 11px 40px;
-    border-radius: 30px;
+    padding: 11px 50px;
+    border-radius: 20px;
     border: 2px solid rgba(0, 0, 0, 0.13);
     box-shadow: 0 2px 12px 2px rgba(255, 255, 255, 0.99);
 }
@@ -240,12 +241,13 @@ h2{
 }
 
 .login-menu button {
-    background-color: rgba(255, 255, 255, 0.57);
+    background-color: rgba(164, 197, 176, 0.27);
     color: rgba(82, 81, 81, 0.82);
-    padding: 11px 15px;
-    margin-left: 85px;
+    padding: 11px 40px;
+    width: 100%;
+    margin-bottom: 11px;
     font-size: 0.9em;
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(185, 183, 183, 0.85);
     border-radius: 11px;
     font-weight: bold;
     cursor: pointer;
@@ -253,7 +255,7 @@ h2{
 }
 
 .login-menu button:hover{
-    background-color: rgba(141, 213, 131, 0.75);
+    background-color: rgba(141, 213, 131, 0.56);
     color: white;
 }
 
@@ -389,12 +391,11 @@ h1,.span-welcome {
 
 .edit-profile-menu {
     margin: 0 auto;
-    background-color: rgba(255, 255, 255, 0.54);
-    padding: 40px;
-    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.79);
+    padding: 40px 60px;
+    border-radius: 30px;
     width: 700px;
-    height: 527px;
-    box-shadow: 0 2px 12px 2px rgba(255, 255, 255, 0.99);
+    height: 540px;
 }
 
 .edit-profile-menu {
@@ -425,6 +426,7 @@ h1,.span-welcome {
     border-radius: 7px;
     border: 2px solid rgba(173, 171, 171, 0.99);
     width: 96%;
+    resize: none;
 }
 
 .edit-profile-menu input {
@@ -438,7 +440,8 @@ h1,.span-welcome {
 .edit-profile-menu  .but-edit_profile {
     background-color: rgba(36, 114, 36, 0.17);
     color: rgba(66, 65, 65, 0.53);
-    padding: 14px 15px;
+    padding: 14px;
+    width: 100%;
     border: 2px solid rgba(133, 131, 131, 0.18);
     border-radius: 11px;
     font-weight: bold;
@@ -582,12 +585,13 @@ h1 {
     width: 670px;
     height: auto;
     color: rgba(72, 71, 71, 0.82);
+    margin: 70px;
 }
 
 .comment-p{
     text-align: center;
     font-weight: 600;
-    margin-right: 55%;
+    margin-right: 60%;
     font-size: 1.1em;
 
 }
@@ -596,6 +600,18 @@ h1 {
     font-size: 1.6em;
     margin: 5px;
     vertical-align: text-bottom;
+}
+
+.comment-text{
+    color: #343434;
+    font-weight: 500;
+}
+
+h4{
+    color: rgba(91, 90, 88, 0.82);
+    font-size: 1.4em;
+    margin: 0 auto;
+    font-family: Play, serif;
 }
 
 .open_rewiew{
@@ -643,12 +659,26 @@ h1 {
 
 .review-container{
     flex-basis: 50%;
-    padding: 20px;
+    padding: 20px 30px;
     width: 700px;
     background-color: white;
     border-radius: 20px;
     margin: 20px;
 }
+
+.review-container p{
+    color: #727069;
+    font-family: Georgia, serif;
+    font-weight: 400;
+    font-size: 1.1em;
+}
+
+.review-title{
+    font-family: Play, serif;
+    font-size: 1.4em;
+    color: #676767;
+}
+
 
 @media (min-width: 1600px) {
     .menu ul li:last-child {
