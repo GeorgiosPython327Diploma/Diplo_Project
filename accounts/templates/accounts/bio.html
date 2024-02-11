@@ -1,0 +1,9 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+    <h1>User Bio</h1>
+    <div id="bio-container">
+        <img src="{{ avatar_url }}" alt="{{ user.username }}'s avatar">
+        <p>{{ user.bio }}</p>
+    </div>
+{% endblock %}

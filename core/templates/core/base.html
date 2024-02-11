@@ -5,15 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Play:wght@400;700&family=Tektur:wght@400;500;600;700;800;900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=Roboto+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Spectral+SC:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.0/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="{% static 'tinymce/tinymce.min.js' %}" referrerpolicy="origin"></script>
     <script src="{% static 'js/tiny.js' %}"></script>
-     <script src="{% static 'js/base_app.js' %}"></script>
+    <script src="{% static 'js/base_app.js' %}"></script>
     <script src="{% static 'js/likes_dislikes_app.js' %}"></script>
     <script src="{% static 'js/search_app.js' %}"></script>
-    <title>Title</title>
+    <script src="{% static 'js/scrolling.js' %}"></script>
+    <title>Universal Digest Family</title>
 </head>
 <body class="loaded">
 <div class="menu">
@@ -49,7 +52,7 @@
                 <a href="{% url 'login' %}">
                     <img class="welcom-img" src="{% static 'images/welcome.png' %}" alt="Войти">
                      Войти
-                </a>
+                </a> |  <a href="{% url 'register' %}">Регистрация</a>
             </li>
             {% endif %}
         </ul>
@@ -71,7 +74,7 @@
                                 <img class="image-article" src="{{ article.photo.url }}" alt="{{ article.title }}">
                                  {% endif %}
                                 <p class="content-article"> {{ article.content|safe|truncatewords:50|linebreaks }}</p>
-                                <p class="author-article"> Автор: {{ article.author.username }}</p>
+                                <p class="author-article"> Автор: <span class="author-span">{{ article.author.username }}</span> </p>
                                  <p class="content-likes-dislikes-bookmarkio-article">
                                         <span id="likes-count-{{ article.id }}">{{ article.likes.count }}</span>
                                         <span class="like-button" data-article-id="{{ article.id }}" data-is-liked="{{ article.is_liked }}" data-is-disliked="{{ article.is_disliked }}">

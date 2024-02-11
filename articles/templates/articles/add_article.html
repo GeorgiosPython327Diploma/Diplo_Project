@@ -1,24 +1,34 @@
 {% extends 'core/base.html' %}
 
 {% block content %}
-  <h2>Добавление статьи</h2>
+  <div class="add-article-container">
+      <h2>Добавление статьи</h2>
+    <form method="post" enctype="multipart/form-data" class="add-article-form">
+      {% csrf_token %}
 
-  <form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
+      <div class="form-group">
+        {{ form.title.label_tag }}
+        {{ form.title }}
+      </div>
 
-    {{ form.title.label_tag }} {{ form.title }}
-    {{ form.content.label_tag }}
-    {{ form.content }}
+      <div class="form-group">
+        {{ form.content.label_tag }}
+        {{ form.content }}
+      </div>
 
-    {{ form.photo.label_tag }} {{ form.photo }}
-    {% if form.photo.errors %}
-      <ul class="errorlist">
-        {% for error in form.photo.errors %}
-          <li>{{ error }}</li>
-        {% endfor %}
-      </ul>
-    {% endif %}
+      <div class="form-group">
+        {{ form.photo.label_tag }}
+        {{ form.photo }}
+        {% if form.photo.errors %}
+          <ul class="errorlist">
+            {% for error in form.photo.errors %}
+              <li>{{ error }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
 
-    <button type="submit">Сохранить</button>
-  </form>
+      <button type="submit" class="btn btn-primary">Добавить</button>
+    </form>
+  </div>
 {% endblock %}

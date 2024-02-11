@@ -2,7 +2,7 @@ from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.urls import reverse
-from .forms import MyUserCreationForm, MyAuthenticationForm, UserProfileForm, UserEmailChangeForm, UserPasswordChangeForm
+from .forms import MyUserCreationForm, MyAuthenticationForm, UserProfileForm,  UserPasswordChangeForm, BioForm
 
 def register_user(request):
     if request.method == 'POST':
@@ -53,19 +53,6 @@ def edit_profile(request):
     return render(request, 'accounts/edit_profile.html', {'form': form})
 
 @login_required
-def change_email(request):
-    if request.method == 'POST':
-        form = UserEmailChangeForm(request.POST, instance=request.user)
-        if form.is_valid():
-            form.save()
-
-            return redirect('user_profile')
-    else:
-        form = UserEmailChangeForm(instance=request.user)
-
-    return render(request, 'accounts/change_email.html', {'form': form})
-
-@login_required
 def change_password(request):
     if request.method == 'POST':
         form = UserPasswordChangeForm(request.user, request.POST)
@@ -77,3 +64,15 @@ def change_password(request):
         form = UserPasswordChangeForm(request.user)
 
     return render(request, 'accounts/change_password.html', {'form': form})
+
+@login_required
+def bio_view(request):
+    bio_form = BioForm(instance=request.user)
+
+    if request.method == 'POST':
+        bio_form = BioForm(request.POST, request.FILES, instance=request.user)
+        if bio_form.is_valid():
+            bio_form.save()
+            return redirect('bio_view')
+
+    return render(request, 'accounts/bio.html', {'user': request.user, 'avatar_url': request.user.avatar_url(), 'bio_form': bio_form})

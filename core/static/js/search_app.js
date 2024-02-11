@@ -32,7 +32,7 @@ $(document).ready(function () {
                         `);
 
                         resultsContainer.append(articleItem.hide().fadeIn({
-                            duration: 1300,
+                            duration: 1000,
                         }));
                     });
 

@@ -2,27 +2,28 @@
 
 {% block content %}
 <div class="review-container">
-  <h2>{{ article.title }}</h2>
+  <h3 class="review-title">{{ article.title }}</h3>
       {% if article.photo %}
       <img class="image-article" src="{{ article.photo.url }}" alt="{{ article.title }}">
       {% endif %}
-  <p class="review-content"> {{ article.content|safe|linebreaks }}</p>
+  <p>{{ article.content|safe|linebreaks }}</p>
   <p class="review-author"> Автор: {{ article.author.username }}</p>
 </div>
 
-  <h3>Комментарии</h3>
   <div class="comment-area">
     {% for comment in comments %}
-    <p class="comment-p"><span class="comment-special"> &raquo;</span> {{ comment.author.username }}: {{ comment.content|striptags }}</p>
+    <p class="comment-p"><span class="comment-special"> &raquo;</span> {{ comment.author.username }}: <span class="comment-text">{{ comment.content|striptags }}</span></p>
     {% endfor %}
   </div>
 
-  <h3>Добавить комментарий</h3>
+  <h4>Добавить комментарий</h4>
+  <div class="add-comment-area">
   <form method="post" action="{% url 'add_comment' article.id %}">
     {% csrf_token %}
     {{ comment_form.as_p }}
-    <button type="submit">Добавить комментарий</button>
+    <button class="review-bt" type="submit">Добавить комментарий</button>
   </form>
+  </div>
 
 
 {% endblock %}
