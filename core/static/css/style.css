@@ -341,14 +341,9 @@ h2{
     letter-spacing: 1px;
 }
 
-
 .profile-menu:hover {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     transform: translateY(0);
-}
-
-.article-list{
-    overflow: auto;
 }
 
 .profile-service {
@@ -400,16 +395,16 @@ h1,.span-welcome {
 
 .edit-profile-menu {
     background-color: rgba(255, 255, 255, 0.69);
+    box-sizing: border-box;
     padding: 16px 20px;
     border: 3px solid rgba(109, 115, 115, 0.29);
     box-shadow: 0 0 11px rgba(89, 88, 88, 0.19);
     border-radius: 7px;
     width: 511px;
-    height: 655px;
+    max-height: 700px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 17px;
 }
 
 .edit-profile-menu label {
@@ -447,19 +442,17 @@ h1,.span-welcome {
 .edit-profile-menu  .but-edit_profile {
     background-color: rgba(164, 197, 176, 0.57);
     color: rgba(66, 65, 65, 0.53);
-    padding: 14px;
+    padding: 7px;
     width: 100%;
     border: 2px solid rgba(133, 131, 131, 0.18);
+    box-sizing: border-box;
     border-radius: 11px;
     font-weight: bold;
     cursor: pointer;
     font-family: Play, serif;
     font-size: 1em;
-    transform: translateX(-5px);
-    display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 3px;
     transition: background-color ease-in-out 0.3s, color ease-in-out 0.3s;
 }
 
@@ -478,6 +471,7 @@ h1,.span-welcome {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 20px;
+    overflow: auto;
 }
 
 .article-item{
@@ -544,7 +538,7 @@ h1,.span-welcome {
 }
 
 .dislike-button path{
-    fill: rgba(255, 0, 0, 0.67);
+    fill: rgba(255, 0, 0, 0.53);
 }
 
 .bookmarkio{
@@ -766,10 +760,11 @@ h4{
     border-radius: 7px;
     box-shadow: 0 0 11px rgba(89, 88, 88, 0.19);
     width: 670px;
-    height: 550px;
+    height: 540px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     margin-top: 50px;
 }
 
@@ -858,7 +853,7 @@ textarea {
     color: rgba(66, 65, 65, 0.53);
     border: 1px solid rgba(128, 128, 128, 0.58);
     cursor: pointer;
-    margin-top: 30px;
+    margin-top: 11px;
     border-radius: 7px;
     font-size: 1em;
     font-weight: bold;

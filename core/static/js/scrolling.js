@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     var isVisible = (rect.top >= -triggerPoint && rect.bottom <= window.innerHeight + triggerPoint);
 
                     if (isVisible) {
-                        articleItem.style.transform = "scale(1.05)";
+                        articleItem.style.transform = "scale(1.03)";
                         articleItem.style.boxShadow = "0 0 10px rgba(0, 0, 0, 0.5)";
                     } else {
                         articleItem.style.transform = "scale(1)";

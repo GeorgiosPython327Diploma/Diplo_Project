@@ -1,9 +1,24 @@
 from django.contrib import admin
 from .models import Article, Bookmark
-from .forms import ArticleForm, BookmarkForm
+from django import forms
+from tinymce.widgets import TinyMCE
+
+
+class ArticleAdminForm(forms.ModelForm):
+    class Meta:
+        model = Article
+        fields = '__all__'
+        widgets = {
+            'content': TinyMCE(),
+        }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['likes'].required = False
+        self.fields['dislikes'].required = False
 
 class ArticleAdmin(admin.ModelAdmin):
-    form = ArticleForm
+    form = ArticleAdminForm
     list_display = ('title', 'author', 'created_at', 'get_likes_count', 'get_dislikes_count')
 
     def get_likes_count(self, obj):
@@ -21,10 +36,9 @@ class ArticleAdmin(admin.ModelAdmin):
     get_dislikes_count.short_description = 'Dislikes'
     get_like_dislike_count.short_description = 'Like/Dislike Counts'
 
-class BookmarkAdmin(admin.ModelAdmin):
-    form = BookmarkForm
-    list_display = ('user', 'article', 'created_at')
 
+class BookmarkAdmin(admin.ModelAdmin):
+    list_display = ('user', 'article', 'created_at')
 
 admin.site.register(Article, ArticleAdmin)
 admin.site.register(Bookmark, BookmarkAdmin)
