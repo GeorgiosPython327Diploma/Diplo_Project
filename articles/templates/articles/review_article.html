@@ -16,7 +16,6 @@
     {% endfor %}
   </div>
 
-  <h4>Добавить комментарий</h4>
   <div class="add-comment-area">
   <form method="post" action="{% url 'add_comment' article.id %}">
     {% csrf_token %}
