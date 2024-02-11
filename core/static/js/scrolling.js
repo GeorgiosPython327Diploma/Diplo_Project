@@ -1,19 +1,19 @@
 document.addEventListener("DOMContentLoaded", function () {
-    var articleItems = document.querySelectorAll(".article-item");
-    var triggerPoint = window.innerHeight * 0.3;
+    let articleItems = document.querySelectorAll(".article-item");
+    let triggerPoint = window.innerHeight * 0.3;
 
     if (articleItems.length > 0) {
         articleItems.forEach(function (articleItem) {
             articleItem.style.transition = "transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out";
 
-            var timeoutId;
+            let timeoutId;
 
             window.addEventListener("scroll", function () {
                 clearTimeout(timeoutId);
 
                 timeoutId = setTimeout(function () {
-                    var rect = articleItem.getBoundingClientRect();
-                    var isVisible = (rect.top >= -triggerPoint && rect.bottom <= window.innerHeight + triggerPoint);
+                    let rect = articleItem.getBoundingClientRect();
+                    let isVisible = (rect.top >= -triggerPoint && rect.bottom <= window.innerHeight + triggerPoint);
 
                     if (isVisible) {
                         articleItem.style.transform = "scale(1.03)";
