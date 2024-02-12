@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
   tinymce.init({
-    selector: 'textarea.content1',
+    selector: 'textarea.content_comment',
     height: 200,
     width: 800,
     plugins: 'lists image media emoticons link',
@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   tinymce.init({
-    selector: 'textarea.content2',
+    selector: 'textarea.content_edit',
     height: 500,
     menubar: true,
     plugins: 'autoresize autolink lists link image charmap print preview anchor searchreplace visualblocks code fullscreen insertdatetime media table contextmenu paste code',

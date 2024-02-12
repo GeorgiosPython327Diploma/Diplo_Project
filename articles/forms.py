@@ -15,7 +15,7 @@ class CommentForm(forms.ModelForm):
         model = Comment
         fields = ['content']
         widgets = {
-            'content': TinyMCE(attrs={'class': 'content1'}),
+            'content': TinyMCE(attrs={'class': 'content_comment'}),
         }
 
 class BookmarkForm(forms.ModelForm):
@@ -28,5 +28,5 @@ class ArticleEditForm(forms.ModelForm):
         model = Article
         fields = ['title', 'content', 'photo']
         widgets = {
-            'content': TinyMCE(attrs={'class': 'content2'}),
+            'content': TinyMCE(attrs={'class': 'content_edit'}),
         }
