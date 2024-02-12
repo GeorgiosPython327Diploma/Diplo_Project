@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from .models import Article, Comment, Bookmark
 from accounts.models import User
-from .forms import ArticleForm, CommentForm
+from .forms import ArticleForm, CommentForm, ArticleEditForm
 from django.http import JsonResponse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -207,3 +207,19 @@ class ArticleDeleteView(LoginRequiredMixin, DeleteView):
 
     def get_queryset(self):
         return Article.objects.filter(author=self.request.user)
+
+@login_required
+def edit_article(request, article_id):
+    article = get_object_or_404(Article, pk=article_id)
+
+    if request.method == 'POST':
+        form = ArticleEditForm(request.POST, instance=article)
+        if form.is_valid():
+            article = form.save(commit=False)
+            article.content = mark_safe(form.cleaned_data['content'])
+            article.save()
+            return redirect('review_article', pk=article.id)
+    else:
+        form = ArticleEditForm(instance=article)
+
+    return render(request, 'articles/edit_article.html', {'form': form, 'article': article})

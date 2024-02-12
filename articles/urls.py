@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import base_with_articles,  add_article, add_comment, like_article, dislike_article, article_detail, add_bookmark, remove_bookmark, user_bookmarks, search_articles, get_like_dislike_count, review_article, user_articles, ArticleDeleteView
+from .views import base_with_articles,  add_article, add_comment, like_article, dislike_article, article_detail, add_bookmark, remove_bookmark, user_bookmarks, search_articles, get_like_dislike_count, review_article, user_articles, ArticleDeleteView, edit_article
 
 urlpatterns = [
     path('', base_with_articles, name='base_with_articles'),
@@ -16,4 +16,5 @@ urlpatterns = [
     path('<int:pk>/review/', review_article, name='review_article'),
     path('user/<int:user_id>/articles/', user_articles, name='user_articles'),
     path('article/<int:pk>/delete/', ArticleDeleteView.as_view(), name='delete_article'),
+    path('edit_article/<int:article_id>/', edit_article, name='edit_article'),
 ]

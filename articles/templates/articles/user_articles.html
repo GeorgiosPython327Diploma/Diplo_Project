@@ -1,3 +1,4 @@
+
 {% extends 'core/base.html' %}
 
 {% block content %}
@@ -5,19 +6,22 @@
   <h1>Статьи пользователя {{ user.username }}</h1>
 
   {% for article in articles %}
-        <div class="articles-user">
+    <div class="articles-user">
       <h3>{{ article.title }}</h3>
       <p>{{ article.content|safe }}</p>
 
-
       {% if user.is_authenticated and user == article.author %}
-        <form method="post" action="{% url 'delete_article' pk=article.pk %}">
-          {% csrf_token %}
-          <button type="submit" onclick="return confirm('Вы уверены, что хотите удалить эту статью?')">Удалить статью</button>
-        </form>
+        <div class="article-actions">
+          <form method="post" action="{% url 'delete_article' pk=article.pk %}" style="display: inline-block;">
+            {% csrf_token %}
+            <button type="submit" onclick="return confirm('Вы уверены, что хотите удалить эту статью?')">Удалить статью</button>
+          </form>
+
+          <a href="{% url 'edit_article' article_id=article.pk %}" style="display: inline-block; margin-left: 10px;">Редактировать статью</a>
+        </div>
       {% endif %}
 
-</div>
+    </div>
   {% endfor %}
 
 {% endblock %}
