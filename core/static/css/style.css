@@ -669,15 +669,16 @@ h1 {
     padding: 11px;
     font-size: 1em;
     font-weight: bold;
-    background-color: rgb(255, 255, 255);
-    color: rgba(66, 65, 65, 0.53);
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 2px 12px 2px rgba(112, 110, 110, 0.36);
+    color: rgba(82, 81, 81, 0.82);
     border: 1px solid rgb(255, 255, 255);
     border-radius: 7px;
     transition: background-color ease-in-out 0.3s, color ease-in-out 0.3s;
 }
 
 .add-comment-area form button.review-bt {
-    margin-left: auto;
+    float: right;
 }
 
 .review-bt:hover{
@@ -809,11 +810,9 @@ h4{
 }
 
 .change-password-menu li{
-    font-family: Roboto Condensed, serif;
-    letter-spacing: 1px;
+    font-family: Dialog,serif;
     color: #6b6a6a;
     font-weight: 400;
-    margin: 7px;
     font-size: 1.03em;
 }
 
@@ -828,16 +827,18 @@ h4{
 .change-password-menu button{
     padding: 11px;
     font-size: 1.01em;
-    background-color: rgba(164, 197, 176, 0.37);
+    background-color: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 2px 12px 2px rgba(112, 110, 110, 0.37);
     color: rgba(66, 65, 65, 0.53);
-    border: 1px solid rgba(128, 128, 128, 0.36);
+    border: 1px solid rgb(255, 255, 255);
     border-radius: 7px;
     font-weight: bold;
     transition: background-color ease-in-out 0.3s, color ease-in-out 0.3s;
+    float: right;
 }
 
 .change-password-menu button:hover{
-    background-color: rgba(164, 197, 176, 0.72);
+    background-color: rgba(110, 134, 184, 0.82);
     color: white;
 }
 
@@ -866,7 +867,7 @@ h4{
 .articles-user button{
     padding: 11px;
     font-size: 0.9em;
-    transform: translateY(-2px);
+    transform: translateY(-1px);
     border-radius: 7px;
     background-color: rgb(250, 249, 249);
     border: 1px solid rgba(252, 252, 252, 0.49);
