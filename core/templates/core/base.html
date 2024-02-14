@@ -73,7 +73,7 @@
                                  {% if article.photo %}
                                 <img class="image-article" src="{{ article.photo.url }}" alt="{{ article.title }}">
                                  {% endif %}
-                                <p class="content-article"> {{ article.content|safe|truncatewords:50|linebreaks }}</p>
+                                <p class="content-article"> {{ article.content|safe|truncatewords:20|linebreaks }}</p>
                                 <p class="author-article"> Автор: <span class="author-span">{{ article.author.username }}</span> </p>
                                  <p class="content-likes-dislikes-bookmarkio-article">
                                         <span id="likes-count-{{ article.id }}">{{ article.likes.count }}</span>

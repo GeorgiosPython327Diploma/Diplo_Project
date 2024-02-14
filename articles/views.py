@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from .models import Article, Comment, Bookmark
 from accounts.models import User
-from .forms import ArticleForm, CommentForm, ArticleEditForm
+from .forms import ArticleForm, CommentForm, ArticleEditForm, BookmarkForm
 from django.http import JsonResponse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -118,7 +118,6 @@ def get_like_dislike_count(request, article_id):
 
     return JsonResponse({'likes': likes, 'dislikes': dislikes})
 
-
 @login_required()
 def add_bookmark(request, article_id):
     article = get_object_or_404(Article, pk=article_id)
@@ -142,10 +141,12 @@ def remove_bookmark(request, article_id):
 
     return redirect('base_with_articles')
 
+@login_required()
 def user_bookmarks(request):
     bookmarks = Bookmark.objects.filter(user=request.user)
+    bookmark_form = BookmarkForm()
 
-    return render(request, 'articles/user_bookmarks.html', {'bookmarks': bookmarks})
+    return render(request, 'articles/user_bookmarks.html', {'bookmarks': bookmarks, 'bookmark_form': bookmark_form})
 
 
 def search_articles(request):
@@ -166,7 +167,6 @@ def search_articles(request):
     ]
 
     return JsonResponse({'results': serialized_results})
-
 
 def review_article(request, pk):
     article = get_object_or_404(Article, pk=pk)

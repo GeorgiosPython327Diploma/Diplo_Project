@@ -9,7 +9,6 @@ class ArticleForm(forms.ModelForm):
         fields = ['title', 'content', 'photo']
 
 
-
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
@@ -22,6 +21,7 @@ class BookmarkForm(forms.ModelForm):
     class Meta:
         model = Bookmark
         fields = ['user', 'article']
+
 
 class ArticleEditForm(forms.ModelForm):
     class Meta:

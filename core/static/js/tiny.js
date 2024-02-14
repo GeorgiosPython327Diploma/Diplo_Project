@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
     selector: 'textarea.content_comment',
     height: 200,
     width: 800,
-    plugins: 'lists image media emoticons link',
+    plugins: 'autoresize autolink lists link image charmap print preview anchor searchreplace visualblocks code fullscreen insertdatetime media table contextmenu paste code',
     toolbar: 'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
   });
 

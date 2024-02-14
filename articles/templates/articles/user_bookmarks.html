@@ -1,20 +1,25 @@
 {% extends 'core/base.html' %}
 
 {% block content %}
-
     <h1>Ваши закладки</h1>
+    <div class="bookmarks-users">
     {% if bookmarks %}
         <ul>
             {% for bookmark in bookmarks %}
-                <li>
-                    <h3>{{ bookmark.article.title }}</h3>
-                    <p>{{ bookmark.article.content }}</p>
-                     <a href="{% url 'remove_bookmark' bookmark.article.id %}">Убрать из закладок</a>
-                </li>
+                    <li>
+                        <a class="open_rewiew" href="{% url 'review_article' pk=bookmark.article.id %}">
+                        <h3>{{ bookmark.article.title }}</h3>
+                        </a>
+                        {% if bookmark.article.photo %}
+                            <img class="image-article" src="{{ bookmark.article.photo.url }}" alt="{{ bookmark.article.title }}">
+                        {% endif %}
+                        <p>{{ bookmark.article.content|safe|truncatewords:80 }}</p>
+                        <a class="delete-bookmark" href="{% url 'remove_bookmark' bookmark.article.id %}">Убрать из закладок</a>
+                    </li>
             {% endfor %}
         </ul>
+    </div>
     {% else %}
         <p>У вас нет закладок.</p>
     {% endif %}
-
 {% endblock %}
