@@ -370,9 +370,9 @@ h1 {
     font-size: 1.8em;
     font-weight: 500;
     color: rgb(104, 138, 178);
-    background-color: rgba(255, 255, 255, 0.62);
     border: 3px solid rgba(166, 164, 164, 0.35);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.6);
 }
 
 .span-welcome{
@@ -383,6 +383,7 @@ h1 {
     color: rgba(110, 108, 101, 0.78);
     letter-spacing: 3px;
     border-bottom:1px solid gray;
+    background-color: rgba(255, 255, 255, 0.33);
 }
 
 h1,.span-welcome {
@@ -463,9 +464,9 @@ h1,.span-welcome {
 
 .article-list {
     vertical-align: baseline;
+    z-index: 2;
     box-sizing: inherit;
     position: relative;
-    z-index: 2;
     width: 49%;
     margin: 0 auto;
     display: grid;
@@ -488,11 +489,10 @@ h1,.span-welcome {
 }
 
 .article-item h3{
-    margin-top: 11px;
-    padding-bottom: 70px;
+    padding-bottom: 40px;
     text-align: center;
     color: rgba(88, 87, 87, 0.74);
-    font-weight: 517;
+    font-weight: 600;
     font-family: Play, serif;
     font-size: 1.6em;
 }
@@ -502,10 +502,10 @@ h1,.span-welcome {
 }
 
 .article-list p{
-    font-family: Roboto Condensed, serif;
+    font-family: Spectral SC, serif;
     font-weight: 400;
-    font-size: 1.01em;
-    color: rgba(31, 31, 31, 0.65);
+    font-size: 1em;
+    color: rgb(82, 82, 80);
 }
 
 .content-likes-dislikes-bookmarkio-article{
@@ -552,6 +552,40 @@ h1,.span-welcome {
 
 .bookmarkio:hover{
     background-color: rgba(74, 85, 98, 0.06);
+}
+
+.bookmarks-users{
+    background-color: rgba(255, 255, 255, 0.71);
+    width: 900px;
+    padding: 40px;
+    margin-bottom: 11px;
+    border-radius: 30px;
+}
+
+.bookmarks-users h3{
+    font-family: Play,serif;
+    font-size: 1.4em;
+}
+
+.bookmarks-users p{
+    color: #525250;
+}
+
+.bookmarks-users .delete-bookmark{
+    padding: 11px;
+    text-decoration: none;
+    background-color: white;
+    border: 1px solid #ffffff;
+    color: gray;
+    border-radius: 11px;
+    box-shadow: 0 2px 12px 2px rgba(112, 110, 110, 0.36);
+    font-weight: bold;
+    transition: background-color ease-in-out 0.3s, color ease-in-out 0.3s;
+}
+
+.bookmarks-users .delete-bookmark:hover{
+    background-color: rgba(255, 0, 0, 0.62);
+    color: white;
 }
 
 .user-info {
@@ -621,11 +655,13 @@ h1 {
 
 .comment-area{
     padding: 5px;
-    background-color: white;
-    border-radius: 40px;
+    background-color: rgba(255, 255, 255, 0.88);
+    border-radius: 11px;
+    border: 3px solid rgba(128, 128, 128, 0.29);
     width: 730px;
     height: auto;
     color: rgba(72, 71, 71, 0.82);
+    font-family: Georgia,serif;
     margin: 40px;
 }
 
@@ -633,21 +669,26 @@ h1 {
     padding: 11px;
     font-size: 1em;
     font-weight: bold;
-    background-color: rgba(164, 197, 176, 0.37);
+    background-color: rgb(255, 255, 255);
     color: rgba(66, 65, 65, 0.53);
-    border: 1px solid rgba(128, 128, 128, 0.22);
+    border: 1px solid rgb(255, 255, 255);
     border-radius: 7px;
     transition: background-color ease-in-out 0.3s, color ease-in-out 0.3s;
 }
 
+.add-comment-area form button.review-bt {
+    margin-left: auto;
+}
+
 .review-bt:hover{
-    background-color: rgba(164, 197, 176, 0.75);
+    background-color: rgba(110, 134, 184, 0.82);
     color: white;
 }
 
 .add-comment-area{
     margin-bottom: 40px;
-    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
 }
 
 .comment-p{
@@ -655,7 +696,6 @@ h1 {
     font-weight: 600;
     margin-right: 60%;
     font-size: 1.1em;
-
 }
 
 .comment-special{
@@ -734,17 +774,17 @@ h4{
 .review-container{
     flex-basis: 50%;
     padding: 20px 30px;
-    width: 700px;
-    background-color: white;
+    width: 880px;
+    background-color: rgba(255, 255, 255, 0.78);
     border-radius: 20px;
     margin: 20px;
 }
 
 .review-container p{
-    color: #727069;
-    font-family: Georgia, serif;
+    color: #525250;
+    font-family: Spectral SC, serif;
     font-weight: 400;
-    font-size: 1.1em;
+    font-size: 1.04em;
 }
 
 .review-title{
@@ -802,11 +842,62 @@ h4{
 }
 
 .articles-user{
-    background-color: white;
-    margin: 6px;
+    background-color: rgba(255, 255, 255, 0.75);
+    margin: 20px;
     width: 800px;
-    border-radius: 11px;
+    border-radius: 30px;
     padding: 20px;
+    border: 1px solid rgba(128, 128, 128, 0.46);
+}
+
+.articles-user h3{
+    font-family: Play,serif;
+    color: rgba(77, 76, 76, 0.84);
+    font-size: 1.3em;
+    margin: 7px;
+}
+
+.articles-user p{
+    font-family: Spectral SC,serif;
+    margin-top: 7px;
+    color: #525250;
+}
+
+.articles-user button{
+    padding: 11px;
+    font-size: 0.9em;
+    transform: translateY(-2px);
+    border-radius: 7px;
+    background-color: rgb(250, 249, 249);
+    border: 1px solid rgba(252, 252, 252, 0.49);
+    font-weight: bold;
+    color: #707070;
+    box-shadow: 0 2px 12px 2px rgba(112, 110, 110, 0.44);
+    cursor: pointer;
+    transition: background-color ease-in-out 0.3s, color ease-in-out 0.3s;
+}
+
+.articles-user button:hover{
+    background-color: rgba(246, 9, 2, 0.65);
+    color: white;
+}
+
+.articles-user a{
+    text-decoration: none;
+    padding: 7px;
+    background-color: rgb(250, 249, 249);
+    font-size: 1.1em;
+    color: #707070;
+    font-weight: bold;
+    border: 1px solid rgba(250, 249, 249, 0.63);
+    box-shadow: 0 2px 12px 2px rgba(112, 110, 110, 0.45);
+    border-radius: 7px;
+    transition: background-color ease-in-out 0.3s, color ease-in-out 0.3s;
+}
+
+.articles-user a:hover{
+    background-color: rgba(110, 134, 184, 0.82);
+    color: white;
 }
 
 .add-article-container {
