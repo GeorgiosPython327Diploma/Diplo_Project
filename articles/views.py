@@ -7,7 +7,8 @@ from django.http import JsonResponse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import DeleteView
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
+
 
 BASE_TEMPLATE = 'core/base.html'
 
@@ -148,7 +149,6 @@ def user_bookmarks(request):
 
     return render(request, 'articles/user_bookmarks.html', {'bookmarks': bookmarks, 'bookmark_form': bookmark_form})
 
-
 def search_articles(request):
     query = request.GET.get('query', '')
     results = []
@@ -161,7 +161,9 @@ def search_articles(request):
             'id': result.id,
             'title': result.title,
             'content': result.content,
-            'author': result.author.username
+            'author': result.author.username,
+            'photo': result.photo.url if result.photo else None,
+            'url': reverse('article_detail', args=[result.id])
         }
         for result in results
     ]

@@ -40,9 +40,8 @@ $(document).ready(function () {
                 <a class="open_review" href="#" data-pk="${result.id}">
                   <h3>${result.title}</h3>
                 </a>
-                ${result.photo ? `<img class="image-article" src="${result.photo.url}" alt="${result.title}">` : ''}
+                ${result.photo ? `<img class="image-article" src="${result.photo}" alt="${result.title || 'Изображение статьи'}">` : ''}
                 <p class="content-article">${truncatedContent}</p>
-                <p>Автор: ${result.author}</p>
               </li>
             `);
 
