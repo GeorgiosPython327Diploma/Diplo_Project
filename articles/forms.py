@@ -7,6 +7,9 @@ class ArticleForm(forms.ModelForm):
     class Meta:
         model = Article
         fields = ['title', 'content', 'photo']
+        widgets = {
+            'content': TinyMCE(attrs={'class': 'content_edit'}),
+        }
 
 
 class CommentForm(forms.ModelForm):
