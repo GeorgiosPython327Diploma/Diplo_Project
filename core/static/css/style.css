@@ -656,13 +656,17 @@ h1 {
 .comment-area{
     padding: 5px;
     background-color: rgba(255, 255, 255, 0.88);
-    border-radius: 11px;
+    border-radius: 20px;
     border: 3px solid rgba(128, 128, 128, 0.29);
     width: 730px;
     height: auto;
     color: rgba(72, 71, 71, 0.82);
     font-family: Georgia,serif;
     margin: 40px;
+}
+
+.comment-area h3{
+    text-align: center;
 }
 
 .review-bt{
@@ -690,6 +694,12 @@ h1 {
     margin-bottom: 40px;
     display: flex;
     justify-content: space-between;
+}
+
+.add-comment-area label[for='id_content']{
+    padding: 5px;
+    background-color: white;
+    border-radius: 7px;
 }
 
 .comment-p{
@@ -781,8 +791,13 @@ h4{
     margin: 20px;
 }
 
+.review-container .review-author{
+    float: right;
+    font-weight: 600;
+}
+
 .review-container p{
-    color: #525250;
+    color: #2c2c2b;
     font-family: Spectral SC, serif;
     font-weight: 400;
     font-size: 1.04em;
@@ -954,6 +969,67 @@ textarea {
 
 .add-article-container button:hover {
     background-color: rgba(142, 199, 162, 0.87);
+    color: white;
+}
+
+.edit-container-article {
+    max-width: 800px; 
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.edit-container-article form {
+    display: flex;
+    flex-direction: column;
+}
+
+.edit-container-article form label {
+    margin-bottom: 8px;
+    padding: 7px;
+    background-color: white;
+    border-radius: 7px;
+}
+
+.edit-container-article form input,
+.edit-container-article form textarea {
+    padding: 20px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.edit-container-article form input[type="text"]{
+    width: 700px;
+    border-radius: 7px;
+}
+
+.edit-container-article form input[type="file"]{
+    border-radius: 7px;
+    background-color: white;
+}
+
+.edit-container-article form a{
+    text-decoration: none;
+    padding: 5px;
+    border: 3px solid #a4c5b0;
+    border-radius: 7px;
+}
+
+.edit-container-article form button {
+    padding: 11px;
+    background-color: rgba(255, 255, 255, 0.57);
+    color: rgba(82, 81, 81, 0.82);
+    border: none;
+    box-shadow: 0 2px 12px 2px rgba(112, 110, 110, 0.36);
+    border-radius: 4px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color ease-in-out 0.3s, color ease-in-out 0.3s;
+}
+
+.edit-container-article form button:hover {
+    background-color: rgba(110, 134, 184, 0.82);
     color: white;
 }
 

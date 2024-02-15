@@ -1,7 +1,7 @@
 {% extends 'core/base.html' %}
 
 {% block content %}
-
+<div class="edit-container-article">
   <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.media }}
@@ -9,5 +9,5 @@
 
     <button type="submit">Save changes</button>
   </form>
-
+</div>
 {% endblock %}
