@@ -829,6 +829,7 @@ h4{
     color: #6b6a6a;
     font-weight: 400;
     font-size: 1.03em;
+    width: 500px;
 }
 
 .change-password-menu input{
@@ -840,9 +841,7 @@ h4{
 }
 
 .change-password-menu label{
-    padding: 7px;
-    background-color: white;
-    border-radius: 7px;
+   font-size: 1.1em;
 }
 
 .change-password-menu button{
