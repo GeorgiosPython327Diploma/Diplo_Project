@@ -226,7 +226,7 @@ h2{
 
 .login-menu {
     width: 311px;
-    height: 370px;
+    max-height: fit-content;
     margin: 0 auto;
 }
 
@@ -973,7 +973,7 @@ textarea {
 }
 
 .edit-container-article {
-    max-width: 800px; 
+    max-width: 800px;
     margin: 0 auto;
     padding: 20px;
 }
@@ -1082,25 +1082,6 @@ textarea {
     .welcom-img {
         width: 30px;
     }
-
-    .login-menu{
-        font-size: 1.6em;
-        max-width: 500px;
-        margin-left: 39%;
-        border-radius: 30px;
-    }
-
-    .login-menu input[type="text"],
-    .login-menu input[type="password"] {
-        font-size: 1.1em;
-    }
-
-    .login-menu button{
-        font-size: 1.1em;
-        color: rgba(82, 81, 81, 0.67);
-        margin-left: 189px;
-    }
-
 
     .search-input::placeholder {
         font-size: 0.9em;

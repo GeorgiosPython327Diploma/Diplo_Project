@@ -3,7 +3,6 @@ from .models import Article, Bookmark
 from django import forms
 from tinymce.widgets import TinyMCE
 
-
 class ArticleAdminForm(forms.ModelForm):
     class Meta:
         model = Article
