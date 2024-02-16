@@ -54,6 +54,10 @@ $(document).ready(function () {
               'font-size': '1.6em',
             });
 
+            articleItem.css({
+              'margin': '100px auto 0',
+            });
+
             articleItem.find('a').css({
               'text-decoration': 'none',
               'color': 'inherit',
@@ -84,7 +88,7 @@ $(document).ready(function () {
             alignItems: 'center',
             display: 'grid',
             overflow: 'scroll',
-            height: '740px',
+            height: '750',
             listStyleType: 'none',
           });
         } else {

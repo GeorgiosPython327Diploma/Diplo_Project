@@ -9,14 +9,20 @@ body {
 
 .menu .wrap{
     display: flex;
+    position: fixed;
+    z-index: 1000;
     flex-wrap: nowrap;
+    width: 100%;
     justify-content: space-between;
     align-items: center;
     border-bottom: 2px solid rgba(0, 0, 0, 0.13);
     padding: 11px;
-    background: rgba(239, 204, 139, 0.17);
+    background: rgba(231, 225, 215, 0.96);
     border-radius: 5px;
 }
+
+
+
 
 .menu .logo-menu,
 .menu ul {
@@ -200,8 +206,7 @@ label, #id_username{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 75px;
-    margin-left: 35px;
+    margin: 120px auto 0;
     height: 511px;
     background-color: rgba(239, 204, 139, 0.11);
     padding: 11px 50px;
@@ -264,12 +269,11 @@ h2{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 120px;
+    margin: 120px auto 0;
     background-color: rgba(239, 204, 139, 0.13);
     padding: 20px 40px;
     border-radius: 20px;
     font-size: 1.1em;
-    margin-left: 39%;
     border: 3px solid rgba(66, 66, 66, 0.13);
     box-shadow: 0 2px 12px 2px rgba(255, 255, 255, 0.99);
 }
@@ -337,7 +341,7 @@ h2{
 .menu-user{
     text-align: center;
     padding: 0;
-   transform: translateY(-11px);
+    transform: translateY(-11px);
     letter-spacing: 1px;
 }
 
@@ -468,7 +472,7 @@ h1,.span-welcome {
     box-sizing: inherit;
     position: relative;
     width: 49%;
-    margin: 0 auto;
+    margin: 80px auto 0;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 20px;
@@ -558,7 +562,7 @@ h1,.span-welcome {
     background-color: rgba(255, 255, 255, 0.71);
     width: 900px;
     padding: 40px;
-    margin-bottom: 11px;
+    margin: 20px auto 0;
     border-radius: 30px;
 }
 
@@ -618,7 +622,7 @@ h1,.span-welcome {
 }
 
 h1 {
-    margin: 7px;
+    margin: 100px auto 0;
 }
 
 .like-button,
@@ -788,12 +792,13 @@ h4{
     width: 880px;
     background-color: rgba(255, 255, 255, 0.78);
     border-radius: 20px;
-    margin: 20px;
+    margin: 111px auto 0;
 }
 
 .review-container .review-author{
     float: right;
     font-weight: 600;
+    vertical-align: text-top;
 }
 
 .review-container p{
@@ -810,7 +815,7 @@ h4{
 }
 
 .change-password-menu{
-    background-color: rgba(255, 255, 255, 0.69);
+    background-color: rgba(255, 255, 255, 0.58);
     padding: 11px 25px;
     border: 3px solid rgba(109, 115, 115, 0.23);
     border-radius: 7px;
@@ -821,7 +826,7 @@ h4{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 50px;
+    margin: 120px auto 0;
 }
 
 .change-password-menu li{
@@ -841,7 +846,7 @@ h4{
 }
 
 .change-password-menu label{
-   font-size: 1.1em;
+    font-size: 1.1em;
 }
 
 .change-password-menu button{
@@ -924,9 +929,9 @@ h4{
 .add-article-container {
     max-width: 1000px;
     max-height: fit-content;
-    margin: 60px;
+    margin: 125px auto 0;
     padding: 20px 40px;
-    background-color: rgba(255, 255, 255, 0.69);
+    background-color: rgba(255, 255, 255, 0.47);
     box-shadow: 0 0 11px rgba(89, 88, 88, 0.19);
     border-radius: 5px;
     border: 1px solid rgba(128, 128, 128, 0.45);
@@ -969,7 +974,7 @@ textarea {
 
 .add-article-container button {
     padding: 14px;
-    background-color: rgba(255, 255, 255, 0.29);
+    background-color: rgba(255, 255, 255, 0.54);
     color: rgba(82, 81, 81, 0.82);
     border: 1px solid rgba(128, 128, 128, 0.58);
     box-shadow: 0 2px 12px 2px rgba(112, 110, 110, 0.36);
@@ -988,8 +993,10 @@ textarea {
 
 .edit-container-article {
     max-width: 800px;
-    margin: 0 auto;
+    margin: 100px auto 0;
     padding: 20px;
+    background-color: rgba(255, 255, 255, 0.47);
+    border-radius: 11px;
 }
 
 .edit-container-article form {
