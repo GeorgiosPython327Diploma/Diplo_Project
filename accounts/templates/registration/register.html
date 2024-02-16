@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<div class="register-menu">
+<div class="register-menu" style="transform: translateY(-100%); transition: transform ease-in-out  1s;">
     <h2>Регистрация</h2>
   <form method="post" action="{% url 'register' %}">
     {% csrf_token %}
@@ -11,4 +11,9 @@
   </form>
 </div>
 
+<script>
+    $(document).ready(function() {
+        $(".register-menu").css("transform", "translateY(0)")
+    });
+  </script>
 {% endblock %}
