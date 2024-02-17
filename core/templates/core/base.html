@@ -17,12 +17,14 @@
     <script src="{% static 'js/likes_dislikes_app.js' %}"></script>
     <script src="{% static 'js/search_app.js' %}"></script>
     <script src="{% static 'js/scrolling.js' %}"></script>
+    <script src="{% static 'js/animated-button.js' %}"></script>
+    <script src="{% static 'js/animated-logo.js' %}"></script>
     <title>Universal Digest Family</title>
 </head>
 <body class="loaded">
 <div class="menu">
     <div class="wrap">
-        <div class="logo">
+        <div class="logo" id="logo_animated">
             <a class="logo-menu" href="{% url 'base_with_articles' %}"><img src="{% static 'images/logo.png' %}" alt=""></a>
         </div>
         <div class="shape"></div>
@@ -36,7 +38,7 @@
             </li>
             <li>
                 <a class="add-button" href="{% url 'add_article' %}">
-                    <button type="button">+ Создать</button>
+                    <button class="animated_bt" type="button">+ Создать</button>
                 </a>
             </li>
             {% if user.is_authenticated %}

@@ -135,6 +135,7 @@ ul button:hover {
 .logo-menu {
     opacity: 0.9;
     transition: opacity ease-in-out 0.3s;
+    overflow: hidden;
 }
 
 .logo-menu:hover{
@@ -298,9 +299,8 @@ h2{
 }
 
 .shape {
-    width: 20px;
-    height: 20px;
     background-color: rgba(113, 150, 194, 0.8);
+    cursor: pointer;
     margin-top: 20px;
     transition: background-color 2.2s ease;
     animation: colorChange 3s infinite alternate ease-in-out;
@@ -1098,7 +1098,12 @@ textarea {
 
     .logo-menu img{
         width: 260px;
+        transition: transform 0.3s;
     }
+
+    /*.logo-menu img:hover{*/
+    /*    !*transform: rotateY(180deg);*!*/
+    /*}*/
 
     .welcom-img {
         width: 30px;

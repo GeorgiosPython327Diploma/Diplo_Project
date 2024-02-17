@@ -1,38 +1,54 @@
-$(document).ready(function () {
-    const shape = document.querySelector('.shape');
-    const timeline = gsap.timeline({ repeat: -1, yoyo: true });
+document.addEventListener('DOMContentLoaded', function () {
+  const shape = document.querySelector('.shape');
+  let isHovered = false;
 
-    timeline.to(shape, {
-        borderRadius: '30%',
-        scale: 1,
-        duration: 1,
-        ease: 'ease-in-out',
-        rotation: 360,
+  shape.style.borderRadius = '50%';
+  shape.style.width = '18px';
+  shape.style.height = '11px';
+
+  function rotate360() {
+    gsap.to(shape, {
+      rotation: '+=-360',
+      duration: 1,
+      ease: 'linear',
+      onComplete: function () {
+        if (isHovered) {
+          rotate360();
+        }
+      },
     });
+  }
 
-    timeline.to(shape, {
-        scale: 0.8,
-        duration: 1,
-        ease: 'ease-in-out',
-        rotation: 360,
+  function makeSquare() {
+    gsap.to(shape, {
+      width: '20px',
+      height: '20px',
+      borderRadius: '0%',
+      duration: 0.3,
+      ease: 'ease-in-out',
     });
+  }
 
-    let bookmarkios = document.querySelectorAll('.bookmarkio');
+  shape.addEventListener('mouseover', function () {
+    isHovered = true;
+    makeSquare();
+    rotate360();
+  });
 
-    bookmarkios.forEach(function (bookmarkio) {
-        bookmarkio.addEventListener('mouseenter', function () {
-            bookmarkio.classList.add('hovered');
-        });
-
-        bookmarkio.addEventListener('mouseleave', function () {
-            bookmarkio.classList.remove('hovered');
-        });
+  shape.addEventListener('mouseout', function () {
+    isHovered = false;
+    gsap.to(shape, {
+      width: '18px',
+      height: '11px',
+      borderRadius: '50%',
+      duration: 0.3,
+      ease: 'ease-in-out',
     });
+  });
 
-    $("body").addClass("loaded");
-
-     $("body.loaded").css({
-        "opacity": 1,
-        "transition": "opacity 0.6s ease-in-out"
-    });
+  gsap.to('body', {
+    opacity: 1,
+    duration: 0.6,
+    ease: 'ease-in-out',
+  });
 });
