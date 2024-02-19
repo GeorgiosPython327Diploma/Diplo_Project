@@ -221,9 +221,10 @@ class ArticleDeleteView(LoginRequiredMixin, DeleteView):
 @login_required
 def edit_article(request, article_id):
     article = get_object_or_404(Article, pk=article_id)
+    categories = Category.objects.all()
 
     if request.method == 'POST':
-        form = ArticleEditForm(request.POST, instance=article)
+        form = ArticleEditForm(request.POST, request.FILES, instance=article)
         if form.is_valid():
             article = form.save(commit=False)
             article.content = mark_safe(form.cleaned_data['content'])
@@ -232,4 +233,4 @@ def edit_article(request, article_id):
     else:
         form = ArticleEditForm(instance=article)
 
-    return render(request, 'articles/edit_article.html', {'form': form, 'article': article})
+    return render(request, 'articles/edit_article.html', {'form': form, 'article': article, 'categories': categories})

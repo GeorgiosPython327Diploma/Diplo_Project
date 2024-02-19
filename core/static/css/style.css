@@ -21,9 +21,6 @@ body {
     border-radius: 5px;
 }
 
-
-
-
 .menu .logo-menu,
 .menu ul {
     display: inline-block;
@@ -208,12 +205,12 @@ label, #id_username{
     flex-direction: column;
     align-items: center;
     margin: 120px auto 0;
-    height: 511px;
     background-color: rgba(239, 204, 139, 0.11);
     padding: 11px 50px;
     border-radius: 20px;
     border: 2px solid rgba(0, 0, 0, 0.13);
     box-shadow: 0 2px 12px 2px rgba(255, 255, 255, 0.99);
+    max-height: 1000px;
 }
 
 h2{
@@ -937,6 +934,13 @@ h4{
     border: 1px solid rgba(128, 128, 128, 0.45);
 }
 
+.add-article-container select{
+    padding: 6px;
+    width: 30%;
+    border-radius: 7px;
+}
+
+
 .add-article-container h2{
     text-align: center;
 }
@@ -1100,7 +1104,7 @@ textarea {
         width: 260px;
         transition: transform 0.3s;
     }
-    
+
     .welcom-img {
         width: 30px;
     }

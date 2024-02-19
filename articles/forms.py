@@ -7,7 +7,7 @@ class ArticleForm(forms.ModelForm):
     categories = forms.ModelChoiceField(queryset=Category.objects.all(), label='Categories')
     class Meta:
         model = Article
-        fields = ['title', 'content', 'photo', 'categories']
+        fields = ['title', 'content', 'photo', 'category']
         widgets = {
             'content': TinyMCE(attrs={'class': 'content_edit'}),
         }
@@ -28,9 +28,10 @@ class BookmarkForm(forms.ModelForm):
 
 
 class ArticleEditForm(forms.ModelForm):
+    category = forms.ModelChoiceField(queryset=Category.objects.all(), required=False, label="Категория")
     class Meta:
         model = Article
-        fields = ['title', 'content', 'photo']
+        fields = ['title', 'content', 'photo', 'category']
         widgets = {
             'content': TinyMCE(attrs={'class': 'content_edit'}),
         }
