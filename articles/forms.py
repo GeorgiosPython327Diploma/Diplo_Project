@@ -1,12 +1,13 @@
 from django import forms
-from .models import Article, Comment, Bookmark
+from .models import Article, Comment, Bookmark, Category
 from tinymce.widgets import TinyMCE
 
 
 class ArticleForm(forms.ModelForm):
+    categories = forms.ModelChoiceField(queryset=Category.objects.all(), label='Categories')
     class Meta:
         model = Article
-        fields = ['title', 'content', 'photo']
+        fields = ['title', 'content', 'photo', 'categories']
         widgets = {
             'content': TinyMCE(attrs={'class': 'content_edit'}),
         }

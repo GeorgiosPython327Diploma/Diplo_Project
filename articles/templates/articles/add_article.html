@@ -28,6 +28,11 @@
         {% endif %}
       </div>
 
+      <div class="form-group">
+        {{ form.categories.label_tag }}
+        {{ form.categories }}
+      </div>
+
       <button type="submit" class="btn btn-primary">Добавить</button>
     </form>
   </div>
@@ -36,5 +41,5 @@
     $(document).ready(function() {
         $(".add-article-container").css("transform", "translateY(0)")
     });
-  </script>
+</script>
 {% endblock %}

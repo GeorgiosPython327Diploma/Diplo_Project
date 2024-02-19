@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Article, Bookmark
+from .models import Article, Bookmark, Category
 from django import forms
 from tinymce.widgets import TinyMCE
 
@@ -39,5 +39,13 @@ class ArticleAdmin(admin.ModelAdmin):
 class BookmarkAdmin(admin.ModelAdmin):
     list_display = ('user', 'article', 'created_at')
 
+
+class CategoryAdmin(admin.ModelAdmin):
+    prepopulated_fields = {"slug": ("name",)}
+    list_display = ('id', 'name')
+    list_display_links = ('id', 'name')
+    search_fields = ('name',)
+
 admin.site.register(Article, ArticleAdmin)
 admin.site.register(Bookmark, BookmarkAdmin)
+admin.site.register(Category, CategoryAdmin)

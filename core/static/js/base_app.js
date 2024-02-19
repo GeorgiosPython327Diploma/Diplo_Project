@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   shape.style.borderRadius = '50%';
   shape.style.width = '18px';
-  shape.style.height = '11px';
+  shape.style.height = '17px';
 
   function rotate360() {
     gsap.to(shape, {
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
     isHovered = false;
     gsap.to(shape, {
       width: '18px',
-      height: '11px',
+      height: '17px',
       borderRadius: '50%',
       duration: 0.3,
       ease: 'ease-in-out',

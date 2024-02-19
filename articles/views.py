@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
-from .models import Article, Comment, Bookmark
+from .models import Article, Comment, Bookmark, Category
 from accounts.models import User
 from .forms import ArticleForm, CommentForm, ArticleEditForm, BookmarkForm
 from django.http import JsonResponse
@@ -8,7 +8,6 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import DeleteView
 from django.urls import reverse_lazy, reverse
-
 
 BASE_TEMPLATE = 'core/base.html'
 
@@ -28,9 +27,11 @@ def base_with_articles(request):
     if request.user.is_authenticated:
         user_has_bookmarks = Bookmark.objects.filter(user=request.user, article__in=articles_list).exists()
 
+    categories = Category.objects.all()
+
     print(f"Page: {page}, Articles: {articles}")
 
-    return render(request, BASE_TEMPLATE, {'articles': articles, 'article_form': article_form, 'comment_form': comment_form, 'user_has_bookmarks': user_has_bookmarks})
+    return render(request, BASE_TEMPLATE, {'articles': articles, 'article_form': article_form, 'comment_form': comment_form, 'user_has_bookmarks': user_has_bookmarks, 'categories': categories})
 
 
 def article_detail(request, pk):
@@ -45,7 +46,7 @@ def article_detail(request, pk):
 
 from django.utils.html import mark_safe
 
-@login_required()
+@login_required
 def add_article(request):
     if request.method == 'POST':
         form = ArticleForm(request.POST, request.FILES)
@@ -53,6 +54,13 @@ def add_article(request):
             article = form.save(commit=False)
             article.content = mark_safe(form.cleaned_data['content'])
             article.author = request.user
+
+            category_name = form.cleaned_data.get('categories')
+
+            category, created = Category.objects.get_or_create(name=category_name)
+
+            article.category = category
+
             article.save()
 
             return redirect('base_with_articles')
