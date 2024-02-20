@@ -27,11 +27,17 @@ def base_with_articles(request):
     if request.user.is_authenticated:
         user_has_bookmarks = Bookmark.objects.filter(user=request.user, article__in=articles_list).exists()
 
-    categories = Category.objects.all()
+    used_categories = Article.objects.values_list('category', flat=True).distinct()
+    categories = Category.objects.filter(id__in=used_categories)
+
+    if 'category' in request.GET:
+        category_id = request.GET['category']
+
+        return redirect('category_articles', category_id=category_id)
 
     print(f"Page: {page}, Articles: {articles}")
 
-    return render(request, BASE_TEMPLATE, {'articles': articles, 'article_form': article_form, 'comment_form': comment_form, 'user_has_bookmarks': user_has_bookmarks, 'categories': categories})
+    return render(request, BASE_TEMPLATE, {'articles': articles, 'article_form': article_form, 'comment_form': comment_form, 'user_has_bookmarks': user_has_bookmarks, 'category': categories})
 
 
 def article_detail(request, pk):
@@ -46,6 +52,7 @@ def article_detail(request, pk):
 
 from django.utils.html import mark_safe
 
+
 @login_required
 def add_article(request):
     if request.method == 'POST':
@@ -54,13 +61,9 @@ def add_article(request):
             article = form.save(commit=False)
             article.content = mark_safe(form.cleaned_data['content'])
             article.author = request.user
-
-            category_name = form.cleaned_data.get('categories')
-
+            category_name = form.cleaned_data.get('category')
             category, created = Category.objects.get_or_create(name=category_name)
-
             article.category = category
-
             article.save()
 
             return redirect('base_with_articles')
@@ -127,6 +130,7 @@ def get_like_dislike_count(request, article_id):
 
     return JsonResponse({'likes': likes, 'dislikes': dislikes})
 
+
 @login_required()
 def add_bookmark(request, article_id):
     article = get_object_or_404(Article, pk=article_id)
@@ -150,12 +154,14 @@ def remove_bookmark(request, article_id):
 
     return redirect('base_with_articles')
 
+
 @login_required()
 def user_bookmarks(request):
     bookmarks = Bookmark.objects.filter(user=request.user)
     bookmark_form = BookmarkForm()
 
     return render(request, 'articles/user_bookmarks.html', {'bookmarks': bookmarks, 'bookmark_form': bookmark_form})
+
 
 def search_articles(request):
     query = request.GET.get('query', '')
@@ -177,6 +183,7 @@ def search_articles(request):
     ]
 
     return JsonResponse({'results': serialized_results})
+
 
 def review_article(request, pk):
     article = get_object_or_404(Article, pk=pk)
@@ -201,12 +208,14 @@ def review_article(request, pk):
 
     return render(request, 'articles/review_article.html', {'article': article, 'user_has_bookmark': user_has_bookmark, 'comment_form': comment_form, 'comments': comments})
 
+
 @login_required()
 def user_articles(request, user_id):
     user = get_object_or_404(User, id=user_id)
     articles = Article.objects.filter(author=user).order_by('-created_at')
 
     return render(request, 'articles/user_articles.html', {'user': user, 'articles': articles})
+
 
 class ArticleDeleteView(LoginRequiredMixin, DeleteView):
     model = Article
@@ -217,6 +226,7 @@ class ArticleDeleteView(LoginRequiredMixin, DeleteView):
 
     def get_queryset(self):
         return Article.objects.filter(author=self.request.user)
+
 
 @login_required
 def edit_article(request, article_id):
@@ -233,4 +243,20 @@ def edit_article(request, article_id):
     else:
         form = ArticleEditForm(instance=article)
 
-    return render(request, 'articles/edit_article.html', {'form': form, 'article': article, 'categories': categories})
+    return render(request, 'articles/edit_article.html', {'form': form, 'article': article, 'category': categories})
+
+
+def category_articles(request, category_id):
+    category = Category.objects.get(id=category_id)
+    articles_list = Article.objects.filter(category=category)
+    paginator = Paginator(articles_list, 5)
+    page = request.GET.get('page', 1)
+
+    try:
+        articles = paginator.page(page)
+    except (PageNotAnInteger, EmptyPage):
+        articles = paginator.page(1)
+
+    categories = Category.objects.all()
+
+    return render(request, 'articles/category_articles.html', {'articles': articles, 'category': category, 'categories': categories})

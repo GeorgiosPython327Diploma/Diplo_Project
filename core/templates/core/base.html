@@ -110,7 +110,14 @@
                 <p>Статей нет</p>
             {% endif %}
         </div>
-       <div class="pagination">
+        <div class="categories-article">
+        <ul>
+        {% for category in category %}
+            <li><a href="{% url 'base_with_articles' %}?category={{ category.id }}" {% if cat_selected == category.id %}class="selected"{% endif %}>{{ category.name }}</a></li>
+        {% endfor %}
+        </ul>
+        </div>
+        <div class="pagination">
             {% if articles.has_previous %}
                 <a href="?page={{ articles.previous_page_number }}">&laquo;</a>
             {% endif %}
