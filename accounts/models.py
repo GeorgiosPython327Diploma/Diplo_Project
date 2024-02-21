@@ -6,9 +6,19 @@ class User(AbstractUser):
     username = models.CharField(max_length=150, unique=True)
     password = models.CharField(max_length=128, null=False, blank=False)
     bio = models.TextField(blank=True)
+    country = models.CharField(max_length=50, blank=True)
+    city = models.CharField(max_length=50, blank=True)
+    is_online = models.BooleanField(default=False)
+    occupation = models.CharField(max_length=50, blank=True)
     avatar = models.ImageField(upload_to='avatars', blank=True)
     date_joined = models.DateTimeField(auto_now_add=True)
     email = models.EmailField(unique=True)
+    gender_choices = [
+        ('M', 'Male'),
+        ('F', 'Female'),
+    ]
+    gender = models.CharField(max_length=1, choices=gender_choices, blank=True)
+    age = models.IntegerField(blank=True, null=True)
     last_login = None
     groups = None
     user_permissions = None

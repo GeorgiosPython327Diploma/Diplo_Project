@@ -22,7 +22,7 @@ class MyAuthenticationForm(AuthenticationForm):
 class UserProfileForm(forms.ModelForm):
     class Meta:
         model = User
-        fields = ['username', 'bio', 'avatar', 'email']
+        fields = ['username', 'bio', 'avatar', 'email', 'country', 'city', 'occupation', 'gender', 'age']
 
 class UserPasswordChangeForm(PasswordChangeForm):
     pass
@@ -30,4 +30,4 @@ class UserPasswordChangeForm(PasswordChangeForm):
 class BioForm(forms.ModelForm):
     class Meta:
         model = User
-        fields = ['bio', 'avatar']
+        fields = ['username', 'bio', 'avatar', 'email', 'country', 'city', 'occupation', 'gender', 'age']

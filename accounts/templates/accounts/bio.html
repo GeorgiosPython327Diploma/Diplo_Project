@@ -1,9 +1,23 @@
 {% extends 'core/base.html' %}
 
+{% load static %}
+
 {% block content %}
     <h1>User Bio</h1>
-    <div id="bio-container">
-        <img src="{{ avatar_url }}" alt="{{ user.username }}'s avatar">
-        <p>{{ user.bio }}</p>
+    <div id="bio-text-container">
+            <p>{{ user.bio }}</p>
+        </div>
+<div id="bio-container">
+      {% if user.avatar %}
+      <img class="avatar" src="{{ user.avatar.url }}" alt="User Avatar">
+      {% else %}
+      <img class="static-avatar" src="{% static 'images/standart_img.png' %}" alt="Default Avatar">
+      {% endif %}
+        <p>Email: {{ user.email }}</p>
+        <p>Country: {{ user.country }}</p>
+        <p>City: {{ user.city }}</p>
+        <p>Occupation: {{ user.occupation }}</p>
+        <p>Gender: {{ user.get_gender_display }}</p>
+        <p>Age: {{ user.age }}</p>
     </div>
 {% endblock %}

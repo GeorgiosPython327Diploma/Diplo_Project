@@ -37,7 +37,7 @@ def base_with_articles(request):
 
     print(f"Page: {page}, Articles: {articles}")
 
-    return render(request, BASE_TEMPLATE, {'articles': articles, 'article_form': article_form, 'comment_form': comment_form, 'user_has_bookmarks': user_has_bookmarks, 'category': categories})
+    return render(request, BASE_TEMPLATE, {'articles': articles, 'article_form': article_form, 'comment_form': comment_form, 'user_has_bookmarks': user_has_bookmarks, 'categories': categories})
 
 
 def article_detail(request, pk):
@@ -243,7 +243,7 @@ def edit_article(request, article_id):
     else:
         form = ArticleEditForm(instance=article)
 
-    return render(request, 'articles/edit_article.html', {'form': form, 'article': article, 'category': categories})
+    return render(request, 'articles/edit_article.html', {'form': form, 'article': article, 'categories': categories})
 
 
 def category_articles(request, category_id):

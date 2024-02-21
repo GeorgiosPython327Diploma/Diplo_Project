@@ -396,70 +396,88 @@ h1,.span-welcome {
 }
 
 .edit-profile-menu {
-    background-color: rgba(255, 255, 255, 0.69);
+    background-color: rgba(255, 255, 255, 0.35);
     box-sizing: border-box;
-    padding: 16px 20px;
+    padding: 18px 20px;
     border: 3px solid rgba(109, 115, 115, 0.29);
     box-shadow: 0 0 11px rgba(89, 88, 88, 0.19);
     border-radius: 7px;
-    width: 511px;
-    max-height: 700px;
+    max-width: fit-content;
+    max-height: fit-content;
+    margin: 100px auto 0;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.edit-profile-menu label {
-    font-size: 1.2em;
-    margin-bottom: 8px;
-    display: inline-block;
+.form-group {
+    margin-bottom: 15px;
 }
 
-.edit-profile-menu label[for="id_bio"]{
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.inline-group, .form-age-gender{
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.edit-profile-menu label[for="id_bio"], .edit-profile-menu label[for="id_avatar"]{
     display: flex;
     flex-direction: column;
+}
+
+.edit-profile-menu select{
+    padding: 11px;
+    border-radius: 7px;
 }
 
 .edit-profile-menu input[type="file"]{
     background-color: white;
     color: rgba(82, 81, 81, 0.82);
     padding: 14px;
+    width: 40%;
+}
+
+.edit-profile-menu input[type="number"]{
+    width: 30%;
 }
 
 .edit-profile-menu textarea{
     border-radius: 7px;
-    border: 2px solid rgba(173, 171, 171, 0.99);
-    width: 96%;
+    border: 2px solid rgba(173, 171, 171, 0.78);
+    width: 70%;
     resize: none;
 }
 
 .edit-profile-menu input {
-    width: 90%;
+    width: 80%;
     padding: 11px;
     margin-bottom: 15px;
-    border: 2px solid rgba(173, 171, 171, 0.99);
+    border: 2px solid rgba(173, 171, 171, 0.78);
     border-radius: 7px;
 }
 
 .edit-profile-menu  .but-edit_profile {
-    background-color: rgba(164, 197, 176, 0.57);
+    background-color: rgba(255, 255, 255, 0.46);
     color: rgba(66, 65, 65, 0.53);
-    padding: 7px;
-    width: 100%;
-    border: 2px solid rgba(133, 131, 131, 0.18);
-    box-sizing: border-box;
+    padding: 13px;
+    width: 23%;
+    border: 1px solid rgb(255, 255, 255);
+    box-shadow: 0 2px 12px 2px rgba(112, 110, 110, 0.55);
     border-radius: 11px;
     font-weight: bold;
     cursor: pointer;
     font-family: Play, serif;
     font-size: 1em;
-    margin-left: auto;
-    margin-right: auto;
     transition: background-color ease-in-out 0.3s, color ease-in-out 0.3s;
+    float: right;
 }
 
 .edit-profile-menu  .but-edit_profile:hover{
-    background-color: rgba(142, 199, 162, 0.87);
+    background-color: rgba(110, 134, 184, 0.82);
     color: white;
 }
 
@@ -940,7 +958,6 @@ h4{
     border-radius: 7px;
 }
 
-
 .add-article-container h2{
     text-align: center;
 }
@@ -955,9 +972,6 @@ h4{
 }
 
 .add-article-container label {
-    padding: 7px;
-    background-color: white;
-    border-radius: 7px;
     font-weight: bold;
 }
 
@@ -1077,14 +1091,63 @@ textarea {
     text-decoration: none;
     font-family: Play,serif;
     font-size: 1.3em;
-    margin: 0;
-    color: rgba(49, 48, 45, 0.68);
+    margin: 7px;
+    color: rgba(49, 48, 45, 0.62);
     font-weight: bold;
     letter-spacing: 1px;
 }
 
 .categories-article li{
     margin-bottom: 40px;
+}
+
+.categories-article img{
+    width: 40px;
+    height: 40px;
+    vertical-align: bottom;
+    opacity: 0.7;
+}
+
+#bio-container {
+    position: absolute;
+    top: 20%;
+    left: 7%;
+    max-width: fit-content;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    min-height: fit-content;
+}
+
+#bio-container .static-avatar{
+    width: 40%;
+    height: 40%;
+    border: 3px solid rgba(128, 128, 128, 0.36);
+    padding: 11px 20px;
+}
+
+#bio-container p{
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+#bio-container img{
+    padding: 11px;
+    border: 1px solid gray;
+    display: block;
+    margin:40px auto;
+}
+
+#bio-text-container {
+    margin: 40px auto;
+    max-width: 600px;
+    text-align: left;
+    padding: 11px;
+    background-color: white;
+    width: 500px;
+    max-height: fit-content;
+    border-radius: 11px;
+    border: 1px solid gray;
 }
 
 @media (min-width: 1600px) {

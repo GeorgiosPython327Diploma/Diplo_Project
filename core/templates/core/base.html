@@ -112,9 +112,12 @@
         </div>
         <div class="categories-article">
         <ul>
-        {% for category in category %}
-            <li><a href="{% url 'base_with_articles' %}?category={{ category.id }}" {% if cat_selected == category.id %}class="selected"{% endif %}>{{ category.name }}</a></li>
-        {% endfor %}
+            {% for category in categories %}
+                <li>
+                    <img src="{{ category.icon.url }}" alt="{{ category.name }} icon">
+                    <a href="{% url 'base_with_articles' %}?category={{ category.id }}" {% if cat_selected == category.id %}class="selected"{% endif %}>{{ category.name }}</a>
+                </li>
+            {% endfor %}
         </ul>
         </div>
         <div class="pagination">

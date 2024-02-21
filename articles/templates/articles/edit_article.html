@@ -1,7 +1,7 @@
 {% extends 'core/base.html' %}
 
 {% block content %}
-<div class="edit-container-article">
+<div class="edit-container-article" style="transform: translateY(-100%); transition: transform ease-in-out 1s;">
   <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.media }}
@@ -10,4 +10,9 @@
     <button type="submit">Сохранить</button>
   </form>
 </div>
+<script>
+    $(document).ready(function() {
+        $(".edit-container-article").css("transform", "translateY(0)")
+    });
+</script>
 {% endblock %}

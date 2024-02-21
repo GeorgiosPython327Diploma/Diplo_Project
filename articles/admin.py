@@ -2,6 +2,7 @@ from django.contrib import admin
 from .models import Article, Bookmark, Category
 from django import forms
 from tinymce.widgets import TinyMCE
+from django.utils.html import format_html
 
 class ArticleAdminForm(forms.ModelForm):
     class Meta:
@@ -42,9 +43,19 @@ class BookmarkAdmin(admin.ModelAdmin):
 
 class CategoryAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ("name",)}
-    list_display = ('id', 'name')
+    list_display = ('id', 'name', 'icon_preview')
     list_display_links = ('id', 'name')
     search_fields = ('name',)
+
+    def icon_preview(self, obj):
+        if obj.icon:
+            return format_html('<img src="{}" width="50" height="50" />', obj.icon.url)
+        else:
+            return 'No Icon'
+
+    icon_preview.allow_tags = True
+    icon_preview.short_description = 'Icon Preview'
+
 
 admin.site.register(Article, ArticleAdmin)
 admin.site.register(Bookmark, BookmarkAdmin)

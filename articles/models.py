@@ -5,6 +5,7 @@ from django.conf import settings
 class Category(models.Model):
     name = models.CharField(max_length=100, verbose_name="Категория")
     slug = models.SlugField(max_length=100, unique=True, verbose_name="URL")
+    icon = models.ImageField(upload_to='images_ico/icons/', blank=True, null=True, verbose_name='Иконка')
 
     def __str__(self):
         return self.name
