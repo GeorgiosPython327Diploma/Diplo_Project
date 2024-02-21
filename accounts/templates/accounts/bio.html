@@ -4,10 +4,10 @@
 
 {% block content %}
     <h1>{{ user.username }}</h1>
-    <div id="bio-text-container">
+    <div id="bio-text-container" style="transform: translateY(100%); transition: transform ease-in-out 0.8s;">
             <p>{{ user.bio }}</p>
         </div>
-<div id="bio-container">
+<div id="bio-container" style="transform: translateX(-100%); transition: transform ease-in-out 0.8s;">
       {% if user.avatar %}
       <img class="avatar" src="{{ user.avatar.url }}" alt="User Avatar">
       {% else %}
@@ -20,4 +20,11 @@
         <p>Occupation: {{ user.occupation }}</p>
         <p>Email: {{ user.email }}</p>
     </div>
+
+<script>
+    $(document).ready(function() {
+        $("#bio-text-container").css("transform", "translateY(0)")
+        $("#bio-container").css("transform", "translateX(0)")
+    });
+</script>
 {% endblock %}
