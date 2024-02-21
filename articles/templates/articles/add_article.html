@@ -1,7 +1,7 @@
 {% extends 'core/base.html' %}
 
 {% block content %}
-  <div class="add-article-container" style="transform: translateY(-100%); transition: transform ease-in-out 1s;">
+  <div class="add-article-container" style="transform: translateY(-100%); transition: transform ease-in-out 0.8s;">
       <h2>Добавление статьи</h2>
     <form method="post" enctype="multipart/form-data" class="add-article-form">
       {% csrf_token %}

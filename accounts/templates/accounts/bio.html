@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block content %}
-    <h1>User Bio</h1>
+    <h1>{{ user.username }}</h1>
     <div id="bio-text-container">
             <p>{{ user.bio }}</p>
         </div>
@@ -13,11 +13,11 @@
       {% else %}
       <img class="static-avatar" src="{% static 'images/standart_img.png' %}" alt="Default Avatar">
       {% endif %}
-        <p>Email: {{ user.email }}</p>
+        <p>Gender: {{ user.get_gender_display }}</p>
+        <p>Age: {{ user.age }}</p>
         <p>Country: {{ user.country }}</p>
         <p>City: {{ user.city }}</p>
         <p>Occupation: {{ user.occupation }}</p>
-        <p>Gender: {{ user.get_gender_display }}</p>
-        <p>Age: {{ user.age }}</p>
+        <p>Email: {{ user.email }}</p>
     </div>
 {% endblock %}

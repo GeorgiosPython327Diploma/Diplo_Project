@@ -1113,10 +1113,14 @@ textarea {
     top: 20%;
     left: 7%;
     max-width: fit-content;
-    padding: 10px;
+    padding: 11px;
     box-sizing: border-box;
-    border: 1px solid #ccc;
+    border: 3px solid rgba(157, 156, 156, 0.32);
     min-height: fit-content;
+    margin: 7px;
+    background-color: rgba(255, 255, 255, 0.58);
+    box-shadow: 0 2px 12px 2px rgba(112, 110, 110, 0.22);
+    border-radius: 7px;
 }
 
 #bio-container .static-avatar{
@@ -1129,11 +1133,13 @@ textarea {
 #bio-container p{
     margin-bottom: 25px;
     text-align: center;
+    font-family: Play,serif;
+    color: rgba(116, 112, 105, 0.9);
+    font-weight: bold;
 }
 
 #bio-container img{
     padding: 11px;
-    border: 1px solid gray;
     display: block;
     margin:40px auto;
 }
@@ -1143,11 +1149,12 @@ textarea {
     max-width: 600px;
     text-align: left;
     padding: 11px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.77);
     width: 500px;
     max-height: fit-content;
     border-radius: 11px;
     border: 1px solid gray;
+    font-family: Spectral SC,serif;
 }
 
 @media (min-width: 1600px) {
