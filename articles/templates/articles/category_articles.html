@@ -1,12 +1,40 @@
 {% extends 'core/base.html' %}
 
 {% block content %}
-    <h1>Articles in Category "{{ category.name }}"</h1>
-
+<div class="article-list">
+    <h2>"{{ category.name }}"</h2>
+ <div class="article-item">
     {% for article in articles %}
-        <h2>{{ article.title }}</h2>
-        <p>{{ article.content }}</p>
+        <h3>{{ article.title }}</h3>
+        <p class="content-article"> {{ article.content|safe|truncatewords:20|linebreaks }}</p>
+        <p class="author-article"> Автор: <span class="author-span">{{ article.author.username }}</span> </p>
+        <p class="content-likes-dislikes-bookmarkio-article">
+            <span id="likes-count-{{ article.id }}" style="font-family: Arial, serif; font-size: 1.1em; font-weight:500; padding: 2px;">{{ article.likes.count }}</span>
+            <span class="like-button" data-article-id="{{ article.id }}" data-is-liked="{{ article.is_liked }}" data-is-disliked="{{ article.is_disliked }}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="none" viewBox="0 0 15 15">
+                    <path fill="#676666" fill-opacity=".84" d="M14.476 6.06a2.25 2.25 0 0 0-1.725-.81h-3.42l.42-1.072A3.097 3.097 0 0 0 6.833 0a.75.75 0 0 0-.682.443L4.013 5.25H2.25A2.25 2.25 0 0 0 0 7.5v5.25A2.25 2.25 0 0 0 2.25 15h9.55a2.25 2.25 0 0 0 2.212-1.845l.953-5.25a2.25 2.25 0 0 0-.488-1.845ZM3.75 13.5h-1.5a.75.75 0 0 1-.75-.75V7.5a.75.75 0 0 1 .75-.75h1.5v6.75Zm9.751-5.865-.952 5.25a.75.75 0 0 1-.75.615H5.25V6.158l2.04-4.59a1.583 1.583 0 0 1 1.036 2.085l-.398 1.072A1.5 1.5 0 0 0 9.331 6.75h3.42a.75.75 0 0 1 .578.27.752.752 0 0 1 .172.615Z"/>
+                </svg>
+            </span>
+            <span id="dislikes-count-{{ article.id }}" style="font-family: Arial, serif; font-size: 1.1em; font-weight:500; padding: 2px;" >{{ article.dislikes.count }}</span>
+            <span class="dislike-button" data-article-id="{{ article.id }}" data-is-liked="{{ article.is_liked }}" data-is-disliked="{{ article.is_disliked }}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="none" viewBox="0 0 15 15">
+                    <path fill="#676666" fill-opacity=".84" d="M12.75 0H3.202A2.25 2.25 0 0 0 .989 1.845l-.952 5.25A2.25 2.25 0 0 0 2.249 9.75h3.42l-.42 1.072A3.097 3.097 0 0 0 8.168 15a.75.75 0 0 0 .683-.443l2.137-4.807h1.763A2.25 2.25 0 0 0 15 7.5V2.25A2.25 2.25 0 0 0 12.75 0Zm-3 8.842-2.04 4.59a1.598 1.598 0 0 1-1.035-2.085l.397-1.072A1.5 1.5 0 0 0 5.67 8.25H2.25a.75.75 0 0 1-.578-.27.75.75 0 0 1-.173-.615l.953-5.25a.75.75 0 0 1 .75-.615H9.75v7.342ZM13.5 7.5a.75.75 0 0 1-.75.75h-1.5V1.5h1.5a.75.75 0 0 1 .75.75V7.5Z"/>
+                </svg>
+            </span>
+        </p>
+     {% if user.is_authenticated %}
+     {% if not user_has_bookmark %}
+     <a class="content-likes-dislikes-bookmarkio-article" href="{% url 'add_bookmark' article.id %}">
+         <svg class="bookmarkio" xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="none" viewBox="0 0 15 15">
+             <path fill="#000" fill-opacity=".47" d="M10 4.545v7.943l-3.508-1.109-.659-.208-.658.208-3.508 1.109V4.545H10ZM13.333.871H4.992c-.917 0-1.659.551-1.659 1.225h8.334c.916 0 1.666.55 1.666 1.224v7.961l1.667.612V2.096C15 1.422 14.25.87 13.333.87ZM10 3.321H1.667C.75 3.32 0 3.87 0 4.544v9.798l5.833-1.837 5.834 1.837V4.545c0-.673-.75-1.225-1.667-1.225Z"/>
+         </svg>
+     </a>
+     {% endif %}
+     {% endif %}
+     <p class="date-created-article"> {{article.created_at }}</p>
     {% endfor %}
+ </div>
+</div>
 
     <div class="pagination">
         {% if articles.has_previous %}

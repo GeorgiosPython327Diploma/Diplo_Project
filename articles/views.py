@@ -61,7 +61,7 @@ def add_article(request):
             article = form.save(commit=False)
             article.content = mark_safe(form.cleaned_data['content'])
             article.author = request.user
-            category_name = form.cleaned_data.get('category')
+            category_name = form.cleaned_data.get('categories')
             category, created = Category.objects.get_or_create(name=category_name)
             article.category = category
             article.save()

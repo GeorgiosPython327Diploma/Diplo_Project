@@ -2,18 +2,32 @@
 
 {% block content %}
   <div class="add-article-container" style="transform: translateY(-100%); transition: transform ease-in-out 0.8s;">
-      <h2>Добавление статьи</h2>
+    <h2>Добавление статьи</h2>
     <form method="post" enctype="multipart/form-data" class="add-article-form">
       {% csrf_token %}
 
       <div class="form-group">
         {{ form.title.label_tag }}
         {{ form.title }}
+        {% if form.title.errors %}
+          <ul class="errorlist">
+            {% for error in form.title.errors %}
+              <li>{{ error }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
       </div>
 
       <div class="form-group">
         {{ form.content.label_tag }}
         {{ form.content }}
+        {% if form.content.errors %}
+          <ul class="errorlist">
+            {% for error in form.content.errors %}
+              <li>{{ error }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
       </div>
 
       <div class="form-group">
@@ -31,15 +45,21 @@
       <div class="form-group">
         {{ form.categories.label_tag }}
         {{ form.categories }}
+        {% if form.categories.errors %}
+          <ul class="errorlist">
+            {% for error in form.categories.errors %}
+              <li>{{ error }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
       </div>
 
       <button type="submit" class="btn btn-primary">Добавить</button>
     </form>
   </div>
-
-<script>
+  <script>
     $(document).ready(function() {
-        $(".add-article-container").css("transform", "translateY(0)")
+      $(".add-article-container").css("transform", "translateY(0)")
     });
-</script>
+  </script>
 {% endblock %}
