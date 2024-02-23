@@ -13,11 +13,11 @@
       {% else %}
       <img class="static-avatar" src="{% static 'images/standart_img.png' %}" alt="Default Avatar">
       {% endif %}
-        <p>Gender: {{ user.get_gender_display }}</p>
-        <p>Age: {{ user.age }}</p>
-        <p>Country: {{ user.country }}</p>
-        <p>City: {{ user.city }}</p>
-        <p>Occupation: {{ user.occupation }}</p>
+        <p>Пол: {{ user.get_gender_display }}</p>
+        <p>Возраст: {{ user.age }}</p>
+        <p>Страна: {{ user.country }}</p>
+        <p>Город: {{ user.city }}</p>
+        <p>Род деятельности: {{ user.occupation }}</p>
         <p>Email: {{ user.email }}</p>
     </div>
 

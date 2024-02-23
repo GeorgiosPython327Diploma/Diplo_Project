@@ -4,7 +4,7 @@ from tinymce.widgets import TinyMCE
 
 
 class ArticleForm(forms.ModelForm):
-    categories = forms.ModelChoiceField(queryset=Category.objects.all(), label='Categories')
+    categories = forms.ModelChoiceField(queryset=Category.objects.all(), label='Категория')
     class Meta:
         model = Article
         fields = ['title', 'content', 'photo', 'categories']

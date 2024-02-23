@@ -19,14 +19,14 @@ class Category(models.Model):
 
 
 class Article(models.Model):
-    title = models.CharField(max_length=255)
-    content = models.TextField()
+    title = models.CharField(max_length=255, verbose_name='Заголовок')
+    content = models.TextField(verbose_name='Контент')
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    created_at = models.DateTimeField(auto_now_add=True)
-    photo = models.ImageField(upload_to='photo', blank=True)
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='Дата')
+    photo = models.ImageField(upload_to='photo', blank=True, verbose_name='Изображение')
     likes = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='liked_articles')
     dislikes = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='disliked_articles')
-    category = models.ForeignKey('Category', on_delete=models.PROTECT, verbose_name="categories")
+    category = models.ForeignKey('Category', on_delete=models.PROTECT, verbose_name="Категория")
 
     def __str__(self):
         return f"{self.title}"
@@ -58,7 +58,7 @@ class Review(models.Model):
 
 class Comment(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    content = models.TextField()
+    content = models.TextField(verbose_name='Контент')
     created_at = models.DateTimeField(auto_now_add=True)
     article = models.ForeignKey('Article', on_delete=models.CASCADE)
 

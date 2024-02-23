@@ -1,54 +1,35 @@
 document.addEventListener('DOMContentLoaded', function () {
   const shape = document.querySelector('.shape');
-  let isHovered = false;
+  const timeline = gsap.timeline({ repeat: -1, yoyo: true });
 
-  shape.style.borderRadius = '50%';
-  shape.style.width = '18px';
-  shape.style.height = '17px';
+  shape.style.width = '20px';
+  shape.style.height = '20px';
 
-  function rotate360() {
-    gsap.to(shape, {
-      rotation: '+=-360',
-      duration: 1,
-      ease: 'linear',
-      onComplete: function () {
-        if (isHovered) {
-          rotate360();
-        }
-      },
-    });
-  }
-
-  function makeSquare() {
-    gsap.to(shape, {
-      width: '20px',
-      height: '20px',
-      borderRadius: '0%',
-      duration: 0.3,
-      ease: 'ease-in-out',
-    });
-  }
-
-  shape.addEventListener('mouseover', function () {
-    isHovered = true;
-    makeSquare();
-    rotate360();
+  timeline.to(shape, {
+    borderRadius: '30%',
+    scale: 1,
+    duration: 1,
+    ease: 'power1.inOut',
+    rotation: 360,
   });
 
-  shape.addEventListener('mouseout', function () {
-    isHovered = false;
+  timeline.to(shape, {
+  scale: 0.8,
+  duration: 1,
+  ease: 'power1.inOut',
+  rotation: -360,
+  onComplete: function () {
     gsap.to(shape, {
-      width: '18px',
-      height: '17px',
-      borderRadius: '50%',
-      duration: 0.3,
-      ease: 'ease-in-out',
+      scale: 1,
+      duration: 0,
+      rotation: 0,
     });
-  });
+  },
+});
 
   gsap.to('body', {
     opacity: 1,
     duration: 0.6,
-    ease: 'ease-in-out',
+    ease: 'power3.inOut',
   });
 });

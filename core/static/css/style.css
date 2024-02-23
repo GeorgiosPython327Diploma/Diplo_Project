@@ -514,6 +514,7 @@ h1,.span-welcome {
     font-weight: 600;
     font-family: Play, serif;
     font-size: 1.6em;
+    word-break: break-word;
 }
 
 .article-item .content-article{
@@ -1083,7 +1084,7 @@ textarea {
 
 .categories-article {
     position: fixed;
-    top: 30%;
+    top: 18%;
     left: -1%;
 }
 
