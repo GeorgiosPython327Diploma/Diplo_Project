@@ -103,12 +103,12 @@ ul button:hover {
 
 .menu ul li a {
     text-decoration: none;
-    color: rgba(82, 81, 81, 0.82);
+    color: rgba(65, 64, 64, 0.66);
     font-weight: bold;
     font-size: 1.1em;
     font-family: Play, serif;
     padding: 6px;
-    transition: border-bottom  linear 0.3s, color ease-in-out 0.3s;
+    transition: color ease-in-out 0.3s;
 }
 
 .menu ul li a:hover{
@@ -289,7 +289,6 @@ h2{
 }
 
 .registration-target:hover{
-    border-bottom: 2px solid rgba(101, 99, 141, 0.84);
     border-radius: 11px;
     color: rgba(101, 99, 141, 0.84);
     width: 111px;
@@ -322,10 +321,10 @@ h2{
 .profile-menu {
     width: 300px;
     border-radius: 11px;
-    background-color: rgba(255, 255, 255, 0.62);
+    background-color: rgba(255, 255, 255, 0.49);
     padding-top: 20px;
     position: relative;
-    border: 3px solid rgba(166, 164, 164, 0.35);
+    border: 3px solid rgb(255, 255, 255);
     cursor: pointer;
     overflow: hidden;
     top: -50vh;
@@ -371,7 +370,7 @@ h1 {
     font-size: 1.8em;
     font-weight: 500;
     color: rgb(104, 138, 178);
-    border: 3px solid rgba(166, 164, 164, 0.35);
+    border: 3px solid rgb(255, 255, 255);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     background-color: rgba(255, 255, 255, 0.6);
 }
@@ -384,7 +383,7 @@ h1 {
     color: rgba(110, 108, 101, 0.78);
     letter-spacing: 3px;
     border-bottom:1px solid gray;
-    background-color: rgba(255, 255, 255, 0.33);
+    background-color: rgba(255, 255, 255, 0.25);
 }
 
 h1,.span-welcome {
@@ -395,116 +394,32 @@ h1,.span-welcome {
     letter-spacing: 1px;
 }
 
-.edit-profile-menu {
-    background-color: rgba(255, 255, 255, 0.35);
-    box-sizing: border-box;
-    padding: 18px 20px;
-    border: 3px solid rgba(109, 115, 115, 0.29);
-    box-shadow: 0 0 11px rgba(89, 88, 88, 0.19);
-    border-radius: 7px;
-    max-width: fit-content;
-    max-height: fit-content;
-    margin: 100px auto 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.form-group {
-    margin-bottom: 15px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-.inline-group, .form-age-gender{
-    display: inline-block;
-    margin-right: 15px;
-}
-
-.edit-profile-menu label[for="id_bio"], .edit-profile-menu label[for="id_avatar"]{
-    display: flex;
-    flex-direction: column;
-}
-
-.edit-profile-menu select{
-    padding: 11px;
-    border-radius: 7px;
-}
-
-.edit-profile-menu input[type="file"]{
-    background-color: white;
-    color: rgba(82, 81, 81, 0.82);
-    padding: 14px;
-    width: 40%;
-}
-
-.edit-profile-menu input[type="number"]{
-    width: 30%;
-}
-
-.edit-profile-menu textarea{
-    border-radius: 7px;
-    border: 2px solid rgba(173, 171, 171, 0.78);
-    width: 70%;
-    resize: none;
-}
-
-.edit-profile-menu input {
-    width: 80%;
-    padding: 11px;
-    margin-bottom: 15px;
-    border: 2px solid rgba(173, 171, 171, 0.78);
-    border-radius: 7px;
-}
-
-.edit-profile-menu  .but-edit_profile {
-    background-color: rgba(255, 255, 255, 0.46);
-    color: rgba(66, 65, 65, 0.53);
-    padding: 13px;
-    width: 23%;
-    border: 1px solid rgb(255, 255, 255);
-    box-shadow: 0 2px 12px 2px rgba(112, 110, 110, 0.55);
-    border-radius: 11px;
-    font-weight: bold;
-    cursor: pointer;
-    font-family: Play, serif;
-    font-size: 1em;
-    transition: background-color ease-in-out 0.3s, color ease-in-out 0.3s;
-    float: right;
-}
-
-.edit-profile-menu  .but-edit_profile:hover{
-    background-color: rgba(110, 134, 184, 0.82);
-    color: white;
-}
-
 .article-list {
     vertical-align: baseline;
     z-index: 2;
     box-sizing: inherit;
     position: relative;
     width: 49%;
-    margin: 80px auto 0;
+    margin: 80px auto 11px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 20px;
     overflow: auto;
+    max-height: fit-content;
 }
 
 .article-item{
     position: relative;
-    border: 1px solid rgba(252, 252, 252, 0.5);
+    border: 6px solid rgb(255, 255, 255);
     box-sizing: border-box;
     border-radius: 40px;
-    background-color: rgba(255, 255, 255, 0.82);
+    background-color: rgba(255, 255, 255, 0.7);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin: 40px 0;
     width: 700px;
-    height: 500px;
-    padding: 20px 20px 0;
+    height: 490px;
+    max-height: fit-content;
+    padding: 17px 17px 0;
 }
 
 .article-item h3{
@@ -580,6 +495,7 @@ h1,.span-welcome {
     padding: 40px;
     margin: 20px auto 0;
     border-radius: 30px;
+    border: 4px solid white;
 }
 
 .bookmarks-users h3{
@@ -683,10 +599,19 @@ h1 {
     color: rgba(72, 71, 71, 0.82);
     font-family: Georgia,serif;
     margin: 40px;
+    white-space: pre-line;
 }
 
 .comment-area h3{
     text-align: center;
+}
+
+.content-commentary{
+    background-color: rgba(255, 255, 255, 0.45);
+    margin: 80px auto 0;
+    border-radius: 30px;
+    padding: 20px 20px 0;
+    border: 3px solid white;
 }
 
 .review-bt{
@@ -723,10 +648,11 @@ h1 {
 }
 
 .comment-p{
-    text-align: center;
+    text-align: left;
     font-weight: 600;
-    margin-right: 60%;
     font-size: 1.1em;
+    word-wrap: break-word;
+    max-width: 500px;
 }
 
 .comment-special{
@@ -761,7 +687,7 @@ h4{
     color: #ffffff;
     display: inline-block;
     border-radius: 50%;
-    transition: background-color linear 0.3s;
+    transition: background-color linear 0.3s, transform ease-in-out 0.3s;
     border: 3px solid rgba(255, 255, 255, 0.66);
     font-weight: bold;
     letter-spacing: 1px;
@@ -771,6 +697,7 @@ h4{
 
 .pagination span.page.current, .pagination a.page:hover{
     background-color: rgba(69, 204, 144, 0.67);
+    transform: scale(1.1);
 }
 
 .pagination a {
@@ -796,7 +723,7 @@ h4{
 }
 
 .article-list .author-span{
-    font-family: Play,serif;
+    font-family: Spectral SC,serif;
     font-weight: 600;
     color: rgba(28, 108, 161, 0.68);
     margin-left: 7px;
@@ -806,9 +733,10 @@ h4{
     flex-basis: 50%;
     padding: 20px 30px;
     width: 880px;
-    background-color: rgba(255, 255, 255, 0.78);
+    background-color: rgba(255, 255, 255, 0.65);
     border-radius: 20px;
     margin: 111px auto 0;
+    border: 4px solid white;
 }
 
 .review-container .review-author{
@@ -833,7 +761,7 @@ h4{
 .change-password-menu{
     background-color: rgba(255, 255, 255, 0.58);
     padding: 11px 25px;
-    border: 3px solid rgba(109, 115, 115, 0.23);
+    border: 4px solid rgb(255, 255, 255);
     border-radius: 7px;
     box-shadow: 0 0 11px rgba(89, 88, 88, 0.19);
     width: 670px;
@@ -889,7 +817,7 @@ h4{
     width: 800px;
     border-radius: 30px;
     padding: 20px;
-    border: 1px solid rgba(128, 128, 128, 0.46);
+    border: 4px solid rgb(255, 255, 255);
 }
 
 .articles-user h3{
@@ -950,7 +878,7 @@ h4{
     background-color: rgba(255, 255, 255, 0.47);
     box-shadow: 0 0 11px rgba(89, 88, 88, 0.19);
     border-radius: 5px;
-    border: 1px solid rgba(128, 128, 128, 0.45);
+    border: 4px solid rgb(255, 255, 255);
 }
 
 .add-article-container select{
@@ -984,6 +912,7 @@ textarea {
     box-sizing: border-box;
     resize: none;
     border: 1px solid gray;
+    border-radius: 7px;
 }
 
 .add-article-container input[type='file']{
@@ -995,11 +924,11 @@ textarea {
     padding: 14px;
     background-color: rgba(255, 255, 255, 0.54);
     color: rgba(82, 81, 81, 0.82);
-    border: 1px solid rgba(128, 128, 128, 0.58);
-    box-shadow: 0 2px 12px 2px rgba(112, 110, 110, 0.36);
+    border: 2px solid rgb(255, 255, 255);
+    box-shadow: 0 2px 12px 2px rgba(112, 110, 110, 0.37);
     cursor: pointer;
     margin-top: 11px;
-    border-radius: 7px;
+    border-radius: 11px;
     font-size: 1em;
     font-weight: bold;
     transition: background-color ease-in-out 0.3s, color ease-in-out 0.3s;
@@ -1013,9 +942,10 @@ textarea {
 .edit-container-article {
     max-width: 800px;
     margin: 100px auto 0;
-    padding: 20px;
+    padding: 30px;
     background-color: rgba(255, 255, 255, 0.47);
     border-radius: 11px;
+    border: 3px solid white;
 }
 
 .edit-container-article select{
@@ -1033,7 +963,6 @@ textarea {
 .edit-container-article form label {
     margin-bottom: 8px;
     padding: 7px;
-    background-color: white;
     border-radius: 7px;
 }
 
@@ -1047,7 +976,7 @@ textarea {
 }
 
 .edit-container-article form input[type="text"]{
-    width: 700px;
+    width: 93%;
     border-radius: 7px;
 }
 
@@ -1066,12 +995,12 @@ textarea {
 
 .edit-container-article form button {
     padding: 11px;
-    background-color: rgba(255, 255, 255, 0.82);
+    background-color: rgba(255, 255, 255, 0.63);
     color: rgba(82, 81, 81, 0.82);
-    border: none;
+    border: 2px solid white;
     font-weight: bold;
-    box-shadow: 0 2px 12px 2px rgba(112, 110, 110, 0.36);
-    border-radius: 4px;
+    box-shadow: 0 2px 12px 2px rgba(112, 110, 110, 0.29);
+    border-radius: 7px;
     font-size: 18px;
     cursor: pointer;
     transition: background-color ease-in-out 0.3s, color ease-in-out 0.3s;
@@ -1085,21 +1014,38 @@ textarea {
 .categories-article {
     position: fixed;
     top: 18%;
-    left: -1%;
+    left: -4%;
+    white-space: nowrap;
+}
+
+.categories-article ul{
+    padding: 0;
+    margin: 0;
 }
 
 .categories-article a{
     text-decoration: none;
-    font-family: Play,serif;
-    font-size: 1.3em;
+    font-family: Play,sans-serif;
+    font-size: 1.4em;
     margin: 7px;
-    color: rgba(49, 48, 45, 0.54);
-    font-weight: bold;
+    color: rgba(49, 48, 45, 0.68);
+    font-weight: 500;
     letter-spacing: 1px;
 }
 
 .categories-article li{
     margin-bottom: 40px;
+    transform: translateX(-100%);
+    padding: 11px;
+    border-radius: 30px;
+    border: 3px solid rgb(255, 255, 255);
+    box-shadow: 0 2px 12px 2px rgba(148, 148, 147, 0.4);
+    transition: background-color ease-in-out 0.3s, border ease-in-out,0.3s;
+    background: rgba(255, 255, 255, 0.35);
+}
+
+.categories-article li:hover {
+    background-color: rgba(164, 197, 176, 0.35);
 }
 
 .categories-article img{
@@ -1116,12 +1062,12 @@ textarea {
     max-width: fit-content;
     padding: 11px;
     box-sizing: border-box;
-    border: 3px solid rgba(157, 156, 156, 0.6);
+    border: 3px solid rgb(255, 255, 255);
     min-height: fit-content;
     margin: 7px;
-    background-color: rgba(255, 255, 255, 0.58);
+    background-color: rgba(255, 255, 255, 0.54);
     box-shadow: 0 2px 12px 2px rgba(112, 110, 110, 0.22);
-    border-radius: 7px;
+    border-radius: 20px;
 }
 
 #bio-container .static-avatar{
@@ -1135,7 +1081,7 @@ textarea {
     margin-bottom: 25px;
     text-align: center;
     font-family: Play,serif;
-    color: rgba(116, 112, 105, 0.9);
+    color: rgba(63, 63, 63, 0.76);
     font-weight: bold;
 }
 
@@ -1154,7 +1100,7 @@ textarea {
     width: 500px;
     max-height: fit-content;
     border-radius: 11px;
-    border: 1px solid gray;
+    border: 3px solid rgb(255, 255, 255);
     font-family: Spectral SC,serif;
 }
 
