@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background: linear-gradient(to right, rgba(214, 213, 213, 0.73), rgba(214, 213, 213, 0.58));
+    background: rgba(194, 185, 171, 0.35);
     zoom: 0.9;
     height: 100vh;
     opacity: 0;
@@ -17,7 +17,7 @@ body {
     align-items: center;
     border-bottom: 2px solid rgba(0, 0, 0, 0.13);
     padding: 11px;
-    background: rgba(231, 225, 215, 0.96);
+    background: rgba(239, 231, 217, 0.94);
     border-radius: 5px;
 }
 
