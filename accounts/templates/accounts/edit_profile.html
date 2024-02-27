@@ -1,65 +1,42 @@
 {% extends 'core/base.html' %}
 
-{% load static %}
-
 {% block content %}
-    <div class="edit-profile-menu" style="transform: translateY(-100%); transition: transform ease-in-out 0.7s;">
-        <h2>Редактировать профиль</h2>
-        <form method="post" enctype="multipart/form-data" action="{% url 'edit_profile' %}" class="needs-validation" novalidate>
 
-            {% csrf_token %}
+<h1>Редактировать профиль</h1>
+<form method="post" enctype="multipart/form-data" action="{% url 'edit_profile' %}" class="needs-validation"
+      novalidate>
 
-            <div class="form-group inline-group">
-                {{ form.username.label_tag }}
-                {{ form.username }}
-            </div>
-
-            <div class="form-group inline-group">
-                {{ form.email.label_tag }}
-                {{ form.email }}
-            </div>
-
-            <div class="form-group">
-                {{ form.bio.label_tag }}
-                {{ form.bio }}
-            </div>
-
-            <div class="form-group">
-                {{ form.avatar.label_tag }}
-                {{ form.avatar }}
-            </div>
-
-            <div class="form-group inline-group">
-                {{ form.country.label_tag }}
-                {{ form.country }}
-            </div>
-
-            <div class="form-group inline-group">
-                {{ form.city.label_tag }}
-                {{ form.city }}
-            </div>
-
-            <div class="form-group inline-group">
-                 {{ form.occupation.label_tag }}
-                {{ form.occupation }}
-            </div>
-
-            <div class="form-age-gender">
-                 {{ form.gender.label_tag }}
-                {{ form.gender }}
-            </div>
-
-            <div class="form-age-gender">
-                {{ form.age.label_tag }}
-                {{ form.age }}
-            </div>
-
-            <button class="but-edit_profile" type="submit">Сохранить изменения</button>
-        </form>
+    {% csrf_token %}
+    <div class="form-container">
+    <div class="edit-form-username-email">
+        {{ form.username.label_tag }}
+        {{ form.username }}
+        {{ form.email.label_tag }}
+        {{ form.email }}
     </div>
-<script>
-    $(document).ready(function() {
-        $(".edit-profile-menu").css("transform", "translateY(0)")
-    });
-</script>
+
+    <div class="form-bio-avatar">
+        {{ form.bio.label_tag }}
+        {{ form.bio }}
+        {{ form.avatar.label_tag }}
+        {{ form.avatar }}
+    </div>
+
+    <div class="edit-form-country-city-occupation-gender-age">
+        {{ form.country.label_tag }}
+        {{ form.country }}
+        {{ form.city.label_tag }}
+        {{ form.city }}
+        {{ form.occupation.label_tag }}
+        {{ form.occupation }}
+        {{ form.gender.label_tag }}
+        {{ form.gender }}
+        {{ form.age.label_tag }}
+        {{ form.age }}
+    </div>
+    </div>
+
+    <button class="but-edit-profile" type="submit">Сохранить изменения</button>
+</form>
+
 {% endblock %}
