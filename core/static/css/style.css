@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background: rgba(201, 197, 185, 0.22);
+    background: rgba(168, 164, 154, 0.22);
     zoom: 0.9;
     height: 100vh;
     opacity: 0;
@@ -17,7 +17,7 @@ body {
     align-items: center;
     border-bottom: 2px solid rgba(100, 99, 99, 0.35);
     padding: 11px;
-    background: rgba(252, 243, 225, 0.93);
+    background: rgba(236, 231, 221, 0.93);
 }
 
 .menu .logo-menu,
