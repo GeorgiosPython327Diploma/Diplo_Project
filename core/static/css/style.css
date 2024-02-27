@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background: rgba(194, 185, 171, 0.38);
+    background: rgb(238, 238, 238);
     zoom: 0.9;
     height: 100vh;
     opacity: 0;
@@ -17,7 +17,7 @@ body {
     align-items: center;
     border-bottom: 2px solid rgba(100, 99, 99, 0.35);
     padding: 11px;
-    background: rgba(239, 231, 217, 0.94);
+    background: rgba(238, 236, 236, 0.94);
     border-radius: 5px;
 }
 
