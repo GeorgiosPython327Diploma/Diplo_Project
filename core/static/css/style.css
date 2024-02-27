@@ -17,8 +17,7 @@ body {
     align-items: center;
     border-bottom: 2px solid rgba(100, 99, 99, 0.35);
     padding: 11px;
-    background: rgba(238, 236, 236, 0.94);
-    border-radius: 5px;
+    background: rgba(252, 238, 226, 0.94);
 }
 
 .menu .logo-menu,
@@ -1112,7 +1111,7 @@ textarea {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    align-items: baseline;
+    align-items: center;
 }
 
 .edit-form-username-email,
