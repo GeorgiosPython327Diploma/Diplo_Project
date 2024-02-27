@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background: rgb(238, 238, 238);
+    background: rgba(201, 197, 185, 0.22);
     zoom: 0.9;
     height: 100vh;
     opacity: 0;
@@ -17,7 +17,7 @@ body {
     align-items: center;
     border-bottom: 2px solid rgba(100, 99, 99, 0.35);
     padding: 11px;
-    background: rgba(252, 238, 226, 0.94);
+    background: rgba(252, 243, 225, 0.93);
 }
 
 .menu .logo-menu,
@@ -67,7 +67,7 @@ ul input{
     margin-right: 11px;
     font-size: 1em;
     font-weight: bold;
-    border: 3px solid rgba(255, 255, 255, 0.8);
+    border: 3px solid rgba(171, 170, 170, 0.24);
     text-indent: 16px;
     transition: background-color ease-in-out 0.3s;
 }
@@ -91,7 +91,7 @@ ul button {
     letter-spacing: 1px;
     box-shadow: 0 2px 12px 2px rgba(112, 110, 110, 0.36);
     color: rgba(82, 81, 81, 0.82);
-    border: 3px solid rgb(255, 255, 255);
+    border: 1px solid rgb(255, 255, 255);
     transition: background-color ease-in-out 0.3s, color ease-in-out 0.3s;
 }
 
@@ -267,7 +267,7 @@ h2{
     flex-direction: column;
     align-items: center;
     margin: 120px auto 0;
-    background-color: rgba(238, 236, 236, 0.9);
+    background-color: rgba(252, 236, 224, 0.47);
     padding: 20px 40px;
     border-radius: 20px;
     font-size: 1.1em;
@@ -409,10 +409,10 @@ h1,.span-welcome {
 
 .article-item{
     position: relative;
-    border: 6px solid rgb(255, 255, 255);
+    border: 3px solid rgba(192, 192, 192, 0.51);
     box-sizing: border-box;
     border-radius: 40px;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.88);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin: 40px 0;
     width: 700px;
@@ -732,7 +732,7 @@ h4{
     flex-basis: 50%;
     padding: 20px 30px;
     width: 880px;
-    background-color: rgba(255, 255, 255, 0.65);
+    background-color: rgba(255, 255, 255, 0.89);
     border-radius: 20px;
     margin: 111px auto 0;
     border: 4px solid white;
