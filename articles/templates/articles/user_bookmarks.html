@@ -1,6 +1,7 @@
 {% extends 'core/base.html' %}
 
 {% block content %}
+
     <h1>Ваши закладки</h1>
     <div class="bookmarks-users">
     {% if bookmarks %}
@@ -22,4 +23,5 @@
     {% else %}
         <p>У вас нет закладок.</p>
     {% endif %}
+
 {% endblock %}

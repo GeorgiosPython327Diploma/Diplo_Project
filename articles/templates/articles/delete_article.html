@@ -1,6 +1,7 @@
 {% extends 'core/base.html' %}
 
 {% block content %}
+
   <h2>Удаление статьи</h2>
   <p>Вы уверены, что хотите удалить статью "{{ object.title }}"?</p>
 
@@ -10,4 +11,5 @@
   </form>
 
   <a href="{% url 'user_articles' user_id=object.author.id %}">Отмена</a>
+
 {% endblock %}

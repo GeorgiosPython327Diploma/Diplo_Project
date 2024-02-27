@@ -1,6 +1,7 @@
 {% extends 'core/base.html' %}
 
 {% block content %}
+
 <div class="review-container">
   <h3 class="review-title">{{ article.title }}</h3>
       {% if article.photo %}
@@ -24,10 +25,12 @@
    </p>
 </div>
 
+
+<div class="content-commentary">
   <div class="comment-area">
     <h3>Комментарии</h3>
     {% for comment in comments %}
-    <p class="comment-p"><span class="comment-special"> &raquo;</span> {{ comment.author.username }}: <span class="comment-text">{{ comment.content|striptags }}</span></p>
+    <p class="comment-p"><span class="comment-special"> &raquo;</span> {{ comment.author.username }}:<span class="comment-text">{{ comment.content|striptags }}</span></p>
     {% endfor %}
   </div>
 
@@ -38,6 +41,6 @@
   <button class="review-bt" type="submit">Добавить комментарий</button>
   </form>
   </div>
-
+  </div>
 
 {% endblock %}

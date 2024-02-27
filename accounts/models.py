@@ -14,8 +14,8 @@ class User(AbstractUser):
     date_joined = models.DateTimeField(auto_now_add=True, verbose_name='Дата')
     email = models.EmailField(unique=True)
     gender_choices = [
-        ('M', 'Мужчина'),
-        ('F', 'Женщина'),
+        ('M', 'Мужской'),
+        ('F', 'Женский'),
     ]
     gender = models.CharField(max_length=1, choices=gender_choices, blank=True, verbose_name='Пол')
     age = models.IntegerField(blank=True, null=True, verbose_name='Возраст')

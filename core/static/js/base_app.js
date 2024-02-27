@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
   shape.style.height = '20px';
 
   timeline.to(shape, {
-    borderRadius: '30%',
+    borderRadius: '25%',
     scale: 1,
     duration: 1,
     ease: 'power1.inOut',

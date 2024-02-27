@@ -19,7 +19,7 @@ class ArticleAdminForm(forms.ModelForm):
 
 class ArticleAdmin(admin.ModelAdmin):
     form = ArticleAdminForm
-    list_display = ('title', 'author', 'created_at', 'get_likes_count', 'get_dislikes_count', 'category')
+    list_display = ('title', 'author', 'created_at', 'get_likes_count', 'get_dislikes_count', 'category', 'photo_preview')
 
     def get_likes_count(self, obj):
         return obj.likes.count()
@@ -30,7 +30,15 @@ class ArticleAdmin(admin.ModelAdmin):
     def display_categories(self, obj):
         return ", ".join([category.name for category in obj.category.all()])
 
+    def photo_preview(self, obj):
+        if obj.photo:
+            return format_html('<img src="{}" width="100" height="70" />', obj.photo.url)
+        else:
+            return 'No Photo'
+
     display_categories.short_description = 'Категории'
+    photo_preview.allow_tags = True
+    photo_preview.short_description = 'Изображение'
 
     get_likes_count.short_description = 'Likes'
     get_dislikes_count.short_description = 'Dislikes'
@@ -53,7 +61,7 @@ class CategoryAdmin(admin.ModelAdmin):
             return 'No Icon'
 
     icon_preview.allow_tags = True
-    icon_preview.short_description = 'Icon Preview'
+    icon_preview.short_description = 'Иконка'
 
 
 admin.site.register(Article, ArticleAdmin)

@@ -19,9 +19,9 @@ class Category(models.Model):
 
 
 class Article(models.Model):
-    title = models.CharField(max_length=255, verbose_name='Заголовок')
+    title = models.CharField(max_length=255, verbose_name='Статья')
     content = models.TextField(verbose_name='Контент')
-    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, verbose_name='Автор')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Дата')
     photo = models.ImageField(upload_to='photo', blank=True, verbose_name='Изображение')
     likes = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='liked_articles')
@@ -67,9 +67,9 @@ class Comment(models.Model):
 
 
 class Bookmark(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    article = models.ForeignKey(Article, on_delete=models.CASCADE)
-    created_at = models.DateTimeField(auto_now_add=True)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, verbose_name='Пользователь')
+    article = models.ForeignKey(Article, on_delete=models.CASCADE, verbose_name='Статья')
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='Дата')
 
     def __str__(self):
         return f"{self.article.title}"

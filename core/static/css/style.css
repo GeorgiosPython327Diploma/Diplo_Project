@@ -63,12 +63,12 @@ ul input{
     padding: 14px;
     border-radius: 11px;
     width: 290px;
-    background: rgba(163, 201, 184, 0.77);
+    background: rgba(163, 201, 184, 0.74);
     color: #646363;
     margin-right: 11px;
     font-size: 1em;
     font-weight: bold;
-    border: 2px solid rgba(169, 168, 168, 0.6);
+    border: 3px solid rgba(255, 255, 255, 0.8);
     text-indent: 16px;
     transition: background-color ease-in-out 0.3s;
 }
@@ -92,7 +92,7 @@ ul button {
     letter-spacing: 1px;
     box-shadow: 0 2px 12px 2px rgba(112, 110, 110, 0.36);
     color: rgba(82, 81, 81, 0.82);
-    border: 2px solid rgba(255, 255, 255, 0.47);
+    border: 3px solid rgb(255, 255, 255);
     transition: background-color ease-in-out 0.3s, color ease-in-out 0.3s;
 }
 
@@ -187,7 +187,7 @@ label, #id_username{
     padding: 11px 15px;
     width: 100%;
     margin-bottom: 11px;
-    border: 1px solid rgb(255, 255, 255);
+    border: 3px solid rgb(255, 255, 255);
     font-size: 0.9em;
     font-weight: bold;
     border-radius: 11px;
@@ -196,7 +196,7 @@ label, #id_username{
 }
 
 .register-menu button:hover{
-    background-color: rgba(141, 213, 131, 0.56);
+    background-color: rgba(131, 213, 184, 0.56);
     color: white;
 }
 
@@ -205,7 +205,7 @@ label, #id_username{
     flex-direction: column;
     align-items: center;
     margin: 120px auto 0;
-    background-color: rgba(246, 229, 199, 0.27);
+    background-color: rgba(238, 236, 236, 0.91);
     padding: 11px 50px;
     border-radius: 20px;
     border: 2px solid rgba(0, 0, 0, 0.13);
@@ -251,7 +251,7 @@ h2{
     width: 100%;
     margin-top: 22px;
     font-size: 0.9em;
-    border: 1px solid rgb(255, 255, 255);
+    border: 3px solid rgb(255, 255, 255);
     border-radius: 11px;
     font-weight: bold;
     cursor: pointer;
@@ -259,7 +259,7 @@ h2{
 }
 
 .login-menu button:hover{
-    background-color: rgba(141, 213, 131, 0.56);
+    background-color: rgba(131, 213, 182, 0.56);
     color: white;
 }
 
@@ -268,7 +268,7 @@ h2{
     flex-direction: column;
     align-items: center;
     margin: 120px auto 0;
-    background-color: rgba(246, 229, 199, 0.27);
+    background-color: rgba(238, 236, 236, 0.9);
     padding: 20px 40px;
     border-radius: 20px;
     font-size: 1.1em;

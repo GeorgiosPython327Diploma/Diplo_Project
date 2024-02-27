@@ -1,6 +1,7 @@
 {% extends 'core/base.html' %}
 
 {% block content %}
+
   <div class="add-article-container" style="transform: translateY(-100%); transition: transform ease-in-out 0.8s;">
     <h2>Добавление статьи</h2>
     <form method="post" enctype="multipart/form-data" class="add-article-form">
@@ -57,9 +58,5 @@
       <button type="submit" class="btn btn-primary">Добавить</button>
     </form>
   </div>
-  <script>
-    $(document).ready(function() {
-      $(".add-article-container").css("transform", "translateY(0)")
-    });
-  </script>
+
 {% endblock %}

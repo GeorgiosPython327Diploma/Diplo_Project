@@ -1,6 +1,7 @@
 {% extends 'core/base.html' %}
 
 {% block content %}
+
 <h1> {{ category.name }}</h1>
 <div style="margin: 0 auto" class="article-list">
     {% if articles %}
@@ -65,4 +66,5 @@
             <a href="?page={{ articles.next_page_number }}">&raquo;</a>
         {% endif %}
     </div>
+
 {% endblock %}

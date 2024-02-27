@@ -28,9 +28,28 @@ document.addEventListener("DOMContentLoaded", function () {
             gsap.to(categoriesItems, {
                 x: -100,
                 opacity: 0,
+                scale: 1,
                 duration: 0.3,
                 ease: 'power1.inOut',
             });
         }
+    });
+
+    categoriesItems.forEach(item => {
+        item.addEventListener("mouseenter", function () {
+            gsap.to(item, {
+                scale: 1.04,
+                duration: 0.3,
+                ease: 'power3.inOut',
+            });
+        });
+
+        item.addEventListener("mouseleave", function () {
+            gsap.to(item, {
+                scale: 1,
+                duration: 0.3,
+                ease: 'power1.inOut',
+            });
+        });
     });
 });
