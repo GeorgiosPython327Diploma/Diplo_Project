@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background: rgba(194, 185, 171, 0.35);
+    background: rgba(194, 185, 171, 0.38);
     zoom: 0.9;
     height: 100vh;
     opacity: 0;
@@ -15,7 +15,7 @@ body {
     width: 100%;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.13);
+    border-bottom: 2px solid rgba(100, 99, 99, 0.35);
     padding: 11px;
     background: rgba(239, 231, 217, 0.94);
     border-radius: 5px;
@@ -182,12 +182,12 @@ label, #id_username{
 }
 
 .register-menu button {
-    background-color: rgba(164, 197, 176, 0.27);
+    background-color: rgba(164, 197, 176, 0.51);
     color: rgba(82, 81, 81, 0.82);
     padding: 11px 15px;
     width: 100%;
     margin-bottom: 11px;
-    border: 1px solid rgba(161, 159, 159, 0.64);
+    border: 1px solid rgb(255, 255, 255);
     font-size: 0.9em;
     font-weight: bold;
     border-radius: 11px;
@@ -205,7 +205,7 @@ label, #id_username{
     flex-direction: column;
     align-items: center;
     margin: 120px auto 0;
-    background-color: rgba(239, 204, 139, 0.11);
+    background-color: rgba(246, 229, 199, 0.27);
     padding: 11px 50px;
     border-radius: 20px;
     border: 2px solid rgba(0, 0, 0, 0.13);
@@ -245,13 +245,13 @@ h2{
 }
 
 .login-menu button {
-    background-color: rgba(164, 197, 176, 0.27);
+    background-color: rgba(164, 197, 176, 0.43);
     color: rgba(82, 81, 81, 0.82);
     padding: 11px 40px;
     width: 100%;
     margin-top: 22px;
     font-size: 0.9em;
-    border: 1px solid rgba(185, 183, 183, 0.85);
+    border: 1px solid rgb(255, 255, 255);
     border-radius: 11px;
     font-weight: bold;
     cursor: pointer;
@@ -268,7 +268,7 @@ h2{
     flex-direction: column;
     align-items: center;
     margin: 120px auto 0;
-    background-color: rgba(239, 204, 139, 0.13);
+    background-color: rgba(246, 229, 199, 0.27);
     padding: 20px 40px;
     border-radius: 20px;
     font-size: 1.1em;
@@ -417,7 +417,7 @@ h1,.span-welcome {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin: 40px 0;
     width: 700px;
-    height: 490px;
+    height: 500px;
     max-height: fit-content;
     padding: 17px 17px 0;
 }
@@ -1039,9 +1039,9 @@ textarea {
     padding: 11px;
     border-radius: 30px;
     border: 3px solid rgb(255, 255, 255);
-    box-shadow: 0 2px 12px 2px rgba(148, 148, 147, 0.4);
-    transition: background-color ease-in-out 0.3s, border ease-in-out,0.3s;
-    background: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 2px 12px 2px rgba(148, 148, 147, 0.42);
+    transition: background-color ease-in-out 0.3s;
+    background: rgba(255, 255, 255, 0.65);
 }
 
 .categories-article li:hover {
@@ -1102,6 +1102,74 @@ textarea {
     border-radius: 11px;
     border: 3px solid rgb(255, 255, 255);
     font-family: Spectral SC,serif;
+}
+
+.h2-edit-profile{
+    margin: 111px auto 0;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: baseline;
+}
+
+.edit-form-username-email,
+.form-bio-avatar,
+.edit-form-country-city-occupation-gender-age {
+    margin: 40px 30px;
+    background-color: rgba(255, 255, 255, 0.58);
+    padding: 20px;
+    border-radius: 11px;
+    width: 400px;
+    border: 3px solid white;
+}
+
+.edit-form-username-email label,
+.form-bio-avatar label,
+.edit-form-country-city-occupation-gender-age label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.edit-form-username-email input,
+.form-bio-avatar input,
+.edit-form-country-city-occupation-gender-age input,
+.edit-form-username-email select,
+.form-bio-avatar select,
+.edit-form-country-city-occupation-gender-age select,
+.edit-form-username-email textarea,
+.form-bio-avatar textarea,
+.edit-form-country-city-occupation-gender-age textarea {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    vertical-align: -20px;
+}
+
+.but-edit-profile {
+    background-color: rgba(255, 255, 255, 0.46);
+    color: #676666;
+    padding: 14px 100px;
+    border: 3px solid white;
+    border-radius: 11px;
+    cursor: pointer;
+    margin: 0 auto 30px;
+    display: block;
+    font-size: 1.1em;
+    font-weight: bold;
+    box-shadow: 0 2px 12px 2px rgba(112, 110, 110, 0.29);
+    transition: background-color ease-in-out 0.3s, color ease-in-out 0.3s;
+}
+
+.but-edit-profile:hover {
+    background-color: rgba(110, 134, 184, 0.82);
+    color: white;
 }
 
 @media (min-width: 1600px) {
