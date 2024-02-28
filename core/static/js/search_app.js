@@ -55,7 +55,7 @@ $(document).ready(function () {
             });
 
             articleItem.css({
-              'margin': '100px auto 0',
+              'margin': '116px auto -70px',
             });
 
             articleItem.find('a').css({
@@ -88,7 +88,7 @@ $(document).ready(function () {
             alignItems: 'center',
             display: 'grid',
             overflow: 'scroll',
-            height: '750',
+            height: '790',
             listStyleType: 'none',
           });
         } else {
