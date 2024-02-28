@@ -67,12 +67,14 @@ def change_password(request):
 
 @login_required
 def bio_view(request):
-    bio_form = BioForm(instance=request.user)
+    user = request.user
+    bio_form = BioForm(instance=user)
 
     if request.method == 'POST':
-        bio_form = BioForm(request.POST, request.FILES, instance=request.user)
+        bio_form = BioForm(request.POST, request.FILES, instance=user)
         if bio_form.is_valid():
             bio_form.save()
+            user.update_last_login()
             return redirect('bio_view')
 
-    return render(request, 'accounts/bio.html', {'user': request.user, 'avatar_url': request.user.avatar_url(), 'bio_form': bio_form})
+    return render(request, 'accounts/bio.html', {'user': user, 'avatar_url': user.avatar_url(), 'is_online': user.is_online(), 'bio_form': bio_form})
