@@ -1103,6 +1103,18 @@ textarea {
     font-family: Spectral SC,serif;
 }
 
+.is-online, .is-offline{
+    letter-spacing: 1px;
+}
+
+.is-online{
+    color: #218855;
+}
+
+.is-offline{
+    color: #c51f1f;
+}
+
 .h2-edit-profile{
     margin: 111px auto 0;
 }
