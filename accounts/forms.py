@@ -30,4 +30,4 @@ class UserPasswordChangeForm(PasswordChangeForm):
 class BioForm(forms.ModelForm):
     class Meta:
         model = User
-        fields = ['username', 'bio', 'avatar', 'email', 'country', 'city', 'occupation', 'gender', 'age']
+        fields = ['is_online','username', 'bio', 'avatar', 'email', 'country', 'city', 'occupation', 'gender', 'age']

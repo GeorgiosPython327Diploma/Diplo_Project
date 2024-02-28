@@ -13,6 +13,7 @@
       {% else %}
       <img class="static-avatar" src="{% static 'images/standart_img.png' %}" alt="Default Avatar">
       {% endif %}
+        <p>Статус: {{ is_online }}</p>
         <p>Пол: {{ user.get_gender_display }}</p>
         <p>Возраст: {{ user.age }}</p>
         <p>Страна: {{ user.country }}</p>
