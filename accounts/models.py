@@ -1,11 +1,12 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.conf import settings
+from django.utils import timezone
 
 class User(AbstractUser):
     username = models.CharField(max_length=150, unique=True, verbose_name='Имя')
     password = models.CharField(max_length=128, null=False, blank=False, verbose_name='Пароль')
-    bio = models.TextField(blank=True,verbose_name='Биография')
+    bio = models.TextField(blank=True, verbose_name='Биография')
     country = models.CharField(max_length=50, blank=True, verbose_name='Страна')
     city = models.CharField(max_length=50, blank=True, verbose_name='Город')
     is_online = models.BooleanField(default=False, verbose_name='Статус')
@@ -19,7 +20,7 @@ class User(AbstractUser):
     ]
     gender = models.CharField(max_length=1, choices=gender_choices, blank=True, verbose_name='Пол')
     age = models.IntegerField(blank=True, null=True, verbose_name='Возраст')
-    last_login = None
+    last_login = models.DateTimeField(default=timezone.now)  # Добавляем поле last_login с дефолтным значением
     groups = None
     user_permissions = None
 
@@ -28,6 +29,13 @@ class User(AbstractUser):
             return self.avatar.url
         else:
             return settings.STATIC_URL + 'static/images/standart_img.png'
+
+    def is_online(self):
+        return (timezone.now() - self.last_login).seconds < 600
+
+    def update_last_login(self):
+        self.last_login = timezone.now()
+        self.save()
 
     def __str__(self):
         return self.username
