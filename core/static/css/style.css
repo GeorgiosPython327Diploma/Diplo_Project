@@ -1195,10 +1195,10 @@ textarea {
     content: "";
     position: absolute;
     left: 0;
-    bottom: -8px;
+    bottom: -7px;
     width: 0;
-    height: 3px;
-    background-color: rgb(255, 255, 255);
+    height: 2px;
+    background-color: rgba(110, 134, 184, 0.82);
     transition: width 0.3s ease;
 }
 

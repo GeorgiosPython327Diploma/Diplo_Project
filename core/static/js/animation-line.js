@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
-        let animatedLi = document.getElementById("animated-border");
+    let animatedBorders = document.querySelectorAll(".animated-border");
 
+    animatedBorders.forEach(function (animatedLi) {
         animatedLi.addEventListener("mouseenter", function () {
             this.classList.add("border-hover");
         });
@@ -9,3 +10,4 @@ document.addEventListener("DOMContentLoaded", function () {
             this.classList.remove("border-hover");
         });
     });
+});

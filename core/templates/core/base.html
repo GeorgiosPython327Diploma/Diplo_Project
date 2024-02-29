@@ -32,7 +32,7 @@
                 </a>
             </li>
             {% if user.is_authenticated %}
-            <li>
+            <li class="animated-border">
                 {% if user.avatar %}
                  <img class="menu-avatar" src="{{ user.avatar.url }}" alt="{{ user.username }} Avatar">
                  {% else %}
@@ -41,7 +41,7 @@
                 <a style="font-family:Spectral SC,serif;" href="{% url 'user_profile' %}">{{ user.username }}</a> | <a href="{% url 'logout' %}">Выйти</a>
             </li>
             {% else %}
-            <li class="animated-border" id="animated-border">
+            <li class="animated-border">
                 <a  href="{% url 'login' %}">
                     <img class="welcom-img" src="{% static 'images/welcome.png' %}" alt="Войти">
                      Войти
