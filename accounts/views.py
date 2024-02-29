@@ -1,8 +1,9 @@
 from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
 from .forms import MyUserCreationForm, MyAuthenticationForm, UserProfileForm,  UserPasswordChangeForm, BioForm
+from .models import User
 
 def register_user(request):
     if request.method == 'POST':
@@ -78,3 +79,16 @@ def bio_view(request):
             return redirect('bio_view')
 
     return render(request, 'accounts/bio.html', {'user': user, 'avatar_url': user.avatar_url(), 'is_online': user.is_online(), 'bio_form': bio_form})
+
+def public_profile(request, username):
+    user = get_object_or_404(User, username=username)
+
+    if request.method == 'POST':
+        bio_form = BioForm(request.POST, request.FILES, instance=user)
+        if bio_form.is_valid():
+            bio_form.save()
+            return redirect('public_profile', username=username)
+    else:
+        bio_form = BioForm(instance=user)
+
+    return render(request, 'accounts/public_profile.html', {'user': user, 'avatar_url': user.avatar_url(), 'bio_form': bio_form})

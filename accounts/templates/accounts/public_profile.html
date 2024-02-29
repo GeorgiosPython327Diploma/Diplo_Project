@@ -9,7 +9,7 @@
     </div>
     <div id="bio-container" style="transform: translateX(-100%); transition: transform ease-in-out 0.8s;">
         {% if user.avatar %}
-            <img class="avatar-pofile" src="{{ user.avatar.url }}" alt="User Avatar">
+        <img class="avatar-pofile" src="{{ user.avatar.url }}" alt="User Avatar">
         {% else %}
             <img class="static-avatar" src="{% static 'images/standart_img.png' %}" alt="Default Avatar">
         {% endif %}

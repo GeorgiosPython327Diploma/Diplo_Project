@@ -67,7 +67,7 @@
                                 <img class="image-article" src="{{ article.photo.url }}" alt="{{ article.title }}">
                                  {% endif %}
                                 <p class="content-article"> {{ article.content|safe|truncatewords:20|linebreaks }}</p>
-                                <p class="author-article"> Автор: <span class="author-span">{{ article.author.username }}</span> </p>
+                                <p class="author-article"> Автор: <span class="author-span"><a class="target-public" href="{% url 'public_profile' username=article.author.username %}">{{ article.author.username }}</a></span> </p>
                                  <p class="content-likes-dislikes-bookmarkio-article">
                                         <span id="likes-count-{{ article.id }}" style="font-family: Arial, serif; font-size: 1.1em; font-weight:500; padding: 2px;">{{ article.likes.count }}</span>
                                         <span class="like-button" data-article-id="{{ article.id }}" data-is-liked="{{ article.is_liked }}" data-is-disliked="{{ article.is_disliked }}">
