@@ -1187,6 +1187,25 @@ textarea {
     color: white;
 }
 
+.animated-border {
+    position: relative;
+}
+
+.animated-border::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 0;
+    height: 3px;
+    background-color: rgb(255, 255, 255);
+    transition: width 0.3s ease;
+}
+
+.animated-border.border-hover::after {
+    width: 100%;
+}
+
 @media (min-width: 1600px) {
     .menu ul li:last-child {
         margin-right: 0;
