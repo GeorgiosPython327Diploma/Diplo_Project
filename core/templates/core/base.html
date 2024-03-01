@@ -110,6 +110,7 @@
             {% endfor %}
         </ul>
         </div>
+        <a class="about_project" href="{% url 'about_project' %}">О проекте</a>
         <div class="pagination">
             {% if articles.has_previous %}
                 <a href="?page={{ articles.previous_page_number }}">&laquo;</a>

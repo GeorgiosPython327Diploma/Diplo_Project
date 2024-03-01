@@ -260,3 +260,6 @@ def category_articles(request, category_id):
     categories = Category.objects.all()
 
     return render(request, 'articles/category_articles.html', {'articles': articles, 'category': category, 'categories': categories})
+
+def about_project(request):
+    return render(request, 'articles/about_project.html')

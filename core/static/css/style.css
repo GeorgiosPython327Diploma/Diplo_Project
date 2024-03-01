@@ -1236,6 +1236,16 @@ textarea {
     width: 82%;
 }
 
+.about_project {
+    position: relative;
+    right: 46%;
+    text-decoration: none;
+    font-size: 20px;
+    color: #7e7e7e;
+    font-weight: bold;
+}
+
+
 @media (min-width: 1600px) {
     .menu ul li:last-child {
         margin-right: 0;
