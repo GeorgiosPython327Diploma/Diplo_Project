@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    let animatedBorders = document.querySelectorAll(".animated-border");
+    let animatedBorders = document.querySelectorAll(".animated-border, .about_project");
 
     animatedBorders.forEach(function (animatedLi) {
         animatedLi.addEventListener("mouseenter", function () {
