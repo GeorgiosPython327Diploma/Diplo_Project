@@ -967,7 +967,7 @@ textarea {
 .edit-container-article {
     max-width: 800px;
     margin: 100px auto 0;
-    padding: 30px;
+    padding: 30px 100px;
     background-color: rgba(255, 255, 255, 0.47);
     border-radius: 11px;
     border: 3px solid white;
@@ -1224,18 +1224,16 @@ textarea {
 .animated-border::after {
     content: "";
     position: absolute;
-    left: auto;
-    right: 0;
-    bottom: -7px;
+    bottom: -3px;
+    left: 6px;
     width: 0;
-    height: 2px;
+    height: 1.4px;
     background-color: #6f94c6;
-    transform-origin: 0% 50%;
     transition: width 0.3s ease;
 }
 
 .animated-border.border-hover::after {
-    width: 86%;
+    width: 100%;
 }
 
 .about_project {

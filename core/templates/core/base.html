@@ -32,20 +32,20 @@
                 </a>
             </li>
             {% if user.is_authenticated %}
-            <li class="animated-border">
+            <li>
                 {% if user.avatar %}
                  <img class="menu-avatar" src="{{ user.avatar.url }}" alt="{{ user.username }} Avatar">
                  {% else %}
                  <img class="menu-avatar" src="{% static 'images/standart_img.png' %}" alt="Default Avatar">
                 {% endif %}
-                <a style="font-family:Spectral SC,serif;" href="{% url 'user_profile' %}">{{ user.username }}</a> | <a href="{% url 'logout' %}">Выйти</a>
+                <a class="animated-border" style="font-family:Spectral SC,serif;" href="{% url 'user_profile' %}">{{ user.username }}</a> | <a class="animated-border" href="{% url 'logout' %}">Выйти</a>
             </li>
             {% else %}
-            <li class="animated-border">
-                <a  href="{% url 'login' %}">
+            <li>
+                <a class="animated-border" href="{% url 'login' %}">
                     <img class="welcom-img" src="{% static 'images/welcome.png' %}" alt="Войти">
                      Войти
-                </a> |  <a href="{% url 'register' %}">Регистрация</a>
+                </a> |  <a class="animated-border" href="{% url 'register' %}">Регистрация</a>
             </li>
             {% endif %}
         </ul>
