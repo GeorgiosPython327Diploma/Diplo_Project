@@ -38,7 +38,7 @@
                  {% else %}
                  <img class="menu-avatar" src="{% static 'images/standart_img.png' %}" alt="Default Avatar">
                 {% endif %}
-                <a class="animated-border" style="font-family:Spectral SC,serif;" href="{% url 'user_profile' %}">{{ user.username }}</a> | <a class="animated-border" href="{% url 'logout' %}">Выйти</a>
+                <a  style="font-family:Spectral SC,serif;" href="{% url 'user_profile' %}">{{ user.username }}</a> | <a  href="{% url 'logout' %}">Выйти</a>
             </li>
             {% else %}
             <li>
