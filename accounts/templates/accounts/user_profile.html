@@ -10,7 +10,7 @@
 {% endblock %}
 
 <div class="user-info">
-        <h1><span class="span-welcome">Welcome</span>{{ user.username }}
+    <h1><span id="welcomeText" class="span-welcome"><span class="rotate-char">W</span>e<span class="rotate-char">l</span>c<span class="rotate-char">o</span>me</span>{{ user.username }}
             {% if user.avatar %}
             <img class="avatar" src="{{ user.avatar.url }}" alt="User Avatar">
             {% else %}
