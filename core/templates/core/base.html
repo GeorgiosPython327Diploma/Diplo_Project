@@ -42,10 +42,10 @@
             </li>
             {% else %}
             <li>
-                <a class="animated-border" href="{% url 'login' %}">
+                <a href="{% url 'login' %}">
                     <img class="welcom-img" src="{% static 'images/welcome.png' %}" alt="Войти">
                      Войти
-                </a> |  <a class="animated-border" href="{% url 'register' %}">Регистрация</a>
+                </a> |  <a href="{% url 'register' %}">Регистрация</a>
             </li>
             {% endif %}
         </ul>

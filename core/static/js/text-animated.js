@@ -19,7 +19,7 @@ gsap.from("#welcomeText", {
           transformOrigin: "50% 50%",
           ease: "power1.inOut",
           stagger: {
-            each: 0.1,
+            each: -0.1,
             from: "start"
           },
         });

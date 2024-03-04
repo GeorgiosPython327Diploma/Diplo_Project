@@ -111,7 +111,7 @@ ul button:hover {
 }
 
 .menu ul li a:hover{
-    color: rgba(101, 99, 141, 0.84);
+    color: rgba(3, 57, 94, 0.68);
 }
 
 .search-icon {
@@ -1269,7 +1269,6 @@ textarea {
 .about_project:hover::after {
     width: 100%;
 }
-
 
 @media (min-width: 1600px) {
     .menu ul li:last-child {
