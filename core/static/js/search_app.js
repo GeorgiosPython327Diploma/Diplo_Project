@@ -22,13 +22,13 @@ $(document).ready(function () {
       resultsContainer.find(".article-list").show();
     }
 
+    resultsContainer.empty();
+
     $.ajax({
       type: "GET",
       url: "/articles/search/",
       data: { query: query },
       success: function (data) {
-        resultsContainer.empty();
-
         if (data.results.length > 0) {
           resultsContainer.addClass("has-results");
 
@@ -45,42 +45,41 @@ $(document).ready(function () {
               </li>
             `);
 
-            articleItem.find('h3').css({
-              'padding-bottom': '40px',
+            gsap.set(articleItem, {
               'text-align': 'center',
+              'margin': '116px auto -70px',
+              'opacity': 0,
+              'transform': 'translateY(-100px)',
+            });
+
+            gsap.set(articleItem.find('h3'), {
               'color': 'rgba(88, 87, 87, 0.74)',
               'font-weight': '517',
               'font-family': 'Play, serif',
               'font-size': '1.6em',
             });
 
-            articleItem.css({
-              'margin': '116px auto -70px',
-            });
-
-            articleItem.find('a').css({
+            gsap.set(articleItem.find('a'), {
               'text-decoration': 'none',
               'color': 'inherit',
             });
 
-            articleItem.find('p').css({
+            gsap.set(articleItem.find('p'), {
               'font-family': 'Spectral SC, serif',
               'font-weight': '400',
               'font-size': '1em',
               'color': 'rgb(82, 82, 80)',
             });
 
+            gsap.to(articleItem, { opacity: 1, y: 0, duration: 1, ease: "power2.out" });
+
             articleItem.find('.open_review').on('click', function (event) {
               event.preventDefault();
               const pk = $(this).data('pk');
-              console.log(pk);
-
               window.location.href = `${pk}/review/`;
             });
 
-            resultsContainer.append(articleItem.hide().fadeIn({
-              duration: 1000,
-            }));
+            resultsContainer.append(articleItem);
           });
 
           resultsContainer.css({
