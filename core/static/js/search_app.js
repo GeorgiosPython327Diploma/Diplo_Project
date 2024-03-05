@@ -47,16 +47,15 @@ $(document).ready(function () {
 
             gsap.set(articleItem, {
               'text-align': 'center',
-              'margin': '116px auto -70px',
+              'margin': '116px auto -60px',
               'opacity': 0,
-              'width': '70%',
-              'height': '75%',
+              'width': '60%',
               'transform': 'translateY(-100px)',
             });
 
             gsap.set(articleItem.find('h3'), {
               'color': 'rgba(88, 87, 87, 0.74)',
-              'font-weight': '517',
+              'font-weight': '600',
               'font-family': 'Play, serif',
               'font-size': '1.6em',
             });
