@@ -49,6 +49,8 @@ $(document).ready(function () {
               'text-align': 'center',
               'margin': '116px auto -70px',
               'opacity': 0,
+              'width': '70%',
+              'height': '75%',
               'transform': 'translateY(-100px)',
             });
 

@@ -5,31 +5,40 @@
 {% block content %}
 
 {% block css %}
-
 <link rel="stylesheet" href="{% static 'css/style-user_profile.css' %}">
 {% endblock %}
 
 <div class="user-info">
-    <h1><span id="welcomeText" class="span-welcome"><span class="rotate-char">W</span>e<span class="rotate-char">l</span>c<span class="rotate-char">o</span>m<span class="rotate-char">e</span></span>{{ user.username }}
-            {% if user.avatar %}
+    <h1>
+    <span id="welcomeText" class="span-welcome">
+        <span class="rotate-char" id="letter1">W</span>
+        <span class="rotate-char" id="letter2">e</span>
+        <span class="rotate-char" id="letter3">l</span>
+        <span class="rotate-char" id="letter4">c</span>
+        <span class="rotate-char" id="letter5">o</span>
+        <span class="rotate-char" id="letter6">m</span>
+        <span class="rotate-char" id="letter7">e</span>
+    </span>
+        {{ user.username }}
+        {% if user.avatar %}
             <img class="avatar" src="{{ user.avatar.url }}" alt="User Avatar">
-            {% else %}
+        {% else %}
             <img class="static-avatar" src="{% static 'images/standart_img.png' %}" alt="Default Avatar">
-            {% endif %}
-        </h1>
+        {% endif %}
+    </h1>
 </div>
-    <img id="myGif" class="gif" src="{% static 'images/girl.gif' %}">
-    <div id="profileMenu" class="profile-menu">
-      <h4 class="menu-user"> Menu</h4>
-      <ul class="profile-service">
+<img id="myGif" class="gif" src="{% static 'images/girl.gif' %}">
+<div id="profileMenu" class="profile-menu">
+    <h4 class="menu-user"> Menu</h4>
+    <ul class="profile-service">
         <li><a href="{% url 'bio_view' %}">Профиль</a></li>
         <li><a href="{% url 'edit_profile' %}">Редактировать профиль</a></li>
         <li><a href="{% url 'change_password' %}">Изменить Пароль</a></li>
         <li><a href="{% url 'user_articles' user_id=user.id %}">Статьи</a></li>
         <li><a href="{% url 'user_bookmarks' %}">Ваши Закладки</a></li>
         <li><a href="{% url 'add_article' %}">Создать статью </a></li>
-      </ul>
-    </div>
+    </ul>
+</div>
  <script>
       let profileMenu = document.getElementById('profileMenu');
       let profileService = document.querySelector('.profile-service');

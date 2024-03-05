@@ -111,7 +111,7 @@ ul button:hover {
 }
 
 .menu ul li a:hover{
-    color: rgba(3, 57, 94, 0.68);
+    color: rgba(3, 57, 94, 0.47);
 }
 
 .search-icon {
@@ -387,6 +387,7 @@ h1 {
 
 .span-welcome .rotate-char {
     display: inline-block;
+    letter-spacing: -0.1em;
 }
 
 h1,.span-welcome {
