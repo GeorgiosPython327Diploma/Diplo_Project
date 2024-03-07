@@ -21,4 +21,10 @@
         <p>Род деятельности: {{ user.occupation }}</p>
         <p>Email: {{ user.email }}</p>
     </div>
+    <div class="static-bio">
+        <h2>Статистика пользователя: {{ user.username }}</h2>
+        <p>Общее количество просмотров ваших статей: {{ total_views }}</p>
+        <p>Общее количество лайков на ваших статьях: <span id="total-likes"></span></p>
+        <p>Общее количество дизлайков на ваших статьях: <span id="total-dislikes"></span></p>
+    </div>
 {% endblock %}

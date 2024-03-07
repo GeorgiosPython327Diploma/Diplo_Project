@@ -27,6 +27,7 @@ class Article(models.Model):
     likes = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='liked_articles')
     dislikes = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='disliked_articles')
     category = models.ForeignKey('Category', on_delete=models.PROTECT, verbose_name="Категория")
+    views = models.PositiveIntegerField(default=0, verbose_name='Просмотры')
 
     def __str__(self):
         return f"{self.title}"
@@ -42,6 +43,11 @@ class Article(models.Model):
 
         if not self.dislikes.filter(id=user.id).exists():
             self.dislikes.add(user)
+
+    def increment_views(self):
+        print("Incrementing views for article:", self.title)
+        self.views += 1
+        self.save()
 
 
 class Review(models.Model):

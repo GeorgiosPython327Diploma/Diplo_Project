@@ -8,6 +8,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import DeleteView
 from django.urls import reverse_lazy, reverse
+from django.utils.html import mark_safe
 
 BASE_TEMPLATE = 'core/base.html'
 
@@ -48,9 +49,6 @@ def article_detail(request, pk):
         user_has_bookmark = article.bookmark_set.filter(user=request.user).exists()
 
     return render(request, BASE_TEMPLATE, {'article': article, 'user_has_bookmark': user_has_bookmark})
-
-
-from django.utils.html import mark_safe
 
 
 @login_required
@@ -101,6 +99,7 @@ def like_article(request, article_id):
         if not article.likes.filter(id=user.id).exists():
             article.likes.add(user)
             article.dislikes.remove(user)
+            article.save()
 
             return JsonResponse({'likes': article.likes.count(), 'dislikes': article.dislikes.count(), 'is_liked': True, 'is_disliked': False})
 
@@ -116,6 +115,7 @@ def dislike_article(request, article_id):
         if not article.dislikes.filter(id=user.id).exists():
             article.dislikes.add(user)
             article.likes.remove(user)
+            article.save()
 
             return JsonResponse({'likes': article.likes.count(), 'dislikes': article.dislikes.count(), 'is_liked': False, 'is_disliked': True})
 
@@ -123,12 +123,19 @@ def dislike_article(request, article_id):
 
 
 @login_required
-def get_like_dislike_count(request, article_id):
-    article = get_object_or_404(Article, pk=article_id)
-    likes = article.likes.count()
-    dislikes = article.dislikes.count()
+def get_like_dislike_count(request, article_id=None):
+    user = request.user
+    articles = Article.objects.filter(author=user)
 
-    return JsonResponse({'likes': likes, 'dislikes': dislikes})
+    if article_id:
+        article = get_object_or_404(Article, pk=article_id)
+        likes = article.likes.count()
+        dislikes = article.dislikes.count()
+    else:
+        likes = sum(article.likes.count() for article in articles)
+        dislikes = sum(article.dislikes.count() for article in articles)
+
+    return JsonResponse({'likes': likes, 'dislikes': dislikes, 'total_likes': likes, 'total_dislikes': dislikes})
 
 
 @login_required()
