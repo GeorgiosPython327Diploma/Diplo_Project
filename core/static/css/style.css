@@ -1271,6 +1271,28 @@ textarea {
     width: 100%;
 }
 
+.static-bio{
+    position: absolute;
+    top: 36%;
+    right: 1%;
+    padding: 40px 100px 80px;
+    background-color: #fafafac8;
+    border-radius: 11px;
+    margin: 0;
+    border: 4px solid white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.static-bio h2{
+    margin-bottom: 30px;
+}
+
+.static-bio p{
+    text-align: left;
+}
+
 @media (min-width: 1600px) {
     .menu ul li:last-child {
         margin-right: 0;
