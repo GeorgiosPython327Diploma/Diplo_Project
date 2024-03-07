@@ -4,6 +4,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
 from .forms import MyUserCreationForm, MyAuthenticationForm, UserProfileForm,  UserPasswordChangeForm, BioForm
 from .models import User
+from django.db.models import Sum
+from articles.models import Article
 
 def register_user(request):
     if request.method == 'POST':
@@ -16,6 +18,7 @@ def register_user(request):
         form = MyUserCreationForm()
 
     return render(request, 'registration/register.html', {'form': form})
+
 
 def login_user(request):
     if request.method == 'POST':
@@ -30,10 +33,12 @@ def login_user(request):
 
     return render(request, 'registration/login.html', {'form': form})
 
+
 def user_logout(request):
     logout(request)
 
     return redirect(reverse('base_with_articles'))
+
 
 @login_required
 def user_profile(request):
@@ -53,6 +58,7 @@ def edit_profile(request):
 
     return render(request, 'accounts/edit_profile.html', {'form': form})
 
+
 @login_required
 def change_password(request):
     if request.method == 'POST':
@@ -66,10 +72,12 @@ def change_password(request):
 
     return render(request, 'accounts/change_password.html', {'form': form})
 
+
 @login_required
 def bio_view(request):
     user = request.user
     bio_form = BioForm(instance=user)
+    articles = Article.objects.filter(author=user)
 
     if request.method == 'POST':
         bio_form = BioForm(request.POST, request.FILES, instance=user)
@@ -78,7 +86,18 @@ def bio_view(request):
             user.update_last_login()
             return redirect('bio_view')
 
-    return render(request, 'accounts/bio.html', {'user': user, 'avatar_url': user.avatar_url(), 'is_online': user.is_online(), 'bio_form': bio_form})
+    total_views = articles.aggregate(Sum('views'))['views__sum'] or 0
+
+    context = {
+        'user': user,
+        'avatar_url': user.avatar_url(),
+        'is_online': user.is_online(),
+        'bio_form': bio_form,
+        'total_views': total_views,
+    }
+
+    return render(request, 'accounts/bio.html', context)
+
 
 def public_profile(request, username):
     user = get_object_or_404(User, username=username)
