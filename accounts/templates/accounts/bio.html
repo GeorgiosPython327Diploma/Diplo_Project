@@ -4,7 +4,7 @@
 
 {% block content %}
     <h1>{{ user.username }}</h1>
-    <div id="bio-text-container" style="transform: translateY(100%); transition: transform ease-in-out 0.8s;">
+    <div id="bio-text-container" style="transform: translateY(-100%); transition: transform ease-in-out 0.8s;">
         <p>{{ user.bio }}</p>
     </div>
     <div id="bio-container" style="transform: translateX(-100%); transition: transform ease-in-out 0.8s;">
@@ -24,7 +24,7 @@
     <div class="static-bio" style="transform: translateX(100%); transition: transform ease-in-out 0.8s;">
         <h2>Статистика:</h2>
 <!--        <p>Общее количество просмотров ваших статей: {{ total_views }}</p>-->
-        <p>Всего Лайков: <span id="total-likes"></span></p>
-        <p>Всего Дизлайков: <span id="total-dislikes"></span></p>
+        <p><span class="likes-bio">Лайков</span>: <span id="total-likes"></span></p>
+        <p><span class="dislikes-bio">Дизлайков</span>:<span id="total-dislikes"></span></p>
     </div>
 {% endblock %}

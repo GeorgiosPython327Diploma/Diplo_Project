@@ -1274,7 +1274,7 @@ textarea {
 .static-bio{
     position: absolute;
     top: 36%;
-    right: 1%;
+    right: 3%;
     padding: 40px 100px 80px;
     background-color: #fafafac8;
     border-radius: 11px;
@@ -1290,7 +1290,21 @@ textarea {
 }
 
 .static-bio p{
-    text-align: left;
+    font-family: Roboto Condensed, serif;
+    font-size: 1.2em;
+    color: rgba(67, 67, 63, 0.86);
+    font-weight: 400;
+    border-bottom: 1px solid gray;
+    height: 30px;
+
+}
+
+.likes-bio{
+    color: #0f3c85ba;
+}
+
+.dislikes-bio{
+    color: rgba(255, 0, 0, 0.723);
 }
 
 @media (min-width: 1600px) {
