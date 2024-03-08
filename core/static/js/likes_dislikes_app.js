@@ -71,23 +71,5 @@ $(document).ready(function () {
             $('.dislike-button[data-article-id=' + articleId + ']').data('is-liked', likeDislikeState.isLiked);
             $('.dislike-button[data-article-id=' + articleId + ']').data('is-disliked', likeDislikeState.isDisliked);
         }
-
-        $.ajax({
-            type: 'GET',
-            url: '/get_like_dislike_count/' + articleId + '/',
-            success: function (data) {
-                $('.like-button[data-article-id=' + articleId + ']').removeClass('active');
-                $('.dislike-button[data-article-id=' + articleId + ']').removeClass('active');
-
-                if (data.is_liked) {
-                    $('.like-button[data-article-id=' + articleId + ']').addClass('active');
-                } else if (data.is_disliked) {
-                    $('.dislike-button[data-article-id=' + articleId + ']').addClass('active');
-                }
-            },
-            error: function () {
-                console.log('Ошибка при получении счетчика лайков и дизлайков.');
-            }
-        });
     });
 });

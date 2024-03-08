@@ -44,10 +44,10 @@ class Article(models.Model):
         if not self.dislikes.filter(id=user.id).exists():
             self.dislikes.add(user)
 
-    def increment_views(self):
-        print("Incrementing views for article:", self.title)
-        self.views += 1
-        self.save()
+    def increment_views(self, user=None):
+        if user and user.is_authenticated:
+            self.views += 1
+            self.save()
 
 
 class Review(models.Model):
