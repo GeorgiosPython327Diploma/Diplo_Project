@@ -2,7 +2,10 @@
 
 {% block content %}
 
-<h1> {{ category.name }}</h1>
+<h1 class="icon-h1-category">
+    <img src="{{ category.icon.url }}" alt="{{ category.name }} Icon">
+    {{ category.name }}
+</h1>
 <div style="margin: 0 auto" class="article-list">
     {% if articles %}
      <ul>

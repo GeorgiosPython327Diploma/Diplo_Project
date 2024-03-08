@@ -1309,6 +1309,19 @@ textarea {
     font-weight: 300;
 }
 
+.icon-h1-category{
+    display: inline-block;
+}
+
+.icon-h1-category img{
+    width: 70px;
+    height: 70px;
+    vertical-align: -20px;
+    transform: translateX(-17px);
+    border-radius: 7px;
+    opacity: 0.7;
+}
+
 @media (min-width: 1600px) {
     .menu ul li:last-child {
         margin-right: 0;
