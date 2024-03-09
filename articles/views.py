@@ -194,7 +194,12 @@ def search_articles(request):
 
 def review_article(request, pk):
     article = get_object_or_404(Article, pk=pk)
-    article.increment_views(user=request.user)
+
+    if request.user == article.author:
+        pass
+    else:
+        article.increment_views(request.user)
+
     user_has_bookmark = False
 
     if request.user.is_authenticated:
