@@ -758,7 +758,7 @@ h4{
     background-color: rgb(255, 255, 255);
     border-radius: 20px;
     margin: 111px auto 0;
-    border: 4px solid white;
+    border: 7px solid rgba(167, 165, 165, 0.363);
     word-break: break-word;
 }
 
