@@ -305,7 +305,7 @@ h2{
     display: grid;
     grid-template-columns: 1fr;
     position: relative;
-    top: 25vh;
+    top: 30vh;
     left: 41%;
     opacity: 0;
     visibility: hidden;
@@ -449,7 +449,7 @@ h1,.span-welcome {
 
 .target-public{
     text-decoration: none;
-    color: #10ad96;
+    color: #1c59a8a3;
     font-weight: bold;
 }
 
@@ -674,6 +674,7 @@ h1 {
     padding: 7px 17px 14px;
     border: 1px solid gray;
     border-radius: 11px;
+    margin-left: 11px;
 }
 
 .comment-special{
@@ -747,7 +748,7 @@ h4{
 .article-list .author-span{
     font-family: Spectral SC,serif;
     font-weight: 600;
-    color: rgba(28, 108, 161, 0.68);
+    color: #1c59a8a3;
     margin-left: 7px;
 }
 
