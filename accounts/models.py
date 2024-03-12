@@ -20,7 +20,7 @@ class User(AbstractUser):
     ]
     gender = models.CharField(max_length=1, choices=gender_choices, blank=True, verbose_name='Пол')
     age = models.IntegerField(blank=True, null=True, verbose_name='Возраст')
-    last_login = models.DateTimeField(default=timezone.now)  # Добавляем поле last_login с дефолтным значением
+    last_login = models.DateTimeField(default=timezone.now)
     groups = None
     user_permissions = None
 
@@ -39,3 +39,13 @@ class User(AbstractUser):
 
     def __str__(self):
         return self.username
+
+class Message(models.Model):
+    sender = models.ForeignKey(User, related_name='sent_messages', on_delete=models.CASCADE)
+    recipient = models.ForeignKey(User, related_name='received_messages', on_delete=models.CASCADE)
+    content = models.TextField()
+    timestamp = models.DateTimeField(auto_now_add=True)
+    is_read = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f" {self.sender}  {self.recipient}  {self.timestamp}"

@@ -2,8 +2,8 @@ from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
-from .forms import MyUserCreationForm, MyAuthenticationForm, UserProfileForm,  UserPasswordChangeForm, BioForm
-from .models import User
+from .forms import MyUserCreationForm, MyAuthenticationForm, UserProfileForm,  UserPasswordChangeForm, BioForm, ComposeForm
+from .models import User, Message
 from django.db.models import Sum
 from articles.models import Article
 
@@ -111,3 +111,21 @@ def public_profile(request, username):
         bio_form = BioForm(instance=user)
 
     return render(request, 'accounts/public_profile.html', {'user': user, 'avatar_url': user.avatar_url(), 'bio_form': bio_form})
+
+@login_required
+def inbox(request):
+       messages = Message.objects.filter(recipient=request.user).order_by('-timestamp')
+       return render(request, 'messages/inbox.html', {'messages': messages})
+
+@login_required
+def compose(request):
+    if request.method == 'POST':
+        form = ComposeForm(request.POST)
+        if form.is_valid():
+            recipient = form.cleaned_data['recipient']
+            content = form.cleaned_data['content']
+            Message.objects.create(sender=request.user, recipient=recipient, content=content)
+            return redirect('inbox')
+    else:
+        form = ComposeForm()
+    return render(request, 'messages/compose.html', {'form': form})

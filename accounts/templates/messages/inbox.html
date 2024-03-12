@@ -1,0 +1,20 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+  <h1>Сообщения</h1>
+  <div class="inbox-message">
+  {% if messages %}
+    <ul>
+      {% for message in messages %}
+        <li>
+          <strong>Пользователь:</strong> {{ message.sender.username }}<br>
+          <strong>Сообщение:</strong> {{ message.content }}<br>
+          <strong>Дата:</strong> {{ message.timestamp }}
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>Сообщений нет</p>
+  {% endif %}
+</div>
+{% endblock %}

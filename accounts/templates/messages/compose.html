@@ -1,0 +1,13 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+   <h1>Отправить сообщение</h1>
+<div class="compose-message">
+   <form method="post" action="{% url 'compose' %}">
+       {% csrf_token %}
+       {{ form.as_p }}
+       <button type="submit">Отправить</button>
+   </form>
+</div>
+{% endblock %}
+

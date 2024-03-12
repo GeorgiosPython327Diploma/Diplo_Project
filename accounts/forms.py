@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, PasswordChangeForm
-from .models import User
+from .models import User, Message
 from django.utils import timezone
 
 class MyUserCreationForm(UserCreationForm):
@@ -43,3 +43,14 @@ class BioForm(forms.ModelForm):
         user = super(BioForm, self).save(commit)
         user.update_last_login()
         return user
+
+
+class MessageForm(forms.ModelForm):
+    class Meta:
+        model = Message
+        fields = ['recipient', 'content']
+
+
+class ComposeForm(forms.Form):
+    recipient = forms.ModelChoiceField(queryset=User.objects.all(), label='Отправить')
+    content = forms.CharField(widget=forms.Textarea, label='Сообщение')
