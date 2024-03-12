@@ -1375,6 +1375,35 @@ textarea {
     color: white;
 }
 
+.inbox-message{
+    padding: 20px 90px;
+    background-color: rgba(255, 255, 255, 0.761);
+    border-radius: 11px;
+    margin: 20px;
+    box-sizing: border-box;
+    border: 4px solid white;
+}
+
+.inbox-message ul{
+    display: flex;
+    flex-direction: column;
+    margin-left: -100px;
+}
+
+.inbox-message li{
+    margin-bottom: 30px;
+    padding: 11px;
+    background-color:white;
+    border: 1px solid gray;
+    border-radius: 11px;
+    width: 300px;
+}
+
+.inbox-message strong{
+    margin-bottom: 11px;
+    display:inline-block;
+}
+
 @media (min-width: 1600px) {
     .menu ul li:last-child {
         margin-right: 0;
