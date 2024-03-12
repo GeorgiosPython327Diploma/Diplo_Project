@@ -1356,6 +1356,7 @@ textarea {
     border: 4px solid white;
     margin: 30px;
     border-radius: 11px;
+    box-shadow: 0 2px 12px 2px rgba(112, 110, 110, 0.307);
 }
 
 .compose-message button{
@@ -1382,6 +1383,7 @@ textarea {
     margin: 20px;
     box-sizing: border-box;
     border: 4px solid white;
+    box-shadow: 0 2px 12px 2px rgba(112, 110, 110, 0.306);
 }
 
 .inbox-message ul{
@@ -1401,7 +1403,8 @@ textarea {
 
 .inbox-message strong{
     margin-bottom: 11px;
-    display:inline-block;
+    display: inline-block;
+    word-break: break-word;
 }
 
 @media (min-width: 1600px) {
