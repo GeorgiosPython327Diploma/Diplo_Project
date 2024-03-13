@@ -3,6 +3,11 @@
 {% load static %}
 
 {% block content %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/bio_style.css' %}">
+{% endblock %}
+
     <h1>{{ user.username }}</h1>
     <div id="bio-text-container" style="transform: translateY(-100%); transition: transform ease-in-out 0.8s;">
         <p>{{ user.bio }}</p>
