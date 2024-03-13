@@ -52,5 +52,11 @@ class MessageForm(forms.ModelForm):
 
 
 class ComposeForm(forms.Form):
-    recipient = forms.ModelChoiceField(queryset=User.objects.all(), label='Отправить')
+    def __init__(self, *args, **kwargs):
+        user = kwargs.pop('user', None)
+        super(ComposeForm, self).__init__(*args, **kwargs)
+        if user:
+            self.fields['recipient'].queryset = User.objects.exclude(pk=user.pk)
+
+    recipient = forms.ModelChoiceField(queryset=User.objects.none(), label='Отправить')
     content = forms.CharField(widget=forms.Textarea, label='Сообщение')

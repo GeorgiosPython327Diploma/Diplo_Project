@@ -31,7 +31,7 @@ class User(AbstractUser):
             return settings.STATIC_URL + 'static/images/standart_img.png'
 
     def is_online(self):
-        return (timezone.now() - self.last_login).seconds < 600
+        return (timezone.now() - self.last_login).seconds < 3600
 
     def update_last_login(self):
         self.last_login = timezone.now()

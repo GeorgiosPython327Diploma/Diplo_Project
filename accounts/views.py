@@ -117,15 +117,16 @@ def inbox(request):
        messages = Message.objects.filter(recipient=request.user).order_by('-timestamp')
        return render(request, 'messages/inbox.html', {'messages': messages})
 
+
 @login_required
 def compose(request):
     if request.method == 'POST':
-        form = ComposeForm(request.POST)
+        form = ComposeForm(request.POST, user=request.user)
         if form.is_valid():
             recipient = form.cleaned_data['recipient']
             content = form.cleaned_data['content']
             Message.objects.create(sender=request.user, recipient=recipient, content=content)
             return redirect('inbox')
     else:
-        form = ComposeForm()
+        form = ComposeForm(user=request.user)
     return render(request, 'messages/compose.html', {'form': form})
