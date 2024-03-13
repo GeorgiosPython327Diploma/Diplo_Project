@@ -1332,12 +1332,13 @@ textarea {
 .message-position{
     position: absolute;
     top: 25%;
-    right: 0;
+    right: -15%;
     padding: 11px 50px;
     background-color: #fafafac8;
     border: 4px solid white;
     border-radius: 7px;
     box-shadow: 0 2px 12px 2px rgba(112, 110, 110, 0.306);
+    cursor: pointer;
 }
 
 .message-position a{
