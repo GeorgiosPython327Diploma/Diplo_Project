@@ -295,7 +295,6 @@ h2{
 
 .shape {
     background-color: rgba(113, 150, 194, 0.8);
-    cursor: pointer;
     margin-top: 20px;
     transition: background-color 2.2s ease;
     animation: colorChange 3s infinite alternate ease-in-out;

@@ -32,6 +32,7 @@
                 </a>
             </li>
             {% if user.is_authenticated %}
+            {% if not is_public_profile %}
             <li>
                 {% if user.avatar %}
                  <img class="menu-avatar" src="{{ user.avatar.url }}" alt="{{ user.username }} Avatar">
@@ -40,6 +41,7 @@
                 {% endif %}
                 <a  style="font-family:Spectral SC,serif;" href="{% url 'user_profile' %}">{{ user.username }}</a> | <a  href="{% url 'logout' %}">Выйти</a>
             </li>
+            {% endif %}
             {% else %}
             <li>
                 <a href="{% url 'login' %}">

@@ -101,6 +101,7 @@ def bio_view(request):
 
 def public_profile(request, username):
     user = get_object_or_404(User, username=username)
+    is_public_profile = True
 
     if request.method == 'POST':
         bio_form = BioForm(request.POST, request.FILES, instance=user)
@@ -110,13 +111,12 @@ def public_profile(request, username):
     else:
         bio_form = BioForm(instance=user)
 
-    return render(request, 'accounts/public_profile.html', {'user': user, 'avatar_url': user.avatar_url(), 'bio_form': bio_form})
+    return render(request, 'accounts/public_profile.html', {'user': user, 'avatar_url': user.avatar_url(), 'bio_form': bio_form, 'is_public_profile': is_public_profile})
 
 @login_required
 def inbox(request):
        messages = Message.objects.filter(recipient=request.user).order_by('-timestamp')
        return render(request, 'messages/inbox.html', {'messages': messages})
-
 
 @login_required
 def compose(request):
