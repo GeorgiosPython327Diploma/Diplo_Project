@@ -5,8 +5,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const saveButton = document.querySelector('.but-edit-profile');
 
     gsap.set(formContainer, { transform: 'translateY(100%)' });
-    gsap.set(bioAvatar, { transform: 'translateY(-40%)' });
-    gsap.set(additionalInfo, { transform: 'translateY(-25%)' });
+    gsap.set(bioAvatar, { transform: 'translateY(-11%)' });
+    gsap.set(additionalInfo, { transform: 'translateY(-18%)' });
     gsap.set(saveButton, { opacity: 0 });
 
     gsap.to(formContainer, { transform: 'translateY(0)', duration: 1, ease: 'power1.inOut' });

@@ -1432,8 +1432,8 @@ textarea {
     margin: 0 auto 30px;
     font-size: 1.2em;
     font-family: Roboto Condensed, serif;
-    font-weight: 400;
-    color: rgba(64, 64, 64, 0.912);
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.995);
     letter-spacing: 0.3px;
 }
 
