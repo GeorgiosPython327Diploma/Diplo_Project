@@ -66,14 +66,14 @@
     }
 
     .register-menu{
-        margin-left: 5%;
-        margin-top: 6%;
+        margin-top: 200px;
         font-size: 1.6em;
-        border-radius: 30px;
+        
     }
 
-    .register-menu form{
-        max-width: 550px;
+    .login-menu  {
+        margin: 300px auto 0;
+        font-size: 1.4em;
     }
 
     .article-list {
