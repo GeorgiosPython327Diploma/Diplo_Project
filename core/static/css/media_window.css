@@ -3,7 +3,7 @@
         margin-right: 0;
         position: relative;
 
-        left: 12%;
+        left: 11%;
         top: 25px;
         font-size: 1.1em;
     }
@@ -12,7 +12,7 @@
         margin-right: 0;
         position: relative;
         left: 1%;
-        top: 23px;
+        top: 20px;
     }
 
     .menu ul li:nth-child(2) {
@@ -41,7 +41,7 @@
     }
 
     .logo-menu img{
-        width: 260px;
+        width: 300px;
         transition: transform 0.3s;
     }
 
@@ -50,8 +50,19 @@
     }
 
     .search-input::placeholder {
-        font-size: 0.9em;
+        font-size: 1em;
         text-indent: 30px;
+    }
+
+    .search-icon{
+        position: relative;
+        left:10%;
+        top: 1px;
+        padding:7px;
+    }
+
+    .shape {
+        margin-bottom: -14px;
     }
 
     .register-menu{

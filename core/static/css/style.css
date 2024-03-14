@@ -1402,6 +1402,8 @@ textarea {
     border: 1px solid gray;
     border-radius: 11px;
     width: 300px;
+    font-family: Spectral SC, serif;
+    color: rgba(42, 42, 42, 0.796);
 }
 
 .inbox-message strong{
