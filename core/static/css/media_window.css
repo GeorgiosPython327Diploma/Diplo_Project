@@ -82,7 +82,7 @@
     }
 
     .article-item{
-        margin: 50px 0;
+        margin: 60px 0;
         width: 800px;
         height: 600px;
     }
@@ -93,6 +93,14 @@
 
     .pagination{
         margin-right: 40px;
+    }
+
+    .article-list p{
+        font-size: 1.3em;
+    }
+
+    .article-list .date-created-article{
+        font-size: 1.4em;
     }
 
     .pagination span.page.current, .pagination a.page  {
