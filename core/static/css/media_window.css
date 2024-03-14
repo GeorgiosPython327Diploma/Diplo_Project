@@ -1,0 +1,67 @@
+@media (min-width: 1600px) {
+    .menu ul li:last-child {
+        margin-right: 0;
+        position: relative;
+
+        left: 12%;
+        top: 25px;
+        font-size: 1.1em;
+    }
+
+    .menu ul li:first-child {
+        margin-right: 0;
+        position: relative;
+        left: 1%;
+        top: 23px;
+    }
+
+    .menu ul li:nth-child(2) {
+        margin-right: 0;
+        position: relative;
+        left: 4%;
+        top: 23px;
+    }
+
+    ul input{
+        padding: 16px;
+        width: 370px;
+        margin-top: -16px;
+        text-indent: 16px;
+    }
+
+    ul button {
+        padding: 8px;
+        font-size: 1.2em;
+        color: rgba(82, 81, 81, 0.67);
+        border-radius: 13px;
+    }
+
+    .menu .wrap{
+        font-size: 1.5rem;
+    }
+
+    .logo-menu img{
+        width: 260px;
+        transition: transform 0.3s;
+    }
+
+    .welcom-img {
+        width: 30px;
+    }
+
+    .search-input::placeholder {
+        font-size: 0.9em;
+        text-indent: 30px;
+    }
+
+    .register-menu{
+        margin-left: 5%;
+        margin-top: 6%;
+        font-size: 1.6em;
+        border-radius: 30px;
+    }
+
+    .register-menu form{
+        max-width: 550px;
+    }
+}
