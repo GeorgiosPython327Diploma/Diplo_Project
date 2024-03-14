@@ -18,7 +18,7 @@
     .menu ul li:nth-child(2) {
         margin-right: 0;
         position: relative;
-        left: 4%;
+        left: 6%;
         top: 23px;
     }
 
@@ -74,5 +74,42 @@
 
     .register-menu form{
         max-width: 550px;
+    }
+
+    .article-list {
+        width: 43%;
+        margin: 125px auto 11px;
+    }
+
+    .article-item{
+        margin: 50px 0;
+        width: 800px;
+        height: 600px;
+    }
+
+    .pagination{
+        margin-right: 30px;
+    }
+
+    .pagination span.page.current, .pagination a.page  {
+        font-size: 1.7em;
+    }
+
+    .categories-article {
+        top: 20%;
+        left: -3%;
+        font-size: 1.4em;
+    }
+
+    .categories-article li{
+        padding: 14px;
+    }
+
+    .categories-article a{
+        vertical-align: 7px;
+    }
+
+    .about_project {
+        font-size: 1.7em;
     }
 }
