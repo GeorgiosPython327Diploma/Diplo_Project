@@ -87,8 +87,12 @@
         height: 600px;
     }
 
+    .article-item h3{
+        font-size: 2em;
+    }
+
     .pagination{
-        margin-right: 30px;
+        margin-right: 40px;
     }
 
     .pagination span.page.current, .pagination a.page  {
