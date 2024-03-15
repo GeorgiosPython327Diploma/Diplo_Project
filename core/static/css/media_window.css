@@ -194,7 +194,6 @@
         height: fit-content;
         margin: 200px auto 0;
         font-size: 1.3em;
-
     }
 
     .articles-user{
@@ -213,5 +212,30 @@
         margin: 180px auto 0;
         padding: 40px 60px;
         font-size: 1.3em;
+    }
+
+    .review-container{
+        width: 1130px;
+        margin: 170px auto 0;
+        font-size: 1.3em;
+    }
+
+    .content-commentary{
+        margin: 80px auto 0;
+        padding: 40px 40px 0;
+    }
+
+    .content-commentary h3{
+        font-size: 1.6em;
+    }
+
+    .comment-p{
+        font-size: 1.4em;
+        padding: 7px 17px 14px;
+    }
+
+    .review-bt{
+        padding: 14px;
+        font-size: 1.1em;
     }
 }
