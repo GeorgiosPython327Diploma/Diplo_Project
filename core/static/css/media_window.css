@@ -155,4 +155,27 @@
         width: 350px;
         height: 470px;
     }
+
+    .message-position{
+        top: 25%;
+        right: -311px;
+        font-size: 1.4em;
+    }
+
+    .static-bio{
+        top: 44%;
+        right: 3%;
+        font-size: 1.4em;
+        height: 400px;
+    }
+
+    #bio-container {
+        top: 20%;
+        left: 11%;
+        font-size: 1.6em;
+    }
+
+    #bio-text-container {
+       font-size: 1.3em;
+    }
 }
