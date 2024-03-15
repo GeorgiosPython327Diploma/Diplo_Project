@@ -207,4 +207,11 @@
         padding: 40px;
         font-size: 1.3em;
     }
+
+    .add-article-container {
+        max-width: 1000x;
+        margin: 180px auto 0;
+        padding: 40px 60px;
+        font-size: 1.3em;
+    }
 }
