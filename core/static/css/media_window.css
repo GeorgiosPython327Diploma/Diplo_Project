@@ -68,12 +68,12 @@
     .register-menu{
         margin-top: 200px;
         font-size: 1.6em;
-        
     }
 
     .login-menu  {
         margin: 300px auto 0;
-        font-size: 1.4em;
+        font-size: 1.6em;
+        width: 400px;
     }
 
     .article-list {
@@ -104,7 +104,7 @@
     }
 
     .pagination span.page.current, .pagination a.page  {
-        font-size: 1.7em;
+        font-size: 1.8em;
     }
 
     .categories-article {
@@ -123,5 +123,16 @@
 
     .about_project {
         font-size: 1.7em;
+    }
+
+    .icon-h1-category{
+        font-size: 2em;
+        margin-top: 150px;
+    }
+
+    .icon-h1-category img{
+        width: 90px;
+        height: 90px;
+        vertical-align: -25px;
     }
 }
