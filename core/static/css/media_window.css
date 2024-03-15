@@ -77,7 +77,7 @@
     }
 
     .article-list {
-        width: 43%;
+        width: 41%;
         margin: 125px auto 11px;
     }
 
@@ -104,7 +104,7 @@
     }
 
     .pagination span.page.current, .pagination a.page  {
-        font-size: 1.8em;
+        font-size: 2.1em;
     }
 
     .categories-article {
@@ -134,5 +134,25 @@
         width: 90px;
         height: 90px;
         vertical-align: -25px;
+    }
+
+    h1{
+        margin-top: 200px;
+        font-size: 2.6em;
+    }
+
+    .profile-menu {
+        width: 370px;
+        top: -350px;
+        left: -43%;
+        font-size: 1.4em;
+        white-space: nowrap;
+    }
+
+    .gif{
+        top: 40vh;
+        left: 41%;
+        width: 350px;
+        height: 470px;
     }
 }
