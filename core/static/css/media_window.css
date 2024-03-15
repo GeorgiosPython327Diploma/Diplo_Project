@@ -188,4 +188,23 @@
         font-size: 1.4em;
         margin-top: 30px;
     }
+
+    .change-password-menu{
+        width: 680px;
+        height: fit-content;
+        margin: 200px auto 0;
+        font-size: 1.3em;
+
+    }
+
+    .articles-user{
+        font-size: 1.3em;
+        padding: 80px 100px;
+    }
+
+    .bookmarks-users{
+        width: 1000px;
+        padding: 40px;
+        font-size: 1.3em;
+    }
 }
