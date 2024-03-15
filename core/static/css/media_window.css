@@ -178,4 +178,14 @@
     #bio-text-container {
        font-size: 1.3em;
     }
+
+    .form-container {
+        font-size: 1.6em;
+        margin-top: 30px;
+    }
+
+    .but-edit-profile {
+        font-size: 1.4em;
+        margin-top: 30px;
+    }
 }
