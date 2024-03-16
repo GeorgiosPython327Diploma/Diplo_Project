@@ -199,6 +199,7 @@
     .articles-user{
         font-size: 1.3em;
         padding: 80px 100px;
+        max-width: 1111px;
     }
 
     .bookmarks-users{
@@ -237,5 +238,14 @@
     .review-bt{
         padding: 14px;
         font-size: 1.1em;
+    }
+
+    .edit-container-article{
+        margin: 160px auto 0;
+        padding: 30px 100px;
+    }
+
+    .edit-container-article form button{
+        font-size: 1.3em;
     }
 }
