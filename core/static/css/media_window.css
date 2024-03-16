@@ -248,4 +248,15 @@
     .edit-container-article form button{
         font-size: 1.3em;
     }
+
+    .inbox-message{
+        padding: 20px 90px;
+        font-size: 1.4em;
+        white-space: nowrap;
+    }
+
+    .compose-message{
+        padding: 20px;
+        font-size: 1.3em;
+    }
 }
