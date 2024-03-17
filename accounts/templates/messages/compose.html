@@ -1,7 +1,7 @@
 {% extends 'core/base.html' %}
 
 {% block content %}
-   <h1>Отправить сообщение</h1>
+   <h1>Сообщение</h1>
 <div class="compose-message">
    <form method="post" action="{% url 'compose' %}">
        {% csrf_token %}
