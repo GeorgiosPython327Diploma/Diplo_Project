@@ -158,25 +158,30 @@
 
     .message-position{
         top: 25%;
-        right: -311px;
+        width: 340px;
+        right: -400px;
         font-size: 1.4em;
+
     }
 
     .static-bio{
         top: 44%;
-        right: 3%;
+        right: 2%;
         font-size: 1.4em;
         height: 400px;
+        padding: 40px 60px;
     }
 
     #bio-container {
         top: 20%;
-        left: 11%;
+        left: 7%;
         font-size: 1.6em;
+        padding: 40px;
     }
 
     #bio-text-container {
        font-size: 1.3em;
+       width: 600px;
     }
 
     .form-container {
