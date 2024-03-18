@@ -6,5 +6,5 @@ document.addEventListener("DOMContentLoaded", function () {
   gsap.set(pProject, { y: '100%' });
 
   gsap.to(projectImg, { scale: 1, duration: 1, ease: "power1.out" });
-  gsap.to(pProject, { y: 0, duration: 1, ease: "power1.out", delay: 0.5 });
+  gsap.to(pProject, { y: 0, duration: 1, ease: "power1.out", delay: 0.6 });
 });
