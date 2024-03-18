@@ -1094,7 +1094,7 @@ textarea {
 
 #bio-container {
     position: absolute;
-    top: 20%;
+    top: 19%;
     left: 7%;
     max-width: fit-content;
     padding: 11px;
@@ -1344,6 +1344,11 @@ textarea {
 .message-position a{
     text-decoration: none;
     color: gray;
+    transition: color 0.3s ease-in-out;
+}
+
+.message-position a:hover{
+    color: rgba(3, 57, 94, 0.47);
 }
 
 .message-position p{
