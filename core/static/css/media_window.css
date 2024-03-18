@@ -143,17 +143,22 @@
 
     .profile-menu {
         width: 370px;
-        top: -350px;
-        left: -43%;
+        top: -470px;
+        left: -42%;
         font-size: 1.4em;
         white-space: nowrap;
+        padding: 7px;
     }
 
+    .menu-user{
+        transform: translateY(-3px);
+    }
+    
     .gif{
-        top: 40vh;
+        top: 37vh;
         left: 41%;
-        width: 350px;
-        height: 470px;
+        width: 387px;
+        height: 570px;
     }
 
     .message-position{
