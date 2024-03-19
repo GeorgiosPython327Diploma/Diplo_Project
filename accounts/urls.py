@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import register_user, login_user, user_profile, edit_profile,  change_password, user_logout, bio_view, public_profile, inbox, compose
+from .views import register_user, login_user, user_profile, edit_profile,  change_password, user_logout, bio_view, public_profile, inbox, compose, unread_message_count
 
 urlpatterns = [
     path('register/', register_user, name='register'),
@@ -12,4 +12,5 @@ urlpatterns = [
     path('profile/<str:username>/', public_profile, name='public_profile'),
     path('inbox/', inbox, name='inbox'),
     path('compose/', compose, name='compose'),
+    path('unread_message_count/', unread_message_count, name='unread_message_count'),
 ]

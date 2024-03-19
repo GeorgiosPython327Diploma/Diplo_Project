@@ -6,6 +6,7 @@ from .forms import MyUserCreationForm, MyAuthenticationForm, UserProfileForm,  U
 from .models import User, Message
 from django.db.models import Sum
 from articles.models import Article
+from django.http import JsonResponse
 
 def register_user(request):
     if request.method == 'POST':
@@ -115,8 +116,25 @@ def public_profile(request, username):
 
 @login_required
 def inbox(request):
-       messages = Message.objects.filter(recipient=request.user).order_by('-timestamp')
-       return render(request, 'messages/inbox.html', {'messages': messages})
+    unread_messages = Message.objects.filter(recipient=request.user, is_read=False)
+    for message in unread_messages:
+        message.is_read = True
+        message.save()
+
+    messages = Message.objects.filter(recipient=request.user).order_by('-timestamp')
+    return render(request, 'messages/inbox.html', {'messages': messages})
+
+
+def unread_message_count(request, message_id=None):
+    if message_id:
+        message = Message.objects.filter(id=message_id, recipient=request.user, is_read=False).first()
+        if message:
+            message.is_read = True
+            message.save()
+
+    unread_count = Message.objects.filter(recipient=request.user, is_read=False).count()
+    return JsonResponse({'unread_count': unread_count})
+
 
 @login_required
 def compose(request):
@@ -125,8 +143,10 @@ def compose(request):
         if form.is_valid():
             recipient = form.cleaned_data['recipient']
             content = form.cleaned_data['content']
-            Message.objects.create(sender=request.user, recipient=recipient, content=content)
-            return redirect('inbox')
+            message = Message.objects.create(sender=request.user, recipient=recipient, content=content)
+            message.is_read = False
+            message.save()
+            return redirect('bio_view')
     else:
         form = ComposeForm(user=request.user)
     return render(request, 'messages/compose.html', {'form': form})

@@ -1094,8 +1094,8 @@ textarea {
 
 #bio-container {
     position: absolute;
-    top: 19%;
-    left: 7%;
+    top: 17%;
+    left: 3%;
     max-width: fit-content;
     padding: 11px;
     box-sizing: border-box;
@@ -1339,6 +1339,7 @@ textarea {
     border-radius: 11px;
     box-shadow: 0 2px 12px 2px rgba(112, 110, 110, 0.306);
     cursor: pointer;
+    z-index: 999; 
 }
 
 .message-position a{

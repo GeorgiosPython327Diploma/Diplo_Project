@@ -33,7 +33,12 @@
         <p><span class="dislikes-bio">Дизлайков</span>:<span id="total-dislikes"></span></p>
     </div>
 <div class="message-position" id="messagePosition">
- <p><a href="{% url 'inbox' %}">Мои сообщения</a></p>
-<p><a href="{% url 'compose' %}">Написать сообщение</a></p>
+<div id="unread-message-url" data-url="{% url 'unread_message_count' %}"></div>
+<p>
+    <a href="{% url 'inbox' %}">
+        Мои сообщения <span id="unread-message-count">0</span>
+    </a>
+</p>
+    <p><a href="{% url 'compose' %}">Написать сообщение</a></p>
 </div>
 {% endblock %}
