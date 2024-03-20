@@ -8,37 +8,43 @@
 <link rel="stylesheet" href="{% static 'css/bio_style.css' %}">
 {% endblock %}
 
-    <h1>{{ user.username }}</h1>
-    <div id="bio-text-container" style="transform: translateY(-100%); transition: transform ease-in-out 0.8s;">
-        <p>{{ user.bio }}</p>
-    </div>
-    <div id="bio-container" style="transform: translateX(-100%); transition: transform ease-in-out 0.8s;">
-        {% if user.avatar %}
-            <img class="avatar-pofile" src="{{ user.avatar.url }}" alt="User Avatar">
+<h1>{{ user.username }}</h1>
+<div id="bio-text-container" style="transform: translateY(-100%); transition: transform ease-in-out 0.8s;">
+    <p>{{ user.bio | linebreaks }}</p>
+</div>
+<div id="bio-container" style="transform: translateX(-100%); transition: transform ease-in-out 0.8s;">
+    {% if user.avatar %}
+        <img class="avatar-pofile" src="{{ user.avatar.url }}" alt="User Avatar">
+    {% else %}
+        {% if user.gender == 'M' %}
+            <img class="static-avatar" src="{% static 'images/male_avatar.png' %}" alt="Male Avatar">
+        {% elif user.gender == 'F' %}
+            <img class="static-avatar" src="{% static 'images/female_avatar.png' %}" alt="Female Avatar">
         {% else %}
             <img class="static-avatar" src="{% static 'images/standart_img.png' %}" alt="Default Avatar">
         {% endif %}
-        <p>Статус: {% if user.is_online %}<span class="is-online">Онлайн</span>{% else %}<span class="is-offline">Офлайн</span>{% endif %}</p>
-        <p>Пол: {{ user.get_gender_display }}</p>
-        <p>Возраст: {{ user.age }}</p>
-        <p>Страна: {{ user.country }}</p>
-        <p>Город: {{ user.city }}</p>
-        <p>Род деятельности: {{ user.occupation }}</p>
-        <p>Email: {{ user.email }}</p>
-    </div>
-    <div class="static-bio" style="transform: translateX(100%); transition: transform ease-in-out 0.8s;">
-        <h2>Статистика:</h2>
-        <p>Просмотрено статей: {{ total_views }}</p>
-        <p><span class="likes-bio">Лайков</span>:<span id="total-likes"></span></p>
-        <p><span class="dislikes-bio">Дизлайков</span>:<span id="total-dislikes"></span></p>
-    </div>
+    {% endif %}
+    <p>Статус: {% if user.is_online %}<span class="is-online">Онлайн</span>{% else %}<span class="is-offline">Офлайн</span>{% endif %}</p>
+    <p>Пол: {{ user.get_gender_display }}</p>
+    <p>Возраст: {{ user.age }}</p>
+    <p>Страна: {{ user.country }}</p>
+    <p>Город: {{ user.city }}</p>
+    <p>Род деятельности: {{ user.occupation }}</p>
+    <p>Email: {{ user.email }}</p>
+</div>
+<div class="static-bio" style="transform: translateX(100%); transition: transform ease-in-out 0.8s;">
+    <h2>Статистика:</h2>
+    <p>Просмотрено статей: {{ total_views }}</p>
+    <p><span class="likes-bio">Лайков</span>:<span id="total-likes"></span></p>
+    <p><span class="dislikes-bio">Дизлайков</span>:<span id="total-dislikes"></span></p>
+</div>
 <div class="message-position" id="messagePosition">
-<div id="unread-message-url" data-url="{% url 'unread_message_count' %}"></div>
-<p>
-    <a href="{% url 'inbox' %}">
-        Мои сообщения <span id="unread-message-count">0</span>
-    </a>
-</p>
+    <div id="unread-message-url" data-url="{% url 'unread_message_count' %}"></div>
+    <p>
+        <a href="{% url 'inbox' %}">
+            Мои сообщения <span id="unread-message-count">0</span>
+        </a>
+    </p>
     <p><a href="{% url 'compose' %}">Написать сообщение</a></p>
 </div>
 {% endblock %}

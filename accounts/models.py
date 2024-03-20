@@ -28,7 +28,12 @@ class User(AbstractUser):
         if self.avatar:
             return self.avatar.url
         else:
-            return settings.STATIC_URL + 'static/images/standart_img.png'
+            if self.gender == 'F':
+                return settings.STATIC_URL + 'static/images/female_avatar.png'
+            elif self.gender == 'M':
+                return settings.STATIC_URL + 'static/images/male_avatar.png'
+            else:
+                return settings.STATIC_URL + 'static/images/standart_img.png'
 
     def is_online(self):
         return (timezone.now() - self.last_login).seconds < 3600

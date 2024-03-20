@@ -20,10 +20,12 @@
         <span class="rotate-char" id="letter7">e</span>
     </span>
         {{ user.username }}
-        {% if user.avatar %}
-            <img class="avatar" src="{{ user.avatar.url }}" alt="User Avatar">
+            {% if user.gender == 'M' %}
+            <img class="static-avatar" src="{% static 'images/male_avatar.png' %}" alt="Male Avatar">
+        {% elif user.gender == 'F' %}
+            <img class="static-avatar" src="{% static 'images/female_avatar.png' %}" alt="Female Avatar">
         {% else %}
-            <img class="static-avatar" src="{% static 'images/standart_img.png' %}" alt="Default Avatar">
+            <img class="static-avatar" src="{% static 'images/default_avatar.png' %}" alt="Default Avatar">
         {% endif %}
     </h1>
 </div>

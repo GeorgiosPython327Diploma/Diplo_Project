@@ -1139,13 +1139,17 @@ textarea {
     margin: 40px auto;
     max-width: 600px;
     text-align: left;
-    padding: 11px;
+    padding: 11px 60px;
     background-color: rgba(255, 255, 255, 0.77);
     width: 500px;
     max-height: fit-content;
     border-radius: 11px;
     border: 3px solid rgb(255, 255, 255);
-    font-family: Spectral SC,serif;
+    font-family: Roboto Condensed, serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    color: #000000;
+    letter-spacing: 0.7px;
 }
 
 .is-online, .is-offline{
@@ -1274,7 +1278,7 @@ textarea {
 
 .static-bio{
     position: absolute;
-    top: 43%;
+    top: 40%;
     right: 1%;
     padding: 40px 60px;
     background-color: #fafafac8;
@@ -1330,7 +1334,7 @@ textarea {
 
 .message-position{
     position: absolute;
-    top: 25%;
+    top: 19%;
     right: -17%;
     width: 220px;
     padding: 11px 50px;
@@ -1341,6 +1345,16 @@ textarea {
     cursor: pointer;
     z-index: 999; 
 }
+
+#unread-message-count {
+    color: rgba(255, 0, 0, 0.644);
+    padding: 6px 11px;
+    border: 1px solid gray;
+    border-radius: 50%;
+    margin: 3px;
+    vertical-align: 1px;
+}
+
 
 .message-position a{
     text-decoration: none;

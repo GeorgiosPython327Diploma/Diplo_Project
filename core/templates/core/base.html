@@ -35,10 +35,12 @@
             {% if user.is_authenticated %}
             {% if not is_public_profile %}
             <li>
-                {% if user.avatar %}
-                 <img class="menu-avatar" src="{{ user.avatar.url }}" alt="{{ user.username }} Avatar">
-                 {% else %}
-                 <img class="menu-avatar" src="{% static 'images/standart_img.png' %}" alt="Default Avatar">
+                {% if user.gender == 'M' %}
+                <img class="menu-avatar" src="{% static 'images/male_avatar.png' %}" alt="Male Avatar">
+                {% elif user.gender == 'F' %}
+                <img class="menu-avatar" src="{% static 'images/female_avatar.png' %}" alt="Female Avatar">
+                {% else %}
+                <img class="menu-avatar" src="{% static 'images/default_avatar.png' %}" alt="Default Avatar">
                 {% endif %}
                 <a  style="font-family:Spectral SC,serif;" href="{% url 'user_profile' %}">{{ user.username }}</a> | <a  href="{% url 'logout' %}">Выйти</a>
             </li>
