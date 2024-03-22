@@ -5,14 +5,13 @@ document.addEventListener("DOMContentLoaded", function() {
         notification.innerText = `Сообщение от ${sender}!!!`;
         notification.style.display = 'block';
 
-        gsap.to(notification, { duration: 1, y: -50, ease: "power2.out" });
+        gsap.to(notification, { duration: 1, y: -70, ease: "power2.out" });
 
         setTimeout(function() {
             hideNotification();
-        }, 7000);
+        }, 3000);
     }
 
-    // Скрываем уведомление
     function hideNotification() {
         gsap.to(notification, { duration: 0.5, y: 100, ease: "power2.in", onComplete: () => {
             notification.style.display = 'none';
