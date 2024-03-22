@@ -126,18 +126,21 @@ def inbox(request):
 
 
 def unread_message_count(request, message_id=None):
-    if message_id:
-        message = Message.objects.filter(id=message_id, recipient=request.user, is_read=False).first()
-        if message:
-            message.is_read = True
-            message.save()
+    if request.user.is_authenticated:
+        if message_id:
+            message = Message.objects.filter(id=message_id, recipient=request.user, is_read=False).first()
+            if message:
+                message.is_read = True
+                message.save()
 
-    unread_count = Message.objects.filter(recipient=request.user, is_read=False).count()
-    sender_name = None
-    if unread_count > 0:
-        sender_name = Message.objects.filter(recipient=request.user, is_read=False).first().sender.username
+        unread_count = Message.objects.filter(recipient=request.user, is_read=False).count()
+        sender_name = None
+        if unread_count > 0:
+            sender_name = Message.objects.filter(recipient=request.user, is_read=False).first().sender.username
 
-    return JsonResponse({'unread_count': unread_count, 'sender': sender_name})
+        return JsonResponse({'unread_count': unread_count, 'sender': sender_name})
+    else:
+        return JsonResponse({'unread_count': 0, 'sender': None})
 
 
 @login_required
