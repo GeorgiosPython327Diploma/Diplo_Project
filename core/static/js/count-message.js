@@ -1,5 +1,5 @@
 function updateUnreadMessageCount() {
-    var url = $('#unread-message-url').data('url');
+    let url = $('#unread-message-url').data('url');
     $.ajax({
         url: url,
         type: 'GET',

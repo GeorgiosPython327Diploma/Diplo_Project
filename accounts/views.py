@@ -124,7 +124,6 @@ def inbox(request):
     messages = Message.objects.filter(recipient=request.user).order_by('-timestamp')
     return render(request, 'messages/inbox.html', {'messages': messages})
 
-
 def unread_message_count(request, message_id=None):
     if message_id:
         message = Message.objects.filter(id=message_id, recipient=request.user, is_read=False).first()
@@ -134,7 +133,6 @@ def unread_message_count(request, message_id=None):
 
     unread_count = Message.objects.filter(recipient=request.user, is_read=False).count()
     return JsonResponse({'unread_count': unread_count})
-
 
 @login_required
 def compose(request):
