@@ -2,16 +2,21 @@ document.addEventListener("DOMContentLoaded", function() {
     let notification = document.getElementById('notification');
 
     function showNotification(sender) {
-        notification.innerText = `У вас новые сообщения от ${sender}!`;
+        notification.innerText = `Сообщение от ${sender}!!!`;
         notification.style.display = 'block';
+
+        gsap.to(notification, { duration: 1, y: -50, ease: "power2.out" });
 
         setTimeout(function() {
             hideNotification();
         }, 7000);
     }
 
+    // Скрываем уведомление
     function hideNotification() {
-        notification.style.display = 'none';
+        gsap.to(notification, { duration: 0.5, y: 100, ease: "power2.in", onComplete: () => {
+            notification.style.display = 'none';
+        }});
     }
 
     function updateUnreadCountAndNotification() {
