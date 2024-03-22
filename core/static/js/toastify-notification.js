@@ -1,9 +1,13 @@
 document.addEventListener("DOMContentLoaded", function() {
-    var notification = document.getElementById('notification');
+    let notification = document.getElementById('notification');
 
     function showNotification(sender) {
         notification.innerText = `У вас новые сообщения от ${sender}!`;
         notification.style.display = 'block';
+
+        setTimeout(function() {
+            hideNotification();
+        }, 7000);
     }
 
     function hideNotification() {
@@ -14,8 +18,8 @@ document.addEventListener("DOMContentLoaded", function() {
         fetch('/accounts/unread_message_count/')
             .then(response => response.json())
             .then(data => {
-                var unreadCount = data.unread_count;
-                var sender = data.sender || "Анонимный отправитель";
+                let unreadCount = data.unread_count;
+                let sender = data.sender || "Анонимный отправитель";
                 if (unreadCount > 0) {
                     showNotification(sender);
                 } else {
@@ -28,6 +32,4 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     updateUnreadCountAndNotification();
-
-    setInterval(updateUnreadCountAndNotification, 5000);
 });
