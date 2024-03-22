@@ -1,37 +1,38 @@
 document.addEventListener("DOMContentLoaded", function() {
-    let notification = document.getElementById('notification');
+    var notification = document.getElementById('notification');
 
-    function showNotification() {
+    // Показываем уведомление
+    function showNotification(sender) {
+        notification.innerText = `У вас новые сообщения от ${sender}!`;
         notification.style.display = 'block';
     }
 
+    // Скрываем уведомление
     function hideNotification() {
         notification.style.display = 'none';
     }
 
-    function updateUnreadCount() {
-        let xhr = new XMLHttpRequest();
-        xhr.open('GET', '/accounts/unread_message_count/', true);
-        xhr.onload = function() {
-            if (xhr.status >= 200 && xhr.status < 300) {
-                let data = JSON.parse(xhr.responseText);
-                let unreadCount = data.unread_count;
+    // Функция для обновления счетчика непрочитанных сообщений и отображения уведомления
+    function updateUnreadCountAndNotification() {
+        fetch('/accounts/unread_message_count/') // Используйте абсолютный путь к вашему представлению
+            .then(response => response.json())
+            .then(data => {
+                var unreadCount = data.unread_count;
+                var sender = data.sender || "Анонимный отправитель"; // Если sender не определен, используйте альтернативное значение
                 if (unreadCount > 0) {
-                    showNotification();
+                    showNotification(sender); // Показываем уведомление с именем отправителя, если есть непрочитанные сообщения
                 } else {
-                    hideNotification();
+                    hideNotification(); // Скрываем уведомление, если нет непрочитанных сообщений
                 }
-            } else {
-                console.error('Request failed with status:', xhr.status);
-            }
-        };
-        xhr.onerror = function() {
-            console.error('Request failed');
-        };
-        xhr.send();
+            })
+            .catch(error => {
+                console.error('Error fetching unread message count:', error);
+            });
     }
 
-    updateUnreadCount();
+    // Первоначальное обновление счетчика непрочитанных сообщений и отображение уведомления
+    updateUnreadCountAndNotification();
 
-    setInterval(updateUnreadCount, 5000);
+    // Повторяем обновление счетчика и отображение уведомления каждые 5 секунд
+    setInterval(updateUnreadCountAndNotification, 5000);
 });
