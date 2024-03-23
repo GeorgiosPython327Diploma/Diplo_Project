@@ -41,6 +41,10 @@
         <li><a href="{% url 'add_article' %}">Создать статью </a></li>
     </ul>
 </div>
+<div class="notification" id="notification">
+        <img src="{% static 'images/messages_icon.png' %}" alt="Иконка сообщения">
+        <p id="message"></p>
+</div>
  <script>
       let profileMenu = document.getElementById('profileMenu');
       let profileService = document.querySelector('.profile-service');
