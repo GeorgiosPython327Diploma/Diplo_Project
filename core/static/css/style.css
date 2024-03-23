@@ -1471,16 +1471,30 @@ textarea {
 .notification {
     position: fixed;
     bottom: 20px;
-    right: 20px;
+    right: 60px;
     padding: 20px 20px;
     font-size: 1.3em;
     font-family: Play, serif;
-    background-color: rgba(113, 149, 194, 0.71);
+    background-color: rgba(147, 174, 206, 0.71);
     border-radius: 7em;
     color: #fff;
     box-shadow: 0px 0px 10px rgba(40, 40, 40, 0.341);
     border-radius: 20px;
-    border: 11px solid rgba(239, 239, 239, 0.901);
+    border: 7px solid rgba(239, 239, 239, 0.901);
     height: 80px;
+    text-align: center;
     display: none; 
+}
+
+.notification p{
+    transform: translateY(-50px);
+    font-weight: bold;
+}
+
+.notification img{
+    width: 90px;
+    height: 90px;
+    transform: translateY(-26px);
+    display: block;
+    margin: auto; 
 }

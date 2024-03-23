@@ -1,8 +1,9 @@
 document.addEventListener("DOMContentLoaded", function() {
     let notification = document.getElementById('notification');
+    let messageElement = document.getElementById('message');
 
     function showNotification(sender) {
-        notification.innerText = `Сообщение от ${sender}!!!`;
+        messageElement.innerText = `Сообщение от ${sender}!!!`;
         notification.style.display = 'block';
 
         gsap.to(notification, { duration: 1, y: -70, ease: "power2.out" });

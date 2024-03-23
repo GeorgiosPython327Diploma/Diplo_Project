@@ -133,7 +133,10 @@
                 <a href="?page={{ articles.next_page_number }}">&raquo;</a>
             {% endif %}
        </div>
-        <div class="notification" id="notification"></div>
+    <div class="notification" id="notification">
+        <img src="{% static 'images/messages_icon.png' %}" alt="Иконка сообщения">
+        <p id="message"></p>
+    </div>
        </div>
         {% endblock %}
     </div>
