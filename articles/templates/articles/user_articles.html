@@ -1,5 +1,7 @@
 {% extends 'core/base.html' %}
 
+{% load static %}
+
 {% block content %}
 
 <h1>Статьи</h1>
@@ -11,7 +13,6 @@
       <img class="image-article" src="{{ article.photo.url }}" alt="{{ article.title }}">
       {% endif %}
       <p>{{ article.content|safe }}</p>
-
       {% if user.is_authenticated and user == article.author %}
         <div class="article-actions">
           <a href="{% url 'edit_article' article_id=article.pk %}" style="display: inline-block; margin-right: 20px;">Редактировать статью</a>
@@ -21,8 +22,11 @@
           </form>
         </div>
       {% endif %}
-
     </div>
   {% endfor %}
+<div class="notification" id="notification">
+        <img src="{% static 'images/messages_icon.png' %}" alt="Иконка сообщения">
+        <p id="message"></p>
+</div>
 
 {% endblock %}

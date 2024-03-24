@@ -1,13 +1,20 @@
 {% extends 'core/base.html' %}
 
+{% load static %}
+
 {% block content %}
+
 <div class="edit-container-article" style="transform: translateY(-100%); transition: transform ease-in-out 1s;">
   <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.media }}
     {{ form.as_p }}
-
     <button type="submit">Сохранить</button>
   </form>
 </div>
+<div class="notification" id="notification">
+        <img src="{% static 'images/messages_icon.png' %}" alt="Иконка сообщения">
+        <p id="message"></p>
+</div>
+
 {% endblock %}

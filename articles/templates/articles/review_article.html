@@ -1,5 +1,7 @@
 {% extends 'core/base.html' %}
 
+{% load static %}
+
 {% block content %}
 
 <div class="review-container">
@@ -24,8 +26,6 @@
      </span>
    </p>
 </div>
-
-
 <div class="content-commentary">
   <div class="comment-area">
     <h3>Комментарии</h3>
@@ -33,7 +33,6 @@
     <p class="comment-p"><span class="comment-special"> &raquo;</span> {{ comment.author.username }}:<span class="comment-text">{{ comment.content|striptags }}</span></p>
     {% endfor %}
   </div>
-
   <div class="add-comment-area">
   <form method="post" action="{% url 'add_comment' article.id %}">
     {% csrf_token %}
@@ -42,5 +41,9 @@
   </form>
   </div>
   </div>
+<div class="notification" id="notification">
+        <img src="{% static 'images/messages_icon.png' %}" alt="Иконка сообщения">
+        <p id="message"></p>
+</div>
 
 {% endblock %}

@@ -3,9 +3,10 @@
 {% load static %}
 
 {% block content %}
+
     <h1>{{ user.username }}</h1>
     <div id="bio-text-container" style="transform: translateY(100%); transition: transform ease-in-out 0.8s;">
-        <p>{{ user.bio }}</p>
+        <p>{{ user.bio|linebreaks }}</p>
     </div>
     <div id="bio-container" style="transform: translateX(-100%); transition: transform ease-in-out 0.8s;">
         {% if user.avatar %}
@@ -21,4 +22,10 @@
         <p>Род деятельности: {{ user.occupation }}</p>
         <p>Email: {{ user.email }}</p>
     </div>
+<a id="compose-message-link" class="compose-message-public" href="{% url 'compose' %}">Написать сообщение</a>
+<div class="notification" id="notification">
+        <img src="{% static 'images/messages_icon.png' %}" alt="Иконка сообщения">
+        <p id="message"></p>
+</div>
+
 {% endblock %}

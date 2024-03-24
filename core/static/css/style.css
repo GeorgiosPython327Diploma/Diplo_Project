@@ -1480,9 +1480,10 @@ textarea {
     color: #fff;
     box-shadow: 0px 0px 10px rgba(40, 40, 40, 0.341);
     border-radius: 20px;
-    border: 7px solid rgba(239, 239, 239, 0.901);
+    border: 6px solid rgba(239, 239, 239, 0.901);
     height: 80px;
     text-align: center;
+    z-index: 999;
     display: none; 
 }
 
@@ -1497,4 +1498,22 @@ textarea {
     transform: translateY(-26px);
     display: block;
     margin: auto; 
+}
+
+.compose-message-public{
+    text-decoration: none;
+    padding: 11px;
+    background-color: rgba(255, 255, 255, 0.615);
+    border: 3px solid rgb(255, 255, 255);
+    border-radius: 7px;
+    font-size: 1.1em;
+    font-weight: bold;
+    font-family: Play, serif;
+    color: rgba(82, 81, 81, 0.82);
+    transition: background-color ease-in-out 0.3s, color ease-in-out 0.3s;
+}
+
+.compose-message-public:hover{
+    background-color: rgba(110, 134, 184, 0.82);
+    color: #ffffff;
 }

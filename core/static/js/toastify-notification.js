@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         setTimeout(function() {
             hideNotification();
-        }, 3000);
+        }, 1500);
     }
 
     function hideNotification() {
