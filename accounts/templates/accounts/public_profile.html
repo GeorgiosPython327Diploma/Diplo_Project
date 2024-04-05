@@ -9,11 +9,17 @@
         <p>{{ user.bio|linebreaks }}</p>
     </div>
     <div id="bio-container" style="transform: translateX(-100%); transition: transform ease-in-out 0.8s;">
-        {% if user.avatar %}
+      {% if user.avatar %}
         <img class="avatar-pofile" src="{{ user.avatar.url }}" alt="User Avatar">
+        {% else %}
+        {% if user.gender == 'M' %}
+            <img class="static-avatar" src="{% static 'images/male_avatar.png' %}" alt="Male Avatar">
+        {% elif user.gender == 'F' %}
+            <img class="static-avatar" src="{% static 'images/female_avatar.png' %}" alt="Female Avatar">
         {% else %}
             <img class="static-avatar" src="{% static 'images/standart_img.png' %}" alt="Default Avatar">
         {% endif %}
+    {% endif %}
         <p>Статус: {% if user.is_online %}<span class="is-online">Онлайн</span>{% else %}<span class="is-offline">Офлайн</span>{% endif %}</p>
         <p>Пол: {{ user.get_gender_display }}</p>
         <p>Возраст: {{ user.age }}</p>
