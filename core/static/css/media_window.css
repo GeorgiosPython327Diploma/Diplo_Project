@@ -2,36 +2,37 @@
     .menu ul li:last-child {
         margin-right: 0;
         position: relative;
-
-        left: 11%;
-        top: 25px;
-        font-size: 1.1em;
+        left: 13%;
+        top: 19px;
+        font-size: 0.7em;
     }
 
     .menu ul li:first-child {
         margin-right: 0;
         position: relative;
         left: 1%;
-        top: 20px;
+        top: 11px;
+        font-size: 0.7em;
     }
 
     .menu ul li:nth-child(2) {
         margin-right: 0;
         position: relative;
         left: 6%;
-        top: 23px;
+        top: 14px;
+        font-size: 0.7em;
     }
 
     ul input{
         padding: 16px;
-        width: 370px;
+        width: 350px;
         margin-top: -16px;
         text-indent: 16px;
     }
 
     ul button {
         padding: 8px;
-        font-size: 1.2em;
+        font-size: 1.1em;
         color: rgba(82, 81, 81, 0.67);
         border-radius: 13px;
     }
@@ -41,7 +42,7 @@
     }
 
     .logo-menu img{
-        width: 300px;
+        width: 200px;
         transition: transform 0.3s;
     }
 
@@ -51,18 +52,19 @@
 
     .search-input::placeholder {
         font-size: 1em;
-        text-indent: 30px;
+        text-indent: 22px;
+        transform: translateY(1px);
     }
 
     .search-icon{
         position: relative;
-        left:10%;
-        top: 1px;
+        left:9%;
+        top: 3px;
         padding:7px;
     }
 
     .shape {
-        margin-bottom: -14px;
+        margin-bottom: -7px;
     }
 
     .register-menu{
@@ -79,16 +81,17 @@
     .article-list {
         width: 41%;
         margin: 125px auto 11px;
+        transform: translateX(25px);
     }
 
     .article-item{
         margin: 60px 0;
-        width: 800px;
-        height: 600px;
+        width: 700px;
+        height: 500px;
     }
 
     .article-item h3{
-        font-size: 2em;
+        font-size: 1.6em;
     }
 
     .pagination{
@@ -96,25 +99,25 @@
     }
 
     .article-list p{
-        font-size: 1.3em;
+        font-size: 1.1em;
     }
 
     .article-list .date-created-article{
-        font-size: 1.4em;
+        font-size: 1.3em;
     }
 
     .pagination span.page.current, .pagination a.page  {
-        font-size: 2.1em;
+        font-size: 1.4em;
     }
 
     .categories-article {
         top: 20%;
         left: -3%;
-        font-size: 1.4em;
+        font-size: 1.3em;
     }
 
     .categories-article li{
-        padding: 14px;
+        padding: 11px;
     }
 
     .categories-article a{
@@ -122,7 +125,7 @@
     }
 
     .about_project {
-        font-size: 1.7em;
+        font-size: 1.5em;
     }
 
     .icon-h1-category{
