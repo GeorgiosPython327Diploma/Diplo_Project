@@ -47,7 +47,7 @@
     }
 
     .welcom-img {
-        width: 30px;
+        width: 25px;
     }
 
     .search-input::placeholder {
@@ -69,13 +69,14 @@
 
     .register-menu{
         margin-top: 200px;
-        font-size: 1.6em;
+        font-size: 1.1em;
+        width: 350px;
     }
 
     .login-menu  {
         margin: 300px auto 0;
-        font-size: 1.6em;
-        width: 400px;
+        font-size: 1.1em;
+        width: 350px;
     }
 
     .article-list {
@@ -130,7 +131,8 @@
 
     .icon-h1-category{
         font-size: 2em;
-        margin-top: 150px;
+        margin-top: 120px;
+        transform: translateX(-25px);
     }
 
     .icon-h1-category img{
@@ -141,14 +143,14 @@
 
     h1{
         margin-top: 200px;
-        font-size: 2.6em;
+        font-size: 2.3em;
     }
 
     .profile-menu {
         width: 370px;
         top: -470px;
         left: -42%;
-        font-size: 1.4em;
+        font-size: 19px;
         white-space: nowrap;
         padding: 7px;
     }
@@ -158,32 +160,35 @@
     }
     
     .gif{
-        top: 37vh;
+        top: 30vh;
         left: 41%;
-        width: 387px;
-        height: 570px;
+        width: 350px;
+        height: 511px;
     }
 
     .message-position{
-        top: 25%;
-        width: 340px;
-        right: -400px;
-        font-size: 1.4em;
+        top: 21%;
+        width: 320px;
+        height: 114px;
+        right: -380px;
+        font-size: 1.1em;
+    }
 
+    .message-position a{
+        vertical-align: 14px;
     }
 
     .static-bio{
-        top: 40%;
-        right: 2%;
-        font-size: 1.4em;
-        height: 400px;
+        top: 46%;
+        right: 3%;
+        font-size: 1.1em;
         padding: 40px 60px;
     }
 
     #bio-container {
         top: 20%;
         left: 7%;
-        font-size: 1.6em;
+        font-size: 1.1em;
         padding: 40px 60px;
     }
 
@@ -198,45 +203,58 @@
     }
 
     .but-edit-profile {
-        font-size: 1.4em;
-        margin-top: 30px;
+        font-size: 1.1em;
+        margin-top: 70px;
     }
 
     .change-password-menu{
         width: 680px;
         height: fit-content;
         margin: 200px auto 0;
-        font-size: 1.3em;
+        font-size: 1.1em;
     }
 
     .articles-user{
-        font-size: 1.3em;
+        font-size: 1.1em;
         padding: 80px 100px;
-        max-width: 1111px;
+        max-width: 1000px;
+    }
+
+    .h1-articles{
+        margin-top: 117px;
     }
 
     .bookmarks-users{
         width: 1000px;
         padding: 40px;
-        font-size: 1.3em;
+        font-size: 1.1em;
     }
 
     .add-article-container {
         max-width: 1000x;
         margin: 180px auto 0;
         padding: 40px 60px;
-        font-size: 1.3em;
+        font-size: 1.1em;
     }
 
     .review-container{
-        width: 1130px;
+        width: 1000px;
         margin: 170px auto 0;
-        font-size: 1.3em;
+        font-size: 1.1em;
+    }
+
+    .review-container .review-author{
+        font-size: 1.1em;
+    }
+
+    .review-container p{
+        font-size: 0.9em;
     }
 
     .content-commentary{
         margin: 80px auto 0;
         padding: 40px 40px 0;
+        margin-bottom: 40px;
     }
 
     .content-commentary h3{
@@ -244,13 +262,13 @@
     }
 
     .comment-p{
-        font-size: 1.4em;
+        font-size: 19px;
         padding: 7px 17px 14px;
     }
 
     .review-bt{
         padding: 14px;
-        font-size: 1.1em;
+        font-size: 1em;
     }
 
     .edit-container-article{
@@ -259,17 +277,21 @@
     }
 
     .edit-container-article form button{
-        font-size: 1.3em;
+        font-size: 1.1em;
+    }
+
+    .form-container{
+        font-size: 1.1em;
     }
 
     .inbox-message{
         padding: 20px 90px;
-        font-size: 1.4em;
+        font-size: 1.1em;
         white-space: nowrap;
     }
 
     .compose-message{
         padding: 20px;
-        font-size: 1.3em;
+        font-size: 1.1em;
     }
 }
