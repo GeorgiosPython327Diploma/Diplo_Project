@@ -1,3 +1,4 @@
+
 body {
     margin: 0;
     padding: 0;
@@ -5,6 +6,10 @@ body {
     zoom: 0.9;
     height: 100vh;
     opacity: 0;
+}
+
+::-webkit-scrollbar {
+    display: none; 
 }
 
 .menu .wrap{
@@ -498,9 +503,11 @@ h1,.span-welcome {
     width: 900px;
     padding: 40px;
     margin: 20px auto 0;
+    margin-bottom: 40px;
     border-radius: 30px;
     box-shadow: 0 2px 12px 2px rgba(112, 110, 110, 0.36);
     border: 4px solid white;
+    height: fit-content;
 }
 
 .bookmarks-users h3{
@@ -508,8 +515,26 @@ h1,.span-welcome {
     font-size: 1.4em;
 }
 
+.bookmarks-users a{
+    text-decoration: none;
+    color: rgba(88, 87, 87, 0.74);
+}
+
 .bookmarks-users p{
     color: #525250;
+    font-size: 1.1em;
+    font-family: Roboto Condensed, serif;
+    letter-spacing: 0.3px;
+}
+
+.bookmarks-users img{
+    max-width: 333px;
+    max-height: 311px;
+}
+
+.bookmarks-users a{
+    text-decoration: none;
+    color: rgba(88, 87, 87, 0.74);
 }
 
 .bookmarks-users .delete-bookmark{
@@ -522,6 +547,11 @@ h1,.span-welcome {
     box-shadow: 0 2px 12px 2px rgba(112, 110, 110, 0.36);
     font-weight: bold;
     transition: background-color ease-in-out 0.3s, color ease-in-out 0.3s;
+    float: right;
+}
+
+.delete-bookmark{
+    margin-top: -25px;
 }
 
 .bookmarks-users .delete-bookmark:hover{
@@ -1079,6 +1109,7 @@ textarea {
     box-shadow: 0 2px 12px 2px rgba(148, 148, 147, 0.42);
     transition: background-color ease-in-out 0.3s;
     background: rgba(255, 255, 255, 0.65);
+    cursor: pointer;
 }
 
 .categories-article li:hover {
@@ -1278,7 +1309,7 @@ textarea {
 
 .static-bio{
     position: absolute;
-    top: 40%;
+    top: 43%;
     right: 1%;
     padding: 40px 60px;
     background-color: #fafafac8;
@@ -1439,7 +1470,8 @@ textarea {
     border-bottom: 1px solid #898988;
     height: 30px;
     font-size: 1.3em;
-    margin-top: 70px;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .project-img img{
