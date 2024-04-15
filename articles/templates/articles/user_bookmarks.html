@@ -2,24 +2,27 @@
 
 {% block content %}
 
-    <h1>Ваши закладки</h1>
-    <div class="bookmarks-users">
+    <h1 class="h1-articles">Ваши закладки</h1>
+
     {% if bookmarks %}
-        <ul>
+        <ul class="bookmarks-list">
             {% for bookmark in bookmarks %}
-                    <li>
-                        <a class="open_rewiew" href="{% url 'review_article' pk=bookmark.article.id %}">
-                        <h3>{{ bookmark.article.title }}</h3>
-                        </a>
-                        {% if bookmark.article.photo %}
-                            <img class="image-article" src="{{ bookmark.article.photo.url }}" alt="{{ bookmark.article.title }}">
-                        {% endif %}
-                        <p>{{ bookmark.article.content|safe|truncatewords:80 }}</p>
-                        <a class="delete-bookmark" href="{% url 'remove_bookmark' bookmark.article.id %}">Убрать из закладок</a>
-                    </li>
+                <li>
+                    <div class="bookmarks-users">
+                        <div class="bookmark">
+                            <a class="open_review" href="{% url 'review_article' pk=bookmark.article.id %}">
+                                <h3>{{ bookmark.article.title }}</h3>
+                            </a>
+                            {% if bookmark.article.photo %}
+                                <img class="image-article" src="{{ bookmark.article.photo.url }}" alt="{{ bookmark.article.title }}">
+                            {% endif %}
+                            <p>{{ bookmark.article.content|safe|truncatewords:80 }}</p>
+                            <a class="delete-bookmark" href="{% url 'remove_bookmark' bookmark.article.id %}">Убрать из закладок</a>
+                        </div>
+                    </div>
+                </li>
             {% endfor %}
         </ul>
-    </div>
     {% else %}
         <p>У вас нет закладок.</p>
     {% endif %}
