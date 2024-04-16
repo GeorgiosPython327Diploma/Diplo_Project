@@ -603,3 +603,24 @@
         font-size: 1.1em;
     }
 }
+
+@media  (min-height: 1000px)  {
+    .gif{
+        top: 33vh;
+        left: 41%;
+    }
+}
+
+@media  (min-height: 1200px)  {
+    .gif{
+        top: 46vh;
+        left: 41%;
+    }
+}
+
+@media  (min-height: 1440px)  {
+    .gif{
+        top: 57vh;
+        left: 41%;
+    }
+}
