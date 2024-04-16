@@ -618,7 +618,7 @@
     }
 }
 
-@media  (min-height: 1440px)  {
+@media screen and (min-height: 1400px)  {
     .gif{
         top: 57vh;
         left: 41%;
