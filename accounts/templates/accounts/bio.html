@@ -9,7 +9,7 @@
 {% endblock %}
 
 <h1>{{ user.username }}</h1>
-<div id="bio-text-container" style="transform: translateY(-100%); transition: transform ease-in-out 0.8s;">
+<div id="bio-text-container" style="transform: translateY(100%); transition: transform ease-in-out 0.8s;">
     <p>{{ user.bio | linebreaks }}</p>
 </div>
 <div id="bio-container" style="transform: translateX(-100%); transition: transform ease-in-out 0.8s;">
