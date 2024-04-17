@@ -1,306 +1,3 @@
-@media (min-width: 1900px) {
-    .menu ul li:last-child {
-        margin-right: 0;
-        position: relative;
-        left: 13%;
-        top: 19px;
-        font-size: 0.7em;
-    }
-
-    .menu ul li:first-child {
-        margin-right: 0;
-        position: relative;
-        left: 1%;
-        top: 11px;
-        font-size: 0.7em;
-    }
-
-    .menu ul li:nth-child(2) {
-        margin-right: 0;
-        position: relative;
-        left: 6%;
-        top: 14px;
-        font-size: 0.7em;
-    }
-
-    ul input{
-        padding: 16px;
-        width: 350px;
-        margin-top: -16px;
-        text-indent: 16px;
-    }
-
-    ul button {
-        padding: 8px;
-        font-size: 1.1em;
-        color: rgba(82, 81, 81, 0.67);
-        border-radius: 13px;
-    }
-
-    .menu .wrap{
-        font-size: 1.5rem;
-    }
-
-    .logo-menu img{
-        width: 200px;
-        transition: transform 0.3s;
-    }
-
-    .welcom-img {
-        width: 25px;
-    }
-
-    .search-input::placeholder {
-        font-size: 1em;
-        text-indent: 22px;
-        transform: translateY(1px);
-    }
-
-    .search-icon{
-        position: relative;
-        left:9%;
-        top: 3px;
-        padding:7px;
-    }
-
-    .shape {
-        margin-bottom: -7px;
-    }
-
-    .register-menu{
-        margin-top: 200px;
-        font-size: 1.1em;
-        width: 350px;
-    }
-
-    .login-menu  {
-        margin: 300px auto 0;
-        font-size: 1.1em;
-        width: 350px;
-    }
-
-    .article-list {
-        width: 41%;
-        margin: 125px auto 11px;
-        transform: translateX(25px);
-    }
-
-    .article-item{
-        margin: 60px 0;
-        width: 720px;
-        height: 500px;
-    }
-
-    .article-item h3{
-        font-size: 1.4em;
-    }
-
-    .pagination{
-        margin-right: 40px;
-    }
-
-    .article-list p{
-        font-size: 1.1em;
-    }
-
-    .article-list .date-created-article{
-        font-size: 1.3em;
-    }
-
-    .pagination span.page.current, .pagination a.page  {
-        font-size: 1.4em;
-    }
-
-    .categories-article {
-        top: 20%;
-        left: -3%;
-        font-size: 1.3em;
-    }
-
-    .categories-article li{
-        padding: 11px;
-    }
-
-    .categories-article a{
-        vertical-align: 7px;
-    }
-
-    .about_project {
-        font-size: 1.5em;
-    }
-
-    .icon-h1-category{
-        font-size: 2em;
-        margin-top: 120px;
-        transform: translateX(-25px);
-    }
-
-    .icon-h1-category img{
-        width: 90px;
-        height: 90px;
-        vertical-align: -25px;
-    }
-
-    .welcome-h1{
-        margin-top: 200px;
-        font-size: 2.3em;
-        margin-left: 60px;
-    }
-
-     h1{
-        margin-top: 140px;
-    }
-
-    .profile-menu {
-        width: 370px;
-        top: -470px;
-        left: -42%;
-        font-size: 19px;
-        white-space: nowrap;
-        padding: 7px;
-    }
-
-    .menu-user{
-        transform: translateY(-3px);
-    }
-    
-    .gif{
-        top: 38vh;
-        left: 41%;
-        width: 350px;
-        height: 511px;
-    }
-
-    .message-position{
-        top: 21%;
-        width: 320px;
-        height: 114px;
-        right: -380px;
-        font-size: 1.1em;
-    }
-
-    .message-position a{
-        vertical-align: 14px;
-    }
-
-    .static-bio{
-        top: 46%;
-        right: 3%;
-        font-size: 1.1em;
-        padding: 40px 60px;
-    }
-
-    #bio-container {
-        top: 20%;
-        left: 4%;
-        font-size: 1.1em;
-        padding: 40px 60px;
-    }
-
-    #bio-text-container {
-       font-size: 1.3em;
-       width: 600px;
-    }
-
-    .form-container {
-        font-size: 1.6em;
-        margin-top: 30px;
-    }
-
-    .but-edit-profile {
-        font-size: 1.1em;
-        margin-top: 70px;
-    }
-
-    .change-password-menu{
-        width: 680px;
-        height: fit-content;
-        margin: 200px auto 0;
-        font-size: 1.1em;
-    }
-
-    .articles-user{
-        font-size: 1.1em;
-        padding: 80px 100px;
-        max-width: 1000px;
-    }
-
-    .h1-articles{
-        margin-top: 117px;
-    }
-
-    .bookmarks-users{
-        width: 1000px;
-        padding: 40px;
-        font-size: 1.1em;
-    }
-
-    .add-article-container {
-        max-width: 1000x;
-        margin: 180px auto 0;
-        padding: 40px 60px;
-        font-size: 1.1em;
-    }
-
-    .review-container{
-        width: 1000px;
-        margin: 170px auto 0;
-        font-size: 1.1em;
-    }
-
-    .review-container .review-author{
-        font-size: 1.1em;
-    }
-
-    .review-container p{
-        font-size: 0.9em;
-    }
-
-    .content-commentary{
-        margin: 80px auto 0;
-        padding: 40px 40px 0;
-        margin-bottom: 40px;
-    }
-
-    .content-commentary h3{
-        font-size: 1.6em;
-    }
-
-    .comment-p{
-        font-size: 19px;
-        padding: 7px 17px 14px;
-    }
-
-    .review-bt{
-        padding: 14px;
-        font-size: 1em;
-    }
-
-    .edit-container-article{
-        margin: 160px auto 0;
-        padding: 30px 100px;
-    }
-
-    .edit-container-article form button{
-        font-size: 1.1em;
-    }
-
-    .form-container{
-        font-size: 1.1em;
-    }
-
-    .inbox-message{
-        padding: 20px 90px;
-        font-size: 1.1em;
-        white-space: nowrap;
-    }
-
-    .compose-message{
-        padding: 20px;
-        font-size: 1.1em;
-    }
-}
-
 @media (min-width: 1500px)  {
     .menu ul li:last-child {
         margin-right: 0;
@@ -604,306 +301,96 @@
     }
 }
 
-@media screen and (min-width: 1600px) and (max-width: 1700px) {
+@media (min-width: 1600px) {
     .menu ul li:last-child {
-        margin-right: 0;
-        position: relative;
         left: 11%;
-        top: 19px;
-        font-size: 0.7em;
-    }
-
-    .menu ul li:first-child {
-        margin-right: 0;
-        position: relative;
-        left: 1%;
-        top: 11px;
-        font-size: 0.7em;
-    }
-
-    .menu ul li:nth-child(2) {
-        margin-right: 0;
-        position: relative;
-        left: 6%;
-        top: 14px;
-        font-size: 0.7em;
-    }
-
-    ul input{
-        padding: 16px;
-        width: 350px;
-        margin-top: -16px;
-        text-indent: 16px;
-    }
-
-    ul button {
-        padding: 8px;
-        font-size: 1.1em;
-        color: rgba(82, 81, 81, 0.67);
-        border-radius: 13px;
-    }
-
-    .menu .wrap{
-        font-size: 1.5rem;
-    }
-
-    .logo-menu img{
-        width: 200px;
-        transition: transform 0.3s;
-    }
-
-    .welcom-img {
-        width: 25px;
-    }
-
-    .search-input::placeholder {
-        font-size: 1em;
-        text-indent: 22px;
-        transform: translateY(1px);
-    }
-
-    .search-icon{
-        position: relative;
-        left:9%;
-        top: 3px;
-        padding:7px;
-    }
-
-    .shape {
-        margin-bottom: -7px;
-    }
-
-    .register-menu{
-        margin-top: 200px;
-        font-size: 1.1em;
-        width: 350px;
-    }
-
-    .login-menu  {
-        margin: 300px auto 0;
-        font-size: 1.1em;
-        width: 350px;
-    }
-
-    .article-list {
-        width: 47%;
-        margin: 125px auto 11px;
-        transform: translateX(25px);
-    }
-
-    .article-item{
-        margin: 60px 0;
-        width: 680px;
-        height: 500px;
-    }
-
-    .article-item a{
-        font-size: 1em;
     }
 
     .pagination{
         margin-right: -3px;
     }
 
-    .article-list p{
-        font-size: 1em;
-    }
-
-    .article-list .date-created-article{
-        font-size: 1.3em;
-    }
-
-    .pagination span.page.current, .pagination a.page  {
-        font-size: 1.4em;
-    }
-
     .categories-article {
-        top: 20%;
         left: -3.5%;
-        font-size: 1.1em;
-    }
-
-    .categories-article li{
-        padding: 11px;
-    }
-
-    .categories-article a{
-        vertical-align: 7px;
-    }
-
-    .about_project {
-        font-size: 1.5em;
-    }
-
-    .icon-h1-category{
-        font-size: 1.8em;
-        margin-top: 120px;
-        transform: translateX(-25px);
-    }
-
-    .icon-h1-category img{
-        width: 80px;
-        height: 80px;
-        vertical-align: -25px;
-    }
-
-    .welcome-h1{
-        margin-top: 200px;
-        font-size: 38px;
-        margin-left: 100px;
-    }
-
-    h1{
-        margin-top: 140px;
     }
 
     .profile-menu {
-        width: 340px;
-        top: -470px;
         left: -40%;
-        font-size: 18px;
-        white-space: nowrap;
-        padding: 7px;
+    }
+}
+
+@media (min-width: 1700px) {
+    .menu ul li:last-child {
+        left: 12%; 
     }
 
-    .menu-user{
-        transform: translateY(-3px);
+    .pagination{
+        margin-right: 70px;
     }
-    
+
+    .categories-article {
+        left: -3.3%;
+    }
+
+    .profile-menu {
+        left: -41%;
+    }
+}
+
+@media (min-width: 1800px) {
+    .menu ul li:last-child {
+        left: 13%; 
+    }
+
+    .pagination{
+        margin-right: 100px;
+    }
+
+    .categories-article {
+        left: -3.1%;
+    }
+
+    .profile-menu {
+        left: -42%;
+    }
+}
+
+@media (min-width: 1900px) {
+    .menu ul li:last-child {
+        left: 13%;
+    }
+
+    .article-list {
+        width: 41%;
+        margin: 125px auto 11px;
+        transform: translateX(25px);
+    }
+
+    .article-item{
+        margin: 60px 0;
+        width: 720px;
+        height: 500px;
+    }
+
+    .pagination{
+        margin-right: -40px;
+    }
+
+    .categories-article {
+        left: -3%;
+    }
+
+    .profile-menu {
+        width: 370px;
+        top: -470px;
+        left: -42%;
+    }
+
     .gif{
         top: 38vh;
         left: 41%;
         width: 350px;
         height: 511px;
-    }
-
-    .message-position{
-        top: 21%;
-        width: 320px;
-        height: 114px;
-        right: -380px;
-        font-size: 1.1em;
-    }
-
-    .message-position a{
-        vertical-align: 14px;
-    }
-
-    .static-bio{
-        top: 46%;
-        right: 3%;
-        font-size: 1.1em;
-        padding: 40px 60px;
-    }
-
-    #bio-container {
-        top: 20%;
-        left: 4%;
-        font-size: 1.1em;
-        padding: 40px 60px;
-    }
-
-    #bio-text-container {
-       font-size: 1.3em;
-       width: 500px;
-    }
-
-    .form-container {
-        font-size: 1.6em;
-        margin-top: 30px;
-    }
-
-    .but-edit-profile {
-        font-size: 1.1em;
-        margin-top: 70px;
-    }
-
-    .change-password-menu{
-        width: 680px;
-        height: fit-content;
-        margin: 200px auto 0;
-        font-size: 1.1em;
-    }
-
-    .articles-user{
-        font-size: 1.1em;
-        padding: 80px 100px;
-        max-width: 1000px;
-    }
-
-    .h1-articles{
-        margin-top: 117px;
-    }
-
-    .bookmarks-users{
-        width: 1000px;
-        padding: 40px;
-        font-size: 1.1em;
-    }
-
-    .add-article-container {
-        max-width: 1000x;
-        margin: 180px auto 0;
-        padding: 40px 60px;
-        font-size: 1.1em;
-    }
-
-    .review-container{
-        width: 1000px;
-        margin: 170px auto 0;
-        font-size: 1.1em;
-    }
-
-    .review-container .review-author{
-        font-size: 1.1em;
-    }
-
-    .review-container p{
-        font-size: 0.9em;
-    }
-
-    .content-commentary{
-        margin: 80px auto 0;
-        padding: 40px 40px 0;
-        margin-bottom: 40px;
-    }
-
-    .content-commentary h3{
-        font-size: 1.6em;
-    }
-
-    .comment-p{
-        font-size: 19px;
-        padding: 7px 17px 14px;
-    }
-
-    .review-bt{
-        padding: 14px;
-        font-size: 1em;
-    }
-
-    .edit-container-article{
-        margin: 160px auto 0;
-        padding: 30px 100px;
-    }
-
-    .edit-container-article form button{
-        font-size: 1.1em;
-    }
-
-    .form-container{
-        font-size: 1.1em;
-    }
-
-    .inbox-message{
-        padding: 20px 90px;
-        font-size: 1.1em;
-        white-space: nowrap;
-    }
-
-    .compose-message{
-        padding: 20px;
-        font-size: 1.1em;
     }
 }
 
