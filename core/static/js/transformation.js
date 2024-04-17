@@ -12,5 +12,11 @@ window.onload = function() {
         $("#bio-text-container, #bio-container, .static-bio").css({
             "transform": "translateY(0) translateX(0)",
         });
+
+        gsap.from("#bio-text-container", {
+            duration: 1,
+            opacity: 0,
+            ease: "power2.inOut"
+        });
     }, 100);
 };
