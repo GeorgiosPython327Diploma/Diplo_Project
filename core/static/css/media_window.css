@@ -399,7 +399,7 @@
     }
 
     .pagination{
-        margin-right: 40px;
+        margin-right: -40px;
     }
 
     .article-list p{
@@ -416,7 +416,7 @@
 
     .categories-article {
         top: 20%;
-        left: -3.5%;
+        left: -3.7%;
         font-size: 1.1em;
     }
 
@@ -702,7 +702,7 @@
     }
 
     .pagination{
-        margin-right: 40px;
+        margin-right: -3px;
     }
 
     .article-list p{
