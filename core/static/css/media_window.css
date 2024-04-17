@@ -306,8 +306,14 @@
         left: 11%;
     }
 
+    .article-list {
+        width: 42%;
+        margin: 125px auto 11px;
+        transform: translateX(25px);
+    }
+
     .pagination{
-        margin-right: -3px;
+        margin-right: -88px;
     }
 
     .categories-article {
@@ -325,7 +331,7 @@
     }
 
     .pagination{
-        margin-right: 70px;
+        margin-right: -50px;
     }
 
     .categories-article {
@@ -342,8 +348,14 @@
         left: 13%; 
     }
 
+    .article-list {
+        width: 37%;
+        margin: 125px auto 11px;
+        transform: translateX(25px);
+    }
+
     .pagination{
-        margin-right: 100px;
+        margin-right: -100px;
     }
 
     .categories-article {
@@ -373,7 +385,7 @@
     }
 
     .pagination{
-        margin-right: -40px;
+        margin-right: -30px;
     }
 
     .categories-article {
