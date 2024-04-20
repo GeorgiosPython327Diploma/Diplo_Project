@@ -3,7 +3,6 @@ body {
     padding: 0;
     background: rgba(93, 82, 57, 0.16);
     zoom: 0.9;
-    height: 100vh;
     opacity: 0;
 }
 
@@ -539,7 +538,6 @@ h1,.span-welcome {
     max-height: 50%; 
     height: 300px;
     border-radius: 20px;
-    opacity: 0.8;
     margin-right: 20px;
     float: left;
     margin-bottom: 20px;
