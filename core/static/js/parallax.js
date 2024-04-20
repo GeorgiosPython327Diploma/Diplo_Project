@@ -5,9 +5,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let lastScrollY = window.scrollY;
 
-    window.addEventListener("scroll", function () {
+    window.addEventListener("wheel", function(event) {
         const scrollPercentage = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
-        const direction = window.scrollY > lastScrollY ? 'forward' : 'backward';
+        const direction = event.deltaY > 0 ? 'forward' : 'backward';
 
         categoriesItems.forEach((item, index) => {
             let parallaxValue = (scrollPercentage * (index + 1)) / 100;
