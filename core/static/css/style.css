@@ -412,7 +412,7 @@ h1,.span-welcome {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 20px;
     overflow: auto;
-    max-height: fit-content;
+    max-height: auto;
 }
 
 .article-item{
@@ -425,7 +425,7 @@ h1,.span-welcome {
     margin: 40px 0;
     width: 700px;
     height: 500px;
-    max-height: fit-content;
+    max-height: auto;
     padding: 17px 17px 0;
 }
 
@@ -503,11 +503,12 @@ h1,.span-welcome {
     height: auto;
     padding: 40px;
     margin: 20px auto 0;
+    margin-right: 80px;
     margin-bottom: 40px;
     border-radius: 30px;
     box-shadow: 0 2px 12px 2px rgba(112, 110, 110, 0.36);
     border: 4px solid white;
-    height: fit-content;
+    height: auto;
     overflow: hidden;
 }
 
@@ -892,7 +893,7 @@ h4{
 
 .articles-user img{
     max-width: 50%; 
-    height: fit-content;
+    height: auto;
 }
 
 .articles-user h3{
