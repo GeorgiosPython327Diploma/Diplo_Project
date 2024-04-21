@@ -4,6 +4,7 @@ body {
     background: rgba(93, 82, 57, 0.16);
     zoom: 0.9;
     opacity: 0;
+    height: auto;
 }
 
 ::-webkit-scrollbar {
@@ -744,6 +745,10 @@ h4{
     color: #6b6a6a;
 }
 
+.pagination{
+    margin-left: 40px;
+}
+
 .pagination span.page.current, .pagination a.page  {
     background: rgba(163, 201, 184, 0.77);
     padding: 14px 19px;
@@ -952,6 +957,7 @@ h4{
     max-width: 1000px;
     max-height: fit-content;
     margin: 125px auto 0;
+    margin-bottom: 40px;
     padding: 20px 40px;
     background-color: rgba(255, 255, 255, 0.47);
     box-shadow: 0 0 11px rgba(89, 88, 88, 0.19);
