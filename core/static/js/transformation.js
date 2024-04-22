@@ -1,22 +1,20 @@
 window.onload = function() {
-    $(".login-menu, .register-menu, .change-password-menu, .add-article-container, .edit-container-article, #bio-text-container, #bio-container, .static-bio").css({
-        "transform": "translateY(100%) translateX(-100%)",
-        "transition": "transform ease-in-out 0.8s",
+    gsap.set([".login-menu", ".register-menu", ".change-password-menu", ".add-article-container", ".edit-container-article", "#bio-text-container", "#bio-container", ".static-bio"], {
+        x: -100,
+        y: 100
     });
 
-    setTimeout(function() {
-        $(".login-menu, .register-menu, .change-password-menu, .add-article-container, .edit-container-article").css({
-            "transform": "translateY(0)",
-        });
+    gsap.to([".login-menu", ".register-menu", ".change-password-menu", ".add-article-container", ".edit-container-article"], {
+        duration: 0.1,
+        y: 0,
+        x: 0,
+        ease: "power2.out"
+    });
 
-        $("#bio-text-container, #bio-container, .static-bio").css({
-            "transform": "translateY(0) translateX(0)",
-        });
-
-        gsap.from("#bio-text-container", {
-            duration: 1,
-            opacity: 0,
-            ease: "power2.inOut"
-        });
-    }, 100);
+    gsap.to(["#bio-text-container", "#bio-container", ".static-bio"], {
+        duration: 0.3,
+        x: 0,
+        y: 0,
+        ease: "bounce.inOut"
+    });
 };

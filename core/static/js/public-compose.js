@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
     gsap.from(composeMessageLink, {
         opacity: 0,
         duration: 1,
-        delay: 0.5,
-        ease: "power3.inOut"
+        delay: 1,
+        ease: "back.out"
     });
 });
