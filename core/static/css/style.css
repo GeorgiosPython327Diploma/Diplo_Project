@@ -961,6 +961,7 @@ h4{
 .article-actions{
     white-space: nowrap;
     transform: translateY(20px);
+    float: right;
 }
 
 .add-article-container {
