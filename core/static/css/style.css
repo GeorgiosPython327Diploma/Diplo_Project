@@ -567,6 +567,7 @@ h1,.span-welcome {
 
 .delete-bookmark{
     margin-top: -25px;
+    float: right;
 }
 
 .bookmarks-users .delete-bookmark:hover{
