@@ -116,6 +116,10 @@ def public_profile(request, username):
 
 @login_required
 def inbox(request):
+    if request.method == 'POST' and 'delete_all' in request.POST:
+        Message.objects.filter(recipient=request.user).delete()
+        return redirect('inbox')
+
     unread_messages = Message.objects.filter(recipient=request.user, is_read=False)
     for message in unread_messages:
         message.is_read = True

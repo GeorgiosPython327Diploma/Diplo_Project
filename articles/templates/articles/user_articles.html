@@ -1,32 +1,36 @@
 {% extends 'core/base.html' %}
-
 {% load static %}
 
 {% block content %}
 
 <h1 class="h1-articles">Статьи</h1>
 
-{% for article in articles %}
-    <div class="articles-user">
-      <h3>{{ article.title }}</h3>
-      {% if article.photo %}
-      <img class="image-article" src="{{ article.photo.url }}" alt="{{ article.title }}">
-      {% endif %}
-      <p>{{ article.content|safe }}</p>
-      {% if user.is_authenticated and user == article.author %}
-        <div class="article-actions">
-          <a href="{% url 'edit_article' article_id=article.pk %}" style="display: inline-block; margin-right: 20px;">Редактировать статью</a>
-          <form method="post" action="{% url 'delete_article' pk=article.pk %}" style="display: inline-block;">
-            {% csrf_token %}
-            <button type="submit" onclick="return confirm('Вы уверены, что хотите удалить эту статью?')">Удалить статью</button>
-          </form>
-        </div>
-      {% endif %}
-    </div>
+<ul>
+  {% for article in articles %}
+    <li>
+      <div class="articles-user">
+        <h3>{{ article.title }}</h3>
+        {% if article.photo %}
+          <img class="image-article" src="{{ article.photo.url }}" alt="{{ article.title }}">
+        {% endif %}
+        <p>{{ article.content|safe|truncatewords:30 }}</p>
+        {% if user.is_authenticated and user == article.author %}
+          <div class="article-actions">
+            <a href="{% url 'edit_article' article_id=article.pk %}" style="display: inline-block; margin-right: 20px;">Редактировать статью</a>
+            <form method="post" action="{% url 'delete_article' pk=article.pk %}" style="display: inline-block;">
+              {% csrf_token %}
+              <button type="submit" onclick="return confirm('Вы уверены, что хотите удалить эту статью?')">Удалить статью</button>
+            </form>
+          </div>
+        {% endif %}
+      </div>
+    </li>
   {% endfor %}
+</ul>
+
 <div class="notification" id="notification">
-        <img src="{% static 'images/messages_icon.png' %}" alt="Иконка сообщения">
-        <p id="message"></p>
+  <img src="{% static 'images/messages_icon.png' %}" alt="Иконка сообщения">
+  <p id="message"></p>
 </div>
 
 {% endblock %}
