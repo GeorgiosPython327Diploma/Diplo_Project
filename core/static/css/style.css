@@ -514,7 +514,7 @@ h1,.span-welcome {
 
 .bookmarks-users h3{
     font-family: Play,serif;
-    font-size: 1.4em;
+    font-size: 1.7em;
 }
 
 .bookmarks-users a{
@@ -812,7 +812,7 @@ h4{
 .review-container .review-author{
     float: right;
     font-weight: 600;
-    color: #229396;
+    color: #3d6fd2e7;
 }
 
 .review-container p{
@@ -906,7 +906,7 @@ h4{
 .articles-user h3{
     font-family: Play,serif;
     color: rgba(77, 76, 76, 0.84);
-    font-size: 1.3em;
+    font-size: 1.6em;
     margin: 7px;
 }
 
