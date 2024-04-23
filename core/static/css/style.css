@@ -451,6 +451,7 @@ h1,.span-welcome {
     color: rgb(82, 82, 80);
 }
 
+
 .target-public{
     text-decoration: none;
     color: #1c59a8a3;
@@ -804,6 +805,11 @@ h4{
     font-weight: 600;
     color: #1c59a8a3;
     margin-left: 7px;
+}
+
+.position-author{
+    text-align: right;
+    margin-right: 130px;
 }
 
 .review-container{
