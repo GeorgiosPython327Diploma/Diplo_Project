@@ -74,6 +74,7 @@
                                  {% endif %}
                                 <p class="content-article"> {{ article.content|safe|truncatewords:20|linebreaks }}</p>
                                 <p class="author-article"> Автор: <span class="author-span"><a class="target-public" href="{% url 'public_profile' username=article.author.username %}">{{ article.author.username }}</a></span> </p>
+                                <div class="position-likes-dislikes-bookmarkio">
                                  <p class="content-likes-dislikes-bookmarkio-article">
                                         <span id="likes-count-{{ article.id }}" style="font-family: Arial, serif; font-size: 1.1em; font-weight:500; padding: 2px;">{{ article.likes.count }}</span>
                                         <span class="like-button" data-article-id="{{ article.id }}" data-is-liked="{{ article.is_liked }}" data-is-disliked="{{ article.is_disliked }}">
@@ -88,6 +89,7 @@
                                             </svg>
                                         </span>
                                  </p>
+
                                 {% if user.is_authenticated %}
                                     {% if not user_has_bookmark %}
                                         <a class="content-likes-dislikes-bookmarkio-article" href="{% url 'add_bookmark' article.id %}">
@@ -95,6 +97,7 @@
                                           <path fill="#000" fill-opacity=".47" d="M10 4.545v7.943l-3.508-1.109-.659-.208-.658.208-3.508 1.109V4.545H10ZM13.333.871H4.992c-.917 0-1.659.551-1.659 1.225h8.334c.916 0 1.666.55 1.666 1.224v7.961l1.667.612V2.096C15 1.422 14.25.87 13.333.87ZM10 3.321H1.667C.75 3.32 0 3.87 0 4.544v9.798l5.833-1.837 5.834 1.837V4.545c0-.673-.75-1.225-1.667-1.225Z"/>
                                         </svg>
                                         </a>
+                                    </div>
                                     {% endif %}
                                 {% endif %}
                                 <p class="date-created-article"> {{article.created_at }}</p>

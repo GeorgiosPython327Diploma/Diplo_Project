@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const inboxMessage = document.querySelector('.inbox-message');
   const composeMessage = document.querySelector('.compose-message');
-  const backProfileLink = document.querySelector('.back-profile');
+  const backProfileLink = document.querySelector('.back-profile, .back-user-menu');
   const delBut = document.querySelector('.del-messages-but');
 
   gsap.set(backProfileLink, { opacity: 0, y: '50%' });

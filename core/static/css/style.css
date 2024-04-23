@@ -456,6 +456,10 @@ h1,.span-welcome {
     color: #1c59a8a3;
     font-weight: bold;
 }
+.position-likes-dislikes-bookmarkio{
+    text-align: right;
+    margin-right: 22%;
+}
 
 .content-likes-dislikes-bookmarkio-article{
     display: inline-block;
