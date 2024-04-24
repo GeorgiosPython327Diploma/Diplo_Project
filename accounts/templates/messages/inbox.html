@@ -12,7 +12,7 @@
               <div class="message-content-inbox">
                 <strong>Пользователь:</strong> {{ message.sender.username }}<br>
                 <div class="message-inbox-area">
-                  <strong>Сообщение:</strong> {{ message.content }}<br>
+                  <strong>Сообщение:</strong> {{ message.content| truncatewords:20 }}<br>
                 </div>
                 <strong>Дата:</strong> {{ message.timestamp }}
               </div>
