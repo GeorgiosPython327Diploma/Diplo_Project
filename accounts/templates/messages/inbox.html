@@ -9,9 +9,14 @@
         <ul>
           {% for message in messages %}
             <li>
-              <strong>Пользователь:</strong> {{ message.sender.username }}<br>
-              <strong>Сообщение:</strong> {{ message.content }}<br>
-              <strong>Дата:</strong> {{ message.timestamp }}
+              <div class="message-content-inbox">
+                <strong>Пользователь:</strong> {{ message.sender.username }}<br>
+                <div class="message-inbox-area">
+                  <strong>Сообщение:</strong> {{ message.content }}<br>
+                </div>
+                <strong>Дата:</strong> {{ message.timestamp }}
+              </div>
+              <button class="view-message-btn" data-content="{{ message.content }}">Открыть</button>
             </li>
           {% endfor %}
         </ul>
@@ -22,4 +27,6 @@
     <button class="del-messages-but" type="submit" name="delete_all">Очистить сообщения</button>
   </form>
   <a class="back-profile" href="{% url 'bio_view' %}">Вернуться в профиль</a>
+
+<!--{% include 'core/modal.html' %}-->
 {% endblock %}

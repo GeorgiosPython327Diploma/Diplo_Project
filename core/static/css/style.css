@@ -533,7 +533,7 @@ h1,.span-welcome {
     color: #525250;
     font-size: 1.1em;
     font-family: Roboto Condensed, serif;
-    letter-spacing: 0.3px;
+    letter-spacing: 0.6px;
 }
 
 .bookmarks-users img{
@@ -930,6 +930,7 @@ h4{
     margin-bottom: 0;
     color: #525250;
     font-size: 1.1em;
+    letter-spacing: 0.6px;
 }
 
 .articles-user button{
@@ -1531,6 +1532,15 @@ textarea {
     font-weight: bold;
 }
 
+.message-content-inbox {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 11px;
+    margin-bottom: 11px;
+  }
+
+  
 .back-profile, .back-user-menu{
     text-decoration: none;
     color: rgb(99, 142, 194);
@@ -1615,4 +1625,54 @@ textarea {
 .compose-message-public:hover{
     background-color: rgba(110, 134, 184, 0.82);
     color: #ffffff;
+}
+
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.view-message-btn{
+    float: right;
+    background-color: white;
+    box-shadow: 0 2px 12px 2px rgba(201, 200, 200, 0.36);
+    border: 1px solid rgb(169, 169, 169);
+    padding: 4px;
+    font-size: 1em;
+    border-radius: 4px;
+    transition: all ease-in-out 0.3s;
+}
+
+.view-message-btn:hover{
+    background-color: #0999517a;
 }
