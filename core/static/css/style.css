@@ -1665,3 +1665,14 @@ textarea {
 .view-message-btn:hover{
     background-color: #0999517a;
 }
+
+.modal-enter {
+    opacity: 0;
+    transform: translateY(-100%) scale(0.3);
+  }
+  
+  .modal-enter-active {
+    opacity: 1;
+    transform: translateY(0%) scale(1);
+    transition: opacity 0.3s, transform 0.5s;
+  }
