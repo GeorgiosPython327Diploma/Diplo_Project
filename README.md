@@ -27,7 +27,9 @@ Universal Digest Family - это гостевой блог, позволяющи
 
    ```bash
    1) Перейдите в директорию проекта: cd Diplo_Project
+   
    2) Установите зависимости проекта: pip install -r requirements.txt
+   
    3) Запустите сервер разработки: python manage.py runserver
    
 5. Перейдите по ссылке сервера Django.
