@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
             gsap.to(item, {
                 x: parallaxValue * 100,
                 opacity: direction === 'backward' ? 0 : 1,
-                duration: 0.1,
+                duration: 0.2,
                 ease: 'power1.inOut',
             });
         });

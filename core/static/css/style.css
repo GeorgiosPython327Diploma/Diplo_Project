@@ -1672,7 +1672,7 @@ textarea {
 
 .modal-enter {
     opacity: 0;
-    transform: translateY(-100%) scale(0.3);
+    transform: translateY(100%) scale(0.3);
   }
   
   .modal-enter-active {
