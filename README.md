@@ -40,11 +40,19 @@ Universal Digest Family - это гостевой блог, позволяющи
 
 4. В терминале PyCharm выполните следующие команды:
 
-   ```bash
-   1) Перейдите в директорию проекта: cd Diplo_Project
    
-   2) Установите зависимости проекта: pip install -r requirements.txt
+   Перейдите в директорию проекта: 
+   ```
+   cd Diplo_Project
+   ```
    
-   3) Запустите сервер разработки: python manage.py runserver
-   
+  Установите зависимости проекта:
+  ```
+  pip install -r requirements.txt
+  ```
+
+  Запустите сервер разработки:
+  ```
+  python manage.py runserver
+  ```
 5. Перейдите по ссылке сервера Django.
