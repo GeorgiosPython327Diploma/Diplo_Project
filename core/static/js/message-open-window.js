@@ -28,11 +28,11 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function hideElements() {
-    gsap.to([inboxMessage, delMessagesBtn, backProfileLink], { duration: 0.5, opacity: 0, display: 'none' });
+    gsap.to([inboxMessage, delMessagesBtn, backProfileLink], { duration: 0.5, opacity: 0, display: 'none',  ease: 'bounce.in' });
   }
 
   function showElements() {
-    gsap.to([inboxMessage, delMessagesBtn, backProfileLink], { duration: 0.5, opacity: 1, display: 'block' });
+    gsap.to([inboxMessage, delMessagesBtn, backProfileLink], { duration: 0.5, opacity: 1, display: 'block', ease: 'bounce.in' });
   }
 
   viewMessageBtns.forEach(btn => {
