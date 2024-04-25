@@ -1475,8 +1475,8 @@ textarea {
 }
 
 .inbox-message{
-    padding: 20px 90px;
-    background-color: rgba(255, 255, 255, 0.761);
+    padding: 20px 100px;
+    background-color: rgba(255, 255, 255, 0.715);
     border-radius: 11px;
     margin: 20px;
     box-sizing: border-box;
@@ -1628,15 +1628,19 @@ textarea {
 }
 
 .modal-content {
-    background-color: #fefefe;
-    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.746);
+    font-family: Roboto Condensed, serif;
+    letter-spacing: 0.8px;
+    font-size: 1.3em;
+    color: rgb(88, 87, 87);
+    padding: 70px;
     margin: 60px auto;
     z-index: 1000;
-    border: 1px solid #888;
+    border: 6px solid #ffffff;
     word-break: break-word;
     border-radius: 11px;
     max-width: 80%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 4px 8px 0 rgba(203, 203, 203, 0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     cursor: pointer;
 }
 

@@ -56,4 +56,9 @@ document.addEventListener('DOMContentLoaded', function() {
       showElements();
     }
   });
+
+  modal.addEventListener('click', function() {
+    hideModal();
+    showElements();
+  });
 });
