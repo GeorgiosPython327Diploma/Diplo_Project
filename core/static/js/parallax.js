@@ -2,25 +2,29 @@ document.addEventListener("DOMContentLoaded", function () {
     const categoriesList = document.querySelector('.categories-article ul');
     const categoriesItems = document.querySelectorAll('.categories-article li');
     const maxTranslateX = 0.7;
+
     let lastScrollY = window.scrollY;
 
-    window.addEventListener("scroll", function(event) {
-        const currentScrollY = window.scrollY;
-        const direction = currentScrollY > lastScrollY ? 'forward' : 'backward';
+    window.addEventListener("wheel", function(event) {
+        const scrollPercentage = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+        const direction = event.deltaY > 0 ? 'forward' : 'backward';
 
-        if (direction === 'forward') {
-            categoriesItems.forEach((item, index) => {
-                let parallaxValue = (currentScrollY / (document.body.scrollHeight - window.innerHeight)) * 100 * (index + 1) / 100;
-                parallaxValue = Math.min(parallaxValue, maxTranslateX);
+        categoriesItems.forEach((item, index) => {
+            let parallaxValue = (scrollPercentage * (index + 1)) / 100;
 
-                gsap.to(item, {
-                    x: parallaxValue * 100,
-                    opacity: 1,
-                    duration: 0.3,
-                    ease: 'power1.inOut',
-                });
+            parallaxValue = Math.min(parallaxValue, maxTranslateX);
+
+            gsap.to(item, {
+                x: parallaxValue * 100,
+                opacity: direction === 'backward' ? 0 : 1,
+                duration: 0.1,
+                ease: 'power1.inOut',
             });
-        } else {
+        });
+
+        lastScrollY = window.scrollY;
+
+        if (direction === 'backward') {
             gsap.to(categoriesItems, {
                 x: -100,
                 opacity: 0,
@@ -29,8 +33,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 ease: 'power1.inOut',
             });
         }
-
-        lastScrollY = currentScrollY;
     });
 
     categoriesItems.forEach(item => {
