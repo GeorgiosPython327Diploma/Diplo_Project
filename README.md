@@ -101,7 +101,7 @@ Universal Digest Family - это гостевой блог, позволяющи
  
 
 
-### Хостинг ссылка на проекта
+### Хостинг ссылка на проект
    
 ```
 georgios7.pythonanywhere.com
