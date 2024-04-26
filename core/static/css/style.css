@@ -1477,11 +1477,25 @@ textarea {
 .inbox-message{
     padding: 20px 100px;
     background-color: rgba(255, 255, 255, 0.715);
-    border-radius: 30px;
+    border-radius: 20px;
     margin: 20px;
     box-sizing: border-box;
     border: 4px solid white;
     box-shadow: 0 2px 12px 2px rgba(112, 110, 110, 0.306);
+}
+
+.strong-username{
+    color: #1c59a8a3;
+    font-weight: bold;
+}
+
+.strong-message{
+    font-family: Roboto Condensed, serif;
+    letter-spacing: 0.8px;
+}
+
+.strong-data{
+    font-family: Play, serif;
 }
 
 .message-inbox-area{

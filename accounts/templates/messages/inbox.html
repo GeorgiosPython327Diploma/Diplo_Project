@@ -10,12 +10,12 @@
           {% for message in messages %}
             <li>
               <div class="message-content-inbox">
-                <strong class="user-strong"> Пользователь:</strong> {{ message.sender.username }}<br>
+                <strong class="user-strong"> Пользователь:</strong> <span class="strong-username">{{ message.sender.username }}</span><br>
                 <div class="message-inbox-area">
-                  <strong class="message-strong">Сообщение:</strong><br> {{ message.content| truncatewords:7 }}<br>
+                  <strong class="message-strong">Сообщение:</strong><br> <span class="strong-message"> {{ message.content| truncatewords:7 }}</span><br>
                 </div>
                 <br>
-                <strong class="data-stong"> Дата:</strong> {{ message.timestamp }}
+                <strong class="data-stong"> Дата:</strong><span class="strong-data"> {{ message.timestamp }}</span>
               </div>
               <button class="view-message-btn" data-content="{{ message.content }}">Открыть</button>
             </li>
