@@ -43,8 +43,12 @@ Universal Digest Family - это гостевой блог, позволяющи
  
 
 
-### Ссылка на хостинг проекта 
-    georgios7.pythonanywhere.com
+### Хостинг ссылка на проекта
+   
+```
+georgios7.pythonanywhere.com
+```
+    
 
 ## Запуск проекта
 
@@ -64,7 +68,7 @@ Universal Digest Family - это гостевой блог, позволяющи
 
    
 Перейдите в директорию проекта: 
-   ```
+  ```
   cd Diplo_Project
   ```
    
