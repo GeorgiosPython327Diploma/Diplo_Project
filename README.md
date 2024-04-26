@@ -120,9 +120,10 @@ georgios7.pythonanywhere.com
 
    ```bash
    git clone https://github.com/MRGeorgioDev8/Diplo_Project.git
+   ```
 
 
-4. В терминале PyCharm выполните следующие команды:
+### В терминале PyCharm выполните следующие команды:
 
    
 Перейдите в директорию проекта: 
