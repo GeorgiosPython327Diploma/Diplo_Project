@@ -756,6 +756,7 @@ h4{
 
 .pagination{
     margin-left: 40px;
+    margin-bottom: 20px;
 }
 
 .pagination span.page.current, .pagination a.page  {
@@ -1482,11 +1483,6 @@ textarea {
     box-sizing: border-box;
     border: 4px solid white;
     box-shadow: 0 2px 12px 2px rgba(112, 110, 110, 0.306);
-}
-
-.strong-username{
-    color: #1c59a8a3;
-    font-weight: bold;
 }
 
 .strong-message{
