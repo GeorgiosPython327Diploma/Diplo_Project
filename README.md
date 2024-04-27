@@ -146,4 +146,4 @@ georgios7.pythonanywhere.com
   ```
   python manage.py runserver
   ```
-5. Перейдите по ссылке сервера Django.
+6. Перейдите по ссылке сервера Django.

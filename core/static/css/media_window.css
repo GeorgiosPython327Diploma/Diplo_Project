@@ -378,10 +378,7 @@
         margin: 100px auto 11px;
         transform: translateX(25px);
     }
-    .shape{
-        width: 50%;
-    }
-
+    
     .message-position a{
         vertical-align: 8px;
     }
@@ -418,7 +415,7 @@
     }
 
     .welcome-h1{
-        font-size: 37px;
+        font-size: 43px;
         width: 700px;
         height: 230px;
     }
@@ -456,6 +453,10 @@
     .bookmarks-users{
         margin-bottom: 160px;
         margin-top: -66px;
+    }
+
+    .form-container{
+        gap: 70px;
     }
 
     .form-container input{
