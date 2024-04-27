@@ -370,12 +370,20 @@
 @media (min-width: 1900px) {
     .menu ul li:last-child {
         left: 13%;
+        font-size: 0.8em;
     }
 
     .article-list {
         width: 41%;
-        margin: 125px auto 11px;
+        margin: 100px auto 11px;
         transform: translateX(25px);
+    }
+    .shape{
+        width: 50%;
+    }
+
+    .message-position a{
+        vertical-align: 8px;
     }
 
     .article-item{
@@ -384,18 +392,100 @@
         height: 500px;
     }
 
+    .menu-avatar{
+        width: 40px;
+        height: 40px;
+    }
+
+    .inbox-message{
+        margin-bottom: 7vh;
+        margin-top: 6vh;
+    }
+
+    .compose-message{
+        margin-top: 8vh;
+        width: 600px;
+        font-size: 1.2em;
+    }
+
+    .back-profile{
+        margin-top: 14vh;
+        font-size: 1.4em;
+    }
+
     .pagination{
         margin-left: -60px;
+    }
+
+    .welcome-h1{
+        font-size: 37px;
+        width: 700px;
+        height: 230px;
     }
 
     .categories-article {
         left: -3%;
     }
 
+    .logo-menu img{
+        width: 240px;
+    }
+
+    ul button {
+        padding: 11px;
+        font-size: 1.2em;
+    }
+
+    #bio-text-container {
+        font-size: 1.3em;
+        width: 700px;
+     }
+
+     #bio-container {
+        left: 6%;
+        font-size: 1.1em;
+        padding: 30px 40px;
+    }
+
+    .h1-articles{
+        margin-bottom: 100px;
+        margin-top: 140px;
+        font-size: 1.8em;
+    }
+
+    .bookmarks-users{
+        margin-bottom: 160px;
+        margin-top: -66px;
+    }
+
+    .form-container input{
+        font-size: 1em;
+    }
+
+    .form-container textarea{
+        font-size: 0.9em;
+    }
+
+    .but-edit-profile{
+        font-size: 1.1em;
+        padding: 17px;
+    }
+
+    .articles-user{
+        margin-top: -70px;
+        margin-bottom: 140px;
+        
+    }
+
+    .back-user-menu{
+        font-size: 1.6em;
+    }
+
     .profile-menu {
         width: 370px;
         top: -470px;
         left: -42%;
+        font-size: 21px;
     }
 
     .gif{
