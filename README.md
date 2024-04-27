@@ -114,7 +114,7 @@ georgios7.pythonanywhere.com
 
 1. Убедитесь, что Python установлен на вашем компьютере. Если нет, установите его с официального сайта Python: [Python Downloads](https://www.python.org/downloads/)
 
-2. Установите PyCharm или откройте его, если он уже установлен. Создайте новый проект.
+2. Установите [PyCharm](https://www.jetbrains.com/pycharm/) или откройте его, если он уже установлен. Создайте новый проект.
 
 3. Для пользователей Windows: убедитесь, что у вас установлен Git Bash. Если его нет, вы можете скачать его по следующей ссылке: [Git for Windows](https://gitforwindows.org/)
 
