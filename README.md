@@ -119,7 +119,7 @@ georgios7.pythonanywhere.com
 3. Для пользователей Windows: убедитесь, что у вас установлен Git Bash. Если его нет, вы можете скачать его по следующей ссылке: [Git for Windows](https://gitforwindows.org/)
 
 
-4. терминале PyCharm клонируйте репозиторий проекта:
+4. В терминале PyCharm клонируйте репозиторий проекта:
 
    ```bash
    git clone https://github.com/MRGeorgioDev8/Diplo_Project.git
