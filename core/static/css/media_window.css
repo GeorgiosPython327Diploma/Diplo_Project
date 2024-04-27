@@ -373,6 +373,26 @@
         font-size: 0.8em;
     }
 
+    .login-menu  {
+        font-size: 1.1em;
+        width: 330px;
+    }
+
+    .register-menu {
+        width: 380px;
+    }
+    
+    .login-menu input, 
+    .login-menu button,
+    .register-menu input {
+        font-size: 1.1em;
+    }
+    
+    .login-menu button,
+    .register-menu button{
+        padding: 13px;
+    }
+
     .article-list {
         width: 41%;
         margin: 100px auto 11px;
