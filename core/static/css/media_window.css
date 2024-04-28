@@ -31,10 +31,15 @@
     }
 
     ul button {
-        padding: 8px;
+        padding: 10px;
         font-size: 1.1em;
         color: rgba(82, 81, 81, 0.67);
         border-radius: 13px;
+    }
+
+    .menu-avatar{
+        width: 34px;
+        height: 34px;
     }
 
     .menu .wrap{
@@ -42,7 +47,7 @@
     }
 
     .logo-menu img{
-        width: 200px;
+        width: 230px;
         transition: transform 0.3s;
     }
 
@@ -81,7 +86,7 @@
 
     .article-list {
         width: 47%;
-        margin: 125px auto 11px;
+        margin: 90px auto 11px;
         transform: translateX(25px);
     }
 
@@ -143,7 +148,7 @@
 
     .welcome-h1{
         margin-top: 200px;
-        font-size: 38px;
+        font-size: 37px;
         margin-left: 100px;
     }
 
@@ -155,7 +160,7 @@
         width: 340px;
         top: -470px;
         left: -40%;
-        font-size: 18px;
+        font-size: 19px;
         white-space: nowrap;
         padding: 7px;
     }
@@ -180,7 +185,7 @@
     }
 
     .message-position a{
-        vertical-align: 14px;
+        vertical-align: 8px;
     }
 
     .static-bio{
@@ -226,7 +231,7 @@
     }
 
     .h1-articles{
-        margin-top: 117px;
+        margin-top: 130px;
     }
 
     .bookmarks-users{
@@ -293,6 +298,13 @@
         padding: 20px 90px;
         font-size: 1.1em;
         white-space: nowrap;
+        margin-bottom: 11vh;
+        margin-top: 6vh;
+    }
+
+    .back-profile{
+        margin-top: 8vh;
+        font-size: 1.4em;
     }
 
     .compose-message{
@@ -303,13 +315,126 @@
 
 @media (min-width: 1600px) {
     .menu ul li:last-child {
-        left: 11%;
+        left: 10%;
+        font-size: 0.8em;
     }
 
     .article-list {
         width: 42%;
-        margin: 125px auto 11px;
+        margin: 80px auto 11px;
         transform: translateX(25px);
+    }
+
+    .login-menu  {
+        font-size: 1em;
+        width: 330px;
+    }
+
+    .register-menu {
+        width: 380px;
+    }
+
+    .login-menu input, 
+    .login-menu button,
+    .register-menu input {
+        font-size: 1em;
+    }
+
+    .login-menu button,
+    .register-menu button{
+        padding: 13px;
+    }
+
+    .article-list {
+        margin: 90px auto 11px;
+    }
+
+    .message-position a{
+        vertical-align: 8px;
+    }
+
+    .menu-avatar{
+        width: 40px;
+        height: 40px;
+    }
+
+    .inbox-message{
+        margin-bottom: 11vh;
+        margin-top: 6vh;
+    }
+
+    .compose-message{
+        margin-top: 8vh;
+        width: 600px;
+        font-size: 1.2em;
+    }
+
+    .back-profile{
+        margin-top: 8vh;
+        font-size: 1.4em;
+    }
+
+    .welcome-h1{
+        font-size: 40px;
+        width: 700px;
+        height: 230px;
+    }
+
+    .logo-menu img{
+        width: 240px;
+    }
+
+    ul button {
+        padding: 11px;
+        font-size: 1.2em;
+    }
+
+    #bio-text-container {
+        font-size: 1.3em;
+        width: 700px;
+     }
+
+     #bio-container {
+        left: 4%;
+        font-size: 1.1em;
+        padding: 30px 40px;
+    }
+
+    .h1-articles{
+        margin-bottom: 100px;
+        margin-top: 130px;
+        font-size: 1.8em;
+    }
+
+    .bookmarks-users{
+        margin-bottom: 160px;
+        margin-top: -66px;
+    }
+
+    .form-container{
+        gap: 50px;
+    }
+
+    .form-container input{
+        font-size: 0.9em;
+    }
+
+    .form-container textarea{
+        font-size: 0.8em;
+    }
+
+    .but-edit-profile{
+        font-size: 1.1em;
+        padding: 13px;
+    }
+
+    .articles-user{
+        margin-top: -70px;
+        margin-bottom: 140px;
+    }
+
+    .back-user-menu{
+        font-size: 1.6em;
     }
 
     .pagination{
@@ -322,13 +447,128 @@
 
     .profile-menu {
         left: -40%;
+        font-size: 20px;
     }
 }
 
 @media (min-width: 1700px) {
     .menu ul li:last-child {
-        left: 12%; 
+        left: 11%; 
+        font-size: 0.8em; 
     }
+
+    .login-menu  {
+        font-size: 1.1em;
+        width: 330px;
+    }
+
+    .register-menu {
+        width: 380px;
+    }
+
+    .login-menu input, 
+    .login-menu button,
+    .register-menu input {
+        font-size: 1.1em;
+    }
+
+    .login-menu button,
+    .register-menu button{
+        padding: 13px;
+    }
+
+    .article-list {
+        margin: 80px auto 11px;
+    }
+
+    .message-position a{
+        vertical-align: 8px;
+    }
+
+    .menu-avatar{
+        width: 40px;
+        height: 40px;
+    }
+
+    .inbox-message{
+        margin-bottom: 11vh;
+        margin-top: 6vh;
+    }
+
+    .compose-message{
+        margin-top: 8vh;
+        width: 600px;
+        font-size: 1.2em;
+    }
+
+    .back-profile{
+        margin-top: 8vh;
+        font-size: 1.4em;
+    }
+
+    .welcome-h1{
+        font-size: 42px;
+        width: 700px;
+        height: 230px;
+    }
+
+    .logo-menu img{
+        width: 240px;
+    }
+
+    ul button {
+        padding: 11px;
+        font-size: 1.2em;
+    }
+
+    #bio-text-container {
+        font-size: 1.3em;
+        width: 700px;
+     }
+
+     #bio-container {
+        left: 5%;
+        font-size: 1.1em;
+        padding: 30px 40px;
+    }
+
+    .h1-articles{
+        margin-bottom: 100px;
+        margin-top: 140px;
+        font-size: 1.8em;
+    }
+
+    .bookmarks-users{
+        margin-bottom: 160px;
+        margin-top: -66px;
+    }
+
+    .form-container{
+        gap: 60px;
+    }
+
+    .form-container input{
+        font-size: 0.9em;
+    }
+
+    .form-container textarea{
+        font-size: 0.8em;
+    }
+
+    .but-edit-profile{
+        font-size: 1.1em;
+        padding: 1px;
+    }
+
+    .articles-user{
+        margin-top: -70px;
+        margin-bottom: 140px;
+    }
+
+    .back-user-menu{
+        font-size: 1.6em;
+    }
+
 
     .pagination{
         margin-right: -11px;
@@ -340,18 +580,127 @@
 
     .profile-menu {
         left: -41%;
+        font-size: 20px;
     }
 }
 
 @media (min-width: 1800px) {
     .menu ul li:last-child {
-        left: 13%; 
+        left: 12%;
+        font-size: 0.8em; 
+    }
+
+    .login-menu  {
+        font-size: 1.1em;
+        width: 330px;
+    }
+
+    .register-menu {
+        width: 380px;
+    }
+
+    .login-menu input, 
+    .login-menu button,
+    .register-menu input {
+        font-size: 1.1em;
+    }
+
+    .login-menu button,
+    .register-menu button{
+        padding: 13px;
     }
 
     .article-list {
         width: 37%;
-        margin: 125px auto 11px;
-        transform: translateX(25px);
+        margin: 80px auto 11px;
+    }
+
+    .message-position a{
+        vertical-align: 8px;
+    }
+
+    .menu-avatar{
+        width: 40px;
+        height: 40px;
+    }
+
+    .inbox-message{
+        margin-bottom: 11vh;
+        margin-top: 6vh;
+    }
+
+    .compose-message{
+        margin-top: 8vh;
+        width: 600px;
+        font-size: 1.2em;
+    }
+
+    .back-profile{
+        margin-top: 14vh;
+        font-size: 1.4em;
+    }
+
+    .welcome-h1{
+        font-size: 43px;
+        width: 700px;
+        height: 230px;
+    }
+
+    .logo-menu img{
+        width: 240px;
+    }
+
+    ul button {
+        padding: 11px;
+        font-size: 1.2em;
+    }
+
+    #bio-text-container {
+        font-size: 1.3em;
+        width: 700px;
+     }
+
+     #bio-container {
+        left: 6%;
+        font-size: 1.1em;
+        padding: 30px 40px;
+    }
+
+    .h1-articles{
+        margin-bottom: 100px;
+        margin-top: 140px;
+        font-size: 1.8em;
+    }
+
+    .bookmarks-users{
+        margin-bottom: 160px;
+        margin-top: -66px;
+    }
+
+    .form-container{
+        gap: 70px;
+    }
+
+    .form-container input{
+        font-size: 1em;
+    }
+
+    .form-container textarea{
+        font-size: 0.9em;
+    }
+
+    .but-edit-profile{
+        font-size: 1.1em;
+        padding: 17px;
+    }
+
+    .articles-user{
+        margin-top: -70px;
+        margin-bottom: 140px;
+    }
+
+    .back-user-menu{
+        font-size: 1.6em;
     }
 
     .pagination{
@@ -363,13 +712,16 @@
     }
 
     .profile-menu {
+        width: 370px;
+        top: -470px;
         left: -42%;
+        font-size: 21px;
     }
 }
 
 @media (min-width: 1900px) {
     .menu ul li:last-child {
-        left: 13%;
+        left: 12%;
         font-size: 0.8em;
     }
 
