@@ -303,6 +303,7 @@ h2{
     margin-top: 20px;
     transition: background-color 2.2s ease;
     animation: colorChange 3s infinite alternate ease-in-out;
+    cursor: pointer;
 }
 
 .gif{
@@ -1124,7 +1125,7 @@ textarea {
 .categories-article {
     position: fixed;
     top: 18%;
-    left: -4%;
+    left: -5.8%;
     white-space: nowrap;
 }
 

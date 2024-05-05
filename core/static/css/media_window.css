@@ -118,7 +118,7 @@
 
     .categories-article {
         top: 20%;
-        left: -3.7%;
+        left: -5.8%;
         font-size: 1.1em;
     }
 
@@ -168,7 +168,7 @@
     .menu-user{
         transform: translateY(-3px);
     }
-    
+
     .gif{
         top: 38vh;
         left: 41%;
@@ -334,7 +334,7 @@
         width: 380px;
     }
 
-    .login-menu input, 
+    .login-menu input,
     .login-menu button,
     .register-menu input {
         font-size: 1em;
@@ -442,7 +442,7 @@
     }
 
     .categories-article {
-        left: -3.5%;
+        left: -5.3%;
     }
 
     .profile-menu {
@@ -453,8 +453,8 @@
 
 @media (min-width: 1700px) {
     .menu ul li:last-child {
-        left: 11%; 
-        font-size: 0.8em; 
+        left: 11%;
+        font-size: 0.8em;
     }
 
     .login-menu  {
@@ -466,7 +466,7 @@
         width: 380px;
     }
 
-    .login-menu input, 
+    .login-menu input,
     .login-menu button,
     .register-menu input {
         font-size: 1.1em;
@@ -575,7 +575,7 @@
     }
 
     .categories-article {
-        left: -3.3%;
+        left: -4.8%;
     }
 
     .profile-menu {
@@ -587,7 +587,7 @@
 @media (min-width: 1800px) {
     .menu ul li:last-child {
         left: 12%;
-        font-size: 0.8em; 
+        font-size: 0.8em;
     }
 
     .login-menu  {
@@ -599,7 +599,7 @@
         width: 380px;
     }
 
-    .login-menu input, 
+    .login-menu input,
     .login-menu button,
     .register-menu input {
         font-size: 1.1em;
@@ -708,7 +708,7 @@
     }
 
     .categories-article {
-        left: -3.1%;
+        left: -4.7%;
     }
 
     .profile-menu {
@@ -733,13 +733,13 @@
     .register-menu {
         width: 380px;
     }
-    
-    .login-menu input, 
+
+    .login-menu input,
     .login-menu button,
     .register-menu input {
         font-size: 1.1em;
     }
-    
+
     .login-menu button,
     .register-menu button{
         padding: 13px;
@@ -750,7 +750,7 @@
         margin: 100px auto 11px;
         transform: translateX(25px);
     }
-    
+
     .message-position a{
         vertical-align: 8px;
     }
@@ -793,7 +793,7 @@
     }
 
     .categories-article {
-        left: -3%;
+        left: -4.3%;
     }
 
     .logo-menu img{
@@ -847,7 +847,7 @@
     .articles-user{
         margin-top: -70px;
         margin-bottom: 140px;
-        
+
     }
 
     .back-user-menu{
