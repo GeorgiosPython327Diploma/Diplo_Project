@@ -136,8 +136,8 @@
 
     .icon-h1-category{
         font-size: 1.8em;
-        margin-top: 120px;
-        transform: translateX(-25px);
+        margin-top: 140px;
+        transform: translateX(7px);
     }
 
     .icon-h1-category img{
@@ -449,6 +449,12 @@
         left: -40%;
         font-size: 20px;
     }
+
+    .icon-h1-category{
+        font-size: 1.8em;
+        margin-top: 140px;
+        transform: translateX(20px);
+    }
 }
 
 @media (min-width: 1700px) {
@@ -581,6 +587,12 @@
     .profile-menu {
         left: -41%;
         font-size: 20px;
+    }
+
+    .icon-h1-category{
+        font-size: 1.8em;
+        margin-top: 140px;
+        transform: translateX(7px);
     }
 }
 
@@ -716,6 +728,12 @@
         top: -470px;
         left: -42%;
         font-size: 21px;
+    }
+
+    .icon-h1-category{
+        font-size: 1.8em;
+        margin-top: 140px;
+        transform: translateX(30px);
     }
 }
 
@@ -866,6 +884,12 @@
         left: 41%;
         width: 350px;
         height: 511px;
+    }
+
+    .icon-h1-category{
+        font-size: 1.8em;
+        margin-top: 140px;
+        transform: translateX(-11px);
     }
 }
 
