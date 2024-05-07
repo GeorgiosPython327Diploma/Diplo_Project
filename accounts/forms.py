@@ -58,4 +58,4 @@ class ComposeForm(forms.Form):
             self.fields['recipient'].queryset = User.objects.exclude(pk=user.pk)
 
     recipient = forms.ModelChoiceField(queryset=User.objects.none(), label='Отправить')
-    content = forms.CharField(widget=forms.Textarea, label='Сообщение')
+    content = forms.CharField(widget=forms.Textarea(attrs={'rows': 7}), label='Сообщение', required=False)

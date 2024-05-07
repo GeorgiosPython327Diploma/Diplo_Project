@@ -2,13 +2,119 @@
 
 {% block content %}
    <h1>Сообщение</h1>
-<div class="compose-message">
-   <form method="post" action="{% url 'compose' %}">
-       {% csrf_token %}
-       {{ form.as_p }}
-       <button type="submit">Отправить</button>
-   </form>
-</div>
-
-<a class="back-profile" href="{% url 'bio_view' %}">Вернуться в профиль</a>
+   <div class="compose-message">
+       <form method="post" action="{% url 'compose' %}">
+           {% csrf_token %}
+           {{ form.as_p }}
+           <div id="emojiPicker">
+            <button class="emoji" type="button" onclick="insertEmoji('😀')">😀</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😃')">😃</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😄')">😄</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😁')">😁</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😆')">😆</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😅')">😅</button>
+            <button class="emoji" type="button" onclick="insertEmoji('🤣')">🤣</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😂')">😂</button>
+            <button class="emoji" type="button" onclick="insertEmoji('🙂')">🙂</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😊')">😊</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😇')">😇</button>
+            <button class="emoji" type="button" onclick="insertEmoji('🥰')">🥰</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😍')">😍</button>
+            <button class="emoji" type="button" onclick="insertEmoji('🤩')">🤩</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😘')">😘</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😗')">😗</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😚')">😚</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😙')">😙</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😋')">😋</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😛')">😛</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😜')">😜</button>
+            <button class="emoji" type="button" onclick="insertEmoji('🤪')">🤪</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😝')">😝</button>
+            <button class="emoji" type="button" onclick="insertEmoji('🤑')">🤑</button>
+            <button class="emoji" type="button" onclick="insertEmoji('🤗')">🤗</button>
+            <button class="emoji" type="button" onclick="insertEmoji('🤭')">🤭</button>
+            <button class="emoji" type="button" onclick="insertEmoji('🤫')">🤫</button>
+            <button class="emoji" type="button" onclick="insertEmoji('🤔')">🤔</button>
+            <button class="emoji" type="button" onclick="insertEmoji('🤐')">🤐</button>
+            <button class="emoji" type="button" onclick="insertEmoji('🤨')">🤨</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😐')">😐</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😑')">😑</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😶')">😶</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😏')">😏</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😒')">😒</button>
+            <button class="emoji" type="button" onclick="insertEmoji('🙄')">🙄</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😬')">😬</button>
+            <button class="emoji" type="button" onclick="insertEmoji('🤥')">🤥</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😌')">😌</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😔')">😔</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😪')">😪</button>
+            <button class="emoji" type="button" onclick="insertEmoji('🤤')">🤤</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😴')">😴</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😷')">😷</button>
+            <button class="emoji" type="button" onclick="insertEmoji('🤒')">🤒</button>
+            <button class="emoji" type="button" onclick="insertEmoji('🤕')">🤕</button>
+            <button class="emoji" type="button" onclick="insertEmoji('🤢')">🤢</button>
+            <button class="emoji" type="button" onclick="insertEmoji('🤮')">🤮</button>
+            <button class="emoji" type="button" onclick="insertEmoji('🤧')">🤧</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😵')">😵</button>
+            <button class="emoji" type="button" onclick="insertEmoji('🤯')">🤯</button>
+            <button class="emoji" type="button" onclick="insertEmoji('🤠')">🤠</button>
+            <button class="emoji" type="button" onclick="insertEmoji('🥳')">🥳</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😎')">😎</button>
+            <button class="emoji" type="button" onclick="insertEmoji('🤓')">🤓</button>
+            <button class="emoji" type="button" onclick="insertEmoji('🧐')">🧐</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😕')">😕</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😟')">😟</button>
+            <button class="emoji" type="button" onclick="insertEmoji('🙁')">🙁</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😮')">😮</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😯')">😯</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😲')">😲</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😳')">😳</button>
+            <button class="emoji" type="button" onclick="insertEmoji('🥺')">🥺</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😦')">😦</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😧')">😧</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😨')">😨</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😰')">😰</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😥')">😥</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😢')">😢</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😭')">😭</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😱')">😱</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😖')">😖</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😣')">😣</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😞')">😞</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😓')">😓</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😩')">😩</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😫')">😫</button>
+            <button class="emoji" type="button" onclick="insertEmoji('🥱')">🥱</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😤')">😤</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😡')">😡</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😠')">😠</button>
+            <button class="emoji" type="button" onclick="insertEmoji('🤬')">🤬</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😈')">😈</button>
+            <button class="emoji" type="button" onclick="insertEmoji('👿')">👿</button>
+            <button class="emoji" type="button" onclick="insertEmoji('💀')">💀</button>
+            <button class="emoji" type="button" onclick="insertEmoji('☠')">☠</button>
+            <button class="emoji" type="button" onclick="insertEmoji('💩')">💩</button>
+            <button class="emoji" type="button" onclick="insertEmoji('🤡')">🤡</button>
+            <button class="emoji" type="button" onclick="insertEmoji('👹')">👹</button>
+            <button class="emoji" type="button" onclick="insertEmoji('👺')">👺</button>
+            <button class="emoji" type="button" onclick="insertEmoji('👻')">👻</button>
+            <button class="emoji" type="button" onclick="insertEmoji('👽')">👽</button>
+            <button class="emoji" type="button" onclick="insertEmoji('👾')">👾</button>
+            <button class="emoji" type="button" onclick="insertEmoji('🤖')">🤖</button>
+            <button class="emoji" type="button" onclick="insertEmoji('🎃')">🎃</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😺')">😺</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😸')">😸</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😹')">😹</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😻')">😻</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😼')">😼</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😽')">😽</button>
+            <button class="emoji" type="button" onclick="insertEmoji('🙀')">🙀</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😿')">😿</button>
+            <button class="emoji" type="button" onclick="insertEmoji('😾')">😾</button>
+            </div>
+           <button type="submit">Отправить</button>
+       </form>
+   </div>
+   <a class="back-profile" href="{% url 'bio_view' %}">Вернуться в профиль</a>
 {% endblock %}

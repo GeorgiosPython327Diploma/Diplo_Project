@@ -1451,6 +1451,7 @@ textarea {
 
 .compose-message{
     padding: 20px;
+    max-width: 680px;
     background-color: #fafafac8;
     border: 4px solid white;
     margin: 30px;
@@ -1461,20 +1462,37 @@ textarea {
 .compose-message button{
     padding: 7px;
     float: right;
-    background-color: rgba(255, 255, 255, 0.823);
+    margin: 4px;
+    margin-bottom: 7px;
+    background-color: white;
     border: 3px solid white;
     border-radius: 7px;
     box-shadow: 0 2px 12px 2px rgba(112, 110, 110, 0.306);
     font-weight: bold;
     font-size: 1em;
-    color: gray;
+    color: rgb(128, 128, 128);
     transition: background-color ease-in-out 0.3s, color ease-in-out 0.3s;
 }
 
 .compose-message button:hover{
+    background-color: #0999517a;
+    color: white;
+}
+
+#emojiPicker .emoji {
+    padding: 7px;
+    background-color: white;
+    margin-right: 4px;
+    float: left;
+    transition: background-color ease-in-out 0.3s, color ease-in-out 0.3s;
+    cursor: pointer;
+}
+
+#emojiPicker .emoji:hover{
     background-color: rgba(110, 134, 184, 0.82);
     color: white;
 }
+
 
 .inbox-message{
     padding: 20px 100px;
