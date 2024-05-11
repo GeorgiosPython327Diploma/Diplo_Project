@@ -55,7 +55,6 @@ class Article(models.Model):
 # Модель обзора
 class Review(models.Model):
     article = models.OneToOneField(Article, on_delete=models.CASCADE)  # Связь с моделью Article
-    rating = models.IntegerField(choices=[(i, str(i)) for i in range(1, 6)])  # Рейтинг обзора
     full_description = models.TextField()  # Полное описание обзора
     likes = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='liked_reviews')  # Пользователи, поставившие лайк
     dislikes = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='disliked_reviews')  # Пользователи, поставившие дизлайк
