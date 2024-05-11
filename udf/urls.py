@@ -18,13 +18,19 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 
+# Определение URL-маршрутов приложения
 urlpatterns = [
+    # Маршрут для административной панели Django
     path('admin/', admin.site.urls),
+    # Включение URL-маршрутов приложения "core"
     path('core/', include('core.urls')),
+    # Включение URL-маршрутов приложения "accounts"
     path('accounts/', include('accounts.urls')),
+    # Основной маршрут для приложения "articles"
     path('', include('articles.urls')),
 ]
 
+# Добавление дополнительных URL-маршрутов для статических медиафайлов в режиме DEBUG
 if settings.DEBUG:
     from django.conf.urls.static import static
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

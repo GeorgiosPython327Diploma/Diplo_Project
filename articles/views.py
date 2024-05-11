@@ -10,50 +10,62 @@ from django.views.generic import DeleteView
 from django.urls import reverse_lazy, reverse
 from django.utils.html import mark_safe
 
+# Базовый шаблон для отображения статей
 BASE_TEMPLATE = 'core/base.html'
 
+# Вывод статей на главной странице
 def base_with_articles(request):
+    # Получение списка статей, сортированных по дате создания
     articles_list = Article.objects.order_by('-created_at')
+    # Создание пагинатора для списка статей
     paginator = Paginator(articles_list, 5)
 
+    # Получение номера страницы
     page = request.GET.get('page', 1)
     try:
+        # Получение объектов статей для текущей страницы
         articles = paginator.page(page)
     except (PageNotAnInteger, EmptyPage):
+        # Если страница не является целым числом или пуста, показываем первую страницу
         articles = paginator.page(1)
 
+    # Создание формы для добавления статьи
     article_form = ArticleForm()
+    # Создание формы для добавления комментария
     comment_form = CommentForm()
+    # Проверка, добавлены ли статьи в закладки текущим пользователем
     user_has_bookmarks = False
     if request.user.is_authenticated:
         user_has_bookmarks = Bookmark.objects.filter(user=request.user, article__in=articles_list).exists()
 
+    # Получение использованных категорий
     used_categories = Article.objects.values_list('category', flat=True).distinct()
     categories = Category.objects.filter(id__in=used_categories)
 
+    # Перенаправление на страницу с отфильтрованными статьями по категории
     if 'category' in request.GET:
         category_id = request.GET['category']
-
         return redirect('category_articles', category_id=category_id)
-
-    print(f"Page: {page}, Articles: {articles}")
 
     return render(request, BASE_TEMPLATE, {'articles': articles, 'article_form': article_form, 'comment_form': comment_form, 'user_has_bookmarks': user_has_bookmarks, 'categories': categories})
 
-
+# Отображение деталей статьи
 def article_detail(request, pk):
+    # Получение статьи по ее идентификатору
     article = get_object_or_404(Article, pk=pk)
 
+    # Проверка, добавлена ли статья в закладки текущим пользователем
     user_has_bookmark = False
     if request.user.is_authenticated:
         user_has_bookmark = article.bookmark_set.filter(user=request.user).exists()
 
     return render(request, BASE_TEMPLATE, {'article': article, 'user_has_bookmark': user_has_bookmark})
 
-
+# Добавление новой статьи
 @login_required
 def add_article(request):
     if request.method == 'POST':
+        # Создание формы для добавления статьи
         form = ArticleForm(request.POST, request.FILES)
         if form.is_valid():
             article = form.save(commit=False)
@@ -70,7 +82,7 @@ def add_article(request):
 
     return render(request, 'articles/add_article.html', {'form': form})
 
-
+# Добавление комментария к статье
 @login_required
 def add_comment(request, article_id):
     article = get_object_or_404(Article, pk=article_id)
@@ -89,7 +101,7 @@ def add_comment(request, article_id):
 
     return render(request, 'articles/review_article.html', {'article': article, 'comment_form': form})
 
-
+# Поставить лайк статье
 @login_required
 def like_article(request, article_id):
     if request.method == 'POST':
@@ -105,7 +117,7 @@ def like_article(request, article_id):
 
     return JsonResponse({'error': 'Неверный запрос'})
 
-
+# Поставить дизлайк статье
 @login_required
 def dislike_article(request, article_id):
     if request.method == 'POST':
@@ -121,7 +133,7 @@ def dislike_article(request, article_id):
 
     return JsonResponse({'error': 'Неверный запрос'})
 
-
+# Получить количество лайков и дизлайков для всех статей пользователя
 @login_required
 def get_like_dislike_count(request, article_id=None):
     user = request.user
@@ -137,7 +149,7 @@ def get_like_dislike_count(request, article_id=None):
 
     return JsonResponse({'likes': likes, 'dislikes': dislikes, 'total_likes': likes, 'total_dislikes': dislikes})
 
-
+# Добавить статью в закладки
 @login_required()
 def add_bookmark(request, article_id):
     article = get_object_or_404(Article, pk=article_id)
@@ -149,7 +161,7 @@ def add_bookmark(request, article_id):
 
     return redirect('base_with_articles')
 
-
+# Удалить статью из закладок
 @login_required()
 def remove_bookmark(request, article_id):
     article = get_object_or_404(Article, pk=article_id)
@@ -161,7 +173,7 @@ def remove_bookmark(request, article_id):
 
     return redirect('base_with_articles')
 
-
+# Показать все закладки пользователя
 @login_required()
 def user_bookmarks(request):
     bookmarks = Bookmark.objects.filter(user=request.user)
@@ -169,7 +181,7 @@ def user_bookmarks(request):
 
     return render(request, 'articles/user_bookmarks.html', {'bookmarks': bookmarks, 'bookmark_form': bookmark_form})
 
-
+# Поиск статей
 def search_articles(request):
     query = request.GET.get('query', '')
     results = []
@@ -191,7 +203,7 @@ def search_articles(request):
 
     return JsonResponse({'results': serialized_results})
 
-
+# Показать статью для рецензии
 def review_article(request, pk):
     article = get_object_or_404(Article, pk=pk)
 
@@ -221,7 +233,7 @@ def review_article(request, pk):
 
     return render(request, 'articles/review_article.html', {'article': article, 'user_has_bookmark': user_has_bookmark, 'comment_form': comment_form, 'comments': comments})
 
-
+# Показать статьи пользователя
 @login_required()
 def user_articles(request, user_id):
     user = get_object_or_404(User, id=user_id)
@@ -229,7 +241,7 @@ def user_articles(request, user_id):
 
     return render(request, 'articles/user_articles.html', {'user': user, 'articles': articles})
 
-
+# Класс для удаления статьи
 class ArticleDeleteView(LoginRequiredMixin, DeleteView):
     model = Article
     template_name = 'articles/article_confirm_delete.html'
@@ -240,7 +252,7 @@ class ArticleDeleteView(LoginRequiredMixin, DeleteView):
     def get_queryset(self):
         return Article.objects.filter(author=self.request.user)
 
-
+# Редактирование статьи
 @login_required
 def edit_article(request, article_id):
     article = get_object_or_404(Article, pk=article_id)
@@ -258,7 +270,7 @@ def edit_article(request, article_id):
 
     return render(request, 'articles/edit_article.html', {'form': form, 'article': article, 'categories': categories})
 
-
+# Показать статьи по категории
 def category_articles(request, category_id):
     category = Category.objects.get(id=category_id)
     articles_list = Article.objects.filter(category=category)
@@ -274,5 +286,6 @@ def category_articles(request, category_id):
 
     return render(request, 'articles/category_articles.html', {'articles': articles, 'category': category, 'categories': categories})
 
+# Показать информацию о проекте
 def about_project(request):
     return render(request, 'articles/about_project.html')
