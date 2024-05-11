@@ -1,22 +1,25 @@
+// Регистрируем плагин TextPlugin(GSAP)
 gsap.registerPlugin(TextPlugin);
 
+// Анимация вращения символов
 gsap.from(".rotate-char", {
-  duration: 1,
-  rotateY: 360,
-  transformOrigin: "50% 50%",
+  duration: 1, // Продолжительность анимации
+  rotateY: 360, // Вращение по оси Y на 360 градусов
+  transformOrigin: "50% 50%", // Центр вращения
   stagger: {
-    each: 0.1,
-    from: "start"
+    each: 0.1, // Задержка между каждым символом
+    from: "start" // Начинать с первого символа
   },
-  onComplete: function () {
+  onComplete: function () { // Функция, которая выполнится по завершению анимации
+    // Обратная анимация для возврата символов в исходное положение
     gsap.to(".rotate-char", {
-      duration: 1,
-      rotateY: 0,
-      transformOrigin: "50% 50%",
-      ease: "power1.inOut",
+      duration: 1, // Продолжительность анимации
+      rotateY: 0, // Вращение по оси Y на 0 градусов (возврат в исходное положение)
+      transformOrigin: "50% 50%", // Центр вращения
+      ease: "power1.inOut", // Эффект анимации
       stagger: {
-        each: -0.1,
-        from: "end"
+        each: -0.1, // Задержка между каждым символом
+        from: "end" // Начинать с последнего символа
       },
     });
   }
