@@ -452,7 +452,6 @@ h1,.span-welcome {
     color: rgb(82, 82, 80);
 }
 
-
 .target-public{
     text-decoration: none;
     color: #1c59a8a3;
@@ -460,7 +459,7 @@ h1,.span-welcome {
 }
 .position-likes-dislikes-bookmarkio{
     text-align: right;
-    margin-right: 22%;
+    margin-right: 120px;
 }
 
 .content-likes-dislikes-bookmarkio-article{
@@ -811,7 +810,8 @@ h4{
 
 .position-author{
     text-align: right;
-    margin-right: 130px;
+    margin-right: 100px;
+    white-space: nowrap;
 }
 
 .review-container{
