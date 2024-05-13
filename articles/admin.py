@@ -4,7 +4,7 @@ from django import forms
 from tinymce.widgets import TinyMCE
 from django.utils.html import format_html
 
-# Определение формы для администрирования статьи
+# Определение формы для администрирования статей
 class ArticleAdminForm(forms.ModelForm):
     class Meta:
         model = Article
@@ -19,19 +19,19 @@ class ArticleAdminForm(forms.ModelForm):
         self.fields['likes'].required = False
         self.fields['dislikes'].required = False
 
-# Класс для отображения и управления административным интерфейсом статьи
+# Класс для отображения и управления административным интерфейсом статей
 class ArticleAdmin(admin.ModelAdmin):
     form = ArticleAdminForm
     list_display = ('title', 'author', 'created_at', 'get_likes_count', 'get_dislikes_count', 'display_categories', 'photo_preview')
 
     def get_likes_count(self, obj):
-        return obj.likes.count()  # Получаем количество лайков для статьи
+        return obj.likes.count()  # Получаем количество лайков для статей
 
     def get_dislikes_count(self, obj):
-        return obj.dislikes.count()  # Получаем количество дизлайков для статьи
+        return obj.dislikes.count()  # Получаем количество дизлайков для статей
 
     def display_categories(self, obj):
-        return ", ".join([category.name for category in obj.category.all()])  # Отображение категорий для статьи
+        return ", ".join([obj.category.name])  # Отображение категории для статьи
 
     def photo_preview(self, obj):
         if obj.photo:
