@@ -2,6 +2,25 @@ Creative Commons Attribution 4.0 International License (CC BY).
 
 Universal Digest Family License
 
+This license is provided by George Oblivantsev (https://github.com/MRGeorgioDev8) to all persons using the Universal Digest Family project.
+
+When using the Project, You are obliged to:
+
+1. Attribute: You must explicitly state that the Author of the Project is George Oblivantsev. This can be done by including a link to the Author's profile (https://github.com/MRGeorgioDev8), mentioning the Author in the project's contributors list, or by any other appropriate means.
+
+2. Preserve Attribution: You must preserve any mentions of the Author in the Project, including any links to the original source code, documentation, or other attributive elements.
+
+3. Not Remove Authorship Information: You may not delete or modify mentions of the Author in the Project without the Author's consent.
+
+This is a Creative Commons Attribution 4.0 International License (CC BY).
+More detailed information on the rules of using the Project can be found at: https://creativecommons.org/licenses/by/4.0/legalcode
+
+
+
+Creative Commons Attribution 4.0 International License (CC BY).
+
+Universal Digest Family License
+
 Данная лицензия предоставляется Обливанцевым Георгием Игоревичем (https://github.com/MRGeorgioDev8), всем лицам, использующим проект Universal Digest Family.
 
 При использовании Проекта, Вы обязаны:
