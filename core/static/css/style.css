@@ -1470,6 +1470,7 @@ textarea {
     font-weight: bold;
     font-size: 1em;
     color: rgb(128, 128, 128);
+    cursor: pointer;
     transition: background-color ease-in-out 0.3s, color ease-in-out 0.3s;
 }
 
