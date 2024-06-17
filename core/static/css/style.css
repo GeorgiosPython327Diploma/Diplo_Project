@@ -192,7 +192,7 @@ label, #id_username{
     width: 100%;
     margin-bottom: 11px;
     border: 3px solid rgb(255, 255, 255);
-    font-size: 0.9em;
+    font-size: 1em;
     font-weight: bold;
     border-radius: 11px;
     cursor: pointer;
@@ -256,7 +256,7 @@ h2{
     padding: 11px 40px;
     width: 100%;
     margin-top: 22px;
-    font-size: 0.9em;
+    font-size: 1em;
     border: 3px solid rgb(255, 255, 255);
     border-radius: 11px;
     font-weight: bold;
@@ -957,12 +957,14 @@ h4{
     color: #707070;
     box-shadow: 0 2px 12px 2px rgba(112, 110, 110, 0.44);
     cursor: pointer;
-    transition: background-color ease-in-out 0.3s, color ease-in-out 0.3s;
+    scale: 1;
+    transition: background-color ease-in-out 0.3s, color ease-in-out 0.3s, scale ease-in-out 0.3s;
 }
 
 .articles-user button:hover{
     background-color: rgba(246, 9, 2, 0.65);
     color: white;
+    scale: 0.97;
 }
 
 .articles-user a{
@@ -976,12 +978,14 @@ h4{
     border: 1px solid rgba(250, 249, 249, 0.63);
     box-shadow: 0 2px 12px 2px rgba(112, 110, 110, 0.45);
     border-radius: 7px;
-    transition: background-color ease-in-out 0.3s, color ease-in-out 0.3s;
+    scale: 1;
+    transition: background-color ease-in-out 0.3s, color ease-in-out 0.3s, scale ease-in-out 0.3s;
 }
 
 .articles-user a:hover{
     background-color: rgba(110, 134, 184, 0.82);
     color: white;
+    scale: 0.97;
 }
 
 .article-actions{
