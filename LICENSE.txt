@@ -2,11 +2,11 @@ Creative Commons Attribution 4.0 International License (CC BY).
 
 Universal Digest Family License
 
-This license is provided by George Oblivantsev (https://github.com/MRGeorgioDev8) to all persons using the Universal Digest Family project.
+This license is provided by (https://github.com/MRGeorgioDev8) to all persons using the Universal Digest Family project.
 
 When using the Project, You are obliged to:
 
-1. Attribute: You must explicitly state that the Author of the Project is George Oblivantsev. This can be done by including a link to the Author's profile (https://github.com/MRGeorgioDev8), mentioning the Author in the project's contributors list, or by any other appropriate means.
+1. Attribute: You must explicitly state that the Author of the Project. This can be done by including a link to the Author's profile (https://github.com/MRGeorgioDev8), mentioning the Author in the project's contributors list, or by any other appropriate means.
 
 2. Preserve Attribution: You must preserve any mentions of the Author in the Project, including any links to the original source code, documentation, or other attributive elements.
 
@@ -14,22 +14,3 @@ When using the Project, You are obliged to:
 
 This is a Creative Commons Attribution 4.0 International License (CC BY).
 More detailed information on the rules of using the Project can be found at: https://creativecommons.org/licenses/by/4.0/legalcode
-
-
-
-Creative Commons Attribution 4.0 International License (CC BY).
-
-Universal Digest Family License
-
-Данная лицензия предоставляется Обливанцевым Георгием Игоревичем (https://github.com/MRGeorgioDev8), всем лицам, использующим проект Universal Digest Family.
-
-При использовании Проекта, Вы обязаны:
-
-1. Указать Авторство: Вы должны явно указать, что Автором Проекта является Обливанцев Георгий Игоревич. Это можно сделать путем включения ссылки на профиль Автора (https://github.com/MRGeorgioDev8), упоминания Автора в списке участников проекта или другим подходящим способом.
-
-2. Сохранять Атрибуцию: Вы должны сохранять любые упоминания о Авторе в Проекте, включая любые ссылки на оригинальный исходный код, документацию или другие атрибутивные элементы.
-
-3. Неудаление информации об авторстве: Вы не можете удалять или изменять упоминания о Авторе в Проекте без согласия Автора.
-
-Это лицензия Creative Commons Attribution 4.0 International License (CC BY).
-Более подробную информацию о правилах использования Проекта можно найти по ссылке: https://creativecommons.org/licenses/by/4.0/legalcode
